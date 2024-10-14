@@ -1,4 +1,4 @@
-Welcome to CyberIOT: Where Smart Devices Come to Party!
+Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts!
 
 ![image](https://github.com/user-attachments/assets/0da19965-6640-4aad-8f9f-5f443d3e31bb)
 
