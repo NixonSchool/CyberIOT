@@ -92,7 +92,7 @@ NOTE: The project has some unfinished parts, like the settings page, reset passw
 
 For pycharm users, ensure that you've configured you server properly, else the project won't work.
 
-Ensure python is well installed and added to path on your main computer. And django is installed too. Then you can enter pycharm and configure the server in settings. 
+Ensure python is well installed and added to path on your main computer. And django is installed too. Then you can load pycharm and configure the server in settings. 
 
 ![image](https://github.com/user-attachments/assets/9c3cd3af-24d8-4b2a-a650-fdf16f7b31fd)
 
