@@ -2,7 +2,7 @@ Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts!
 
 ![image](https://github.com/user-attachments/assets/0da19965-6640-4aad-8f9f-5f443d3e31bb)
 
-**Forums:** Discuss about IoT. A mosh pit for tech nerds. Based on Django Machina, but with a CyberIOT twist that's spicier than your grandma's firewall.
+**Forums:** Discuss about IoT. A mosh pit for tech nerds. Based on Django Machina, but with a unique CyberIOT twist.
 
 ![image](https://github.com/user-attachments/assets/96e0051e-a16f-4bc2-a5aa-11c2a59de634)
 
