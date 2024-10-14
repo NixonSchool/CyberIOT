@@ -86,7 +86,13 @@ Just type their name or their email and the password.
 
 Current's superadmin username and password is: cyberiot || ghoster123@@#@@#
 
+For pycharm users, ensure that you've configured you server properly, else the project won't work.
 
+Ensure python is well installed and added to path on your main computer. And django is installed too. Then you can enter pycharm and configure the server in settings. 
+
+![image](https://github.com/user-attachments/assets/9c3cd3af-24d8-4b2a-a650-fdf16f7b31fd)
+
+![image](https://github.com/user-attachments/assets/919466f2-31b8-460b-9377-50bedbb40c89)
 
 
 
