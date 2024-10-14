@@ -40,7 +40,7 @@ Load your project in your preferred IDE.
 
 Ensure you're exactly inside the project folder. You're where the manage.py is located. If you're not in that folder, change directory into there.
 
-Create a virtual environment.
+Create a virtual environment. If the project doesn’t automatically load into the virtual environment when you run it, delete the existing venv and create a new one.
 
 ![image](https://github.com/user-attachments/assets/2d74c433-f3b5-4a2f-bd2b-9211dc864268)
 
