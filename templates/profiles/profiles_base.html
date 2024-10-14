@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Profile{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="{% url 'mainpage:main_page' %}" class="nav__logo">
+                <img src="{% static 'images/logo.png' %}" alt="CyberIoT Logo">
+            </a>
+
+            <div class="nav__user">
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <a href="{% url 'admin:index' %}" class="nav__button admin-button" style="margin-right: 10px !important;">Admin</a>
+                    {% else %}
+                        <span class="nav__button admin-button disabled" style="margin-right: 10px !important;">Admin</span>
+                    {% endif %}
+                    <a href="{% url 'mainpage:main_page' %}" class="nav__button mainpage-button" style="margin-right: 10px !important;">Mainpage</a>
+                    <a href="{% url 'accounts:logout' %}" class="nav__button logout-button" style="margin-right: 10px !important;">Logout</a>
+                {% else %}
+                    <a href="{% url 'accounts:login' %}" class="nav__button login-button" style="margin-right: 10px !important;">Login</a>
+                    <a href="{% url 'accounts:signup' %}" class="nav__button register-button" style="margin-right: 10px !important;">Register</a>
+                {% endif %}
+            </div>
+
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container" role="main">
+        <div class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h4>About Us</h4>
+          <p>CyberIoT: Securing the Internet of Things</p>
+        </div>
+        <div class="footer__section">
+          <h4>Contact Us</h4>
+          <p><a href="mailto:support@cyberiot.com">support@cyberiot.com</a></p>
+        </div>
+        <div class="footer__section">
+          <h4>Legal</h4>
+          <a href="{% url 'terms:terms_of_service' %}">Terms of Service</a>
+          <a href="{% url 'terms:privacy_policy' %}">Privacy Policy</a>
+          <a href="{% url 'terms:contact_us' %}">Contact Us</a>  
+        </div>
+      </div>
+    </footer>
+
+    {% block extra_js %}
+        <!-- Add this script just before the closing </body> tag -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navUser = document.querySelector('.nav__user');
+        
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navUser.classList.toggle('active');
+            });
+        
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInside = hamburger.contains(event.target) || navUser.contains(event.target);
+                if (!isClickInside && navUser.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navUser.classList.remove('active');
+                }
+            });
+        });
+        </script>
+    {% endblock %}
+</body>
+</html>

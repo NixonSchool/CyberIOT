@@ -1,0 +1,387 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About CyberIOT Forum</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-dark: #0056b3;
+            --primary-light: #cce5ff;
+            --text-color: #333;
+            --bg-color: #007bff;
+            --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --input-bg: #fff;
+            --input-border: #ced4da;
+            --input-border-focus: var(--primary-color);
+            --input-shadow-focus: rgba(0, 123, 255, 0.25);
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar-custom {
+            padding: 0.75rem 1rem;
+            background-color: var(--primary-color);
+        }
+
+        .navbar-custom .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-right: 2rem;
+        }
+
+        .navbar-custom .navbar-brand img {
+            height: 40px;
+        }
+
+        .navbar-custom .form-inline {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .navbar-custom .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 70%;
+            margin-right: 0.5rem;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-custom .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .navbar-custom .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .navbar-custom .btn-outline-light {
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+        }
+
+        .navbar-custom .navbar-nav {
+            margin-left: auto;
+        }
+
+        .navbar-custom .nav-item {
+            margin-left: 0.5rem;
+        }
+
+        .navbar-custom .nav-link.btn-custom {
+            color: var(--primary-color);
+            background-color: white;
+            border: 1px solid var(--primary-color);
+            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .navbar-custom .nav-link.btn-custom:hover {
+            color: white;
+            background-color: var(--primary-color);
+        }
+
+        .btn-custom {
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .footer {
+            background-color: var(--bg-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        .footer__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer__section {
+            margin-bottom: 1rem;
+        }
+
+        .footer__section h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer__section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer__section a:hover {
+            text-decoration: underline;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .about-content h2 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .about-content h3 {
+            color: #34495e;
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .about-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content li {
+            margin-bottom: 0.75rem;
+            color: #555;
+        }
+
+        .about-content strong {
+            color: #2c3e50;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #3498db;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-custom .form-inline {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .navbar-custom .navbar-nav {
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+
+            .navbar-custom .nav-item {
+                margin: 0 0.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-custom .navbar-nav {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .navbar-custom .nav-item {
+                margin: 0.5rem 0;
+                width: 100%;
+            }
+
+            .navbar-custom .nav-link.btn-custom {
+                display: block;
+                text-align: center;
+            }
+
+            .navbar-custom .form-inline {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .navbar-custom .form-control {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .navbar-custom .btn-outline-light {
+                width: 100%;
+            }
+
+            .about-content {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .about-content h2 {
+                font-size: 2rem;
+            }
+
+            .about-content h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .navbar-custom .navbar-nav {
+                justify-content: center;
+            }
+            .btn-custom {
+                padding: 0.25rem 0.6rem;
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'terms:contact_us' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="CyberIoT" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link btn-custom" href="{% url 'mainpage:main_page' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-custom" href="{% url 'marketcore:index' %}">Marketplace</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-custom" href="{% url 'channel:channelList' %}">LearningHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="container">
+            <div class="about-content">
+                <h2>Welcome to CyberIOT Forum</h2>
+                <p>CyberIOT Forum is the ultimate online community for IoT enthusiasts, cybersecurity professionals, and tech innovators. Our platform brings together a diverse group of individuals passionate about the Internet of Things and its secure implementation.</p>
+
+                <h3>Our Mission</h3>
+                <p>To foster a collaborative environment where IoT enthusiasts can learn, share, and innovate while prioritizing cybersecurity in the rapidly evolving world of connected devices.</p>
+
+                <h3>What We Offer</h3>
+                <ul>
+                    <li><strong>Forum:</strong> Engage in discussions, ask questions, and share your knowledge with a community of like-minded individuals.</li>
+                    <li><strong>Marketplace:</strong> Buy, sell, or trade IoT devices, components, and related services in our secure marketplace.</li>
+                    <li><strong>Vulnerability Reporting:</strong> Contribute to the security of IoT ecosystems by reporting vulnerabilities you discover.</li>
+                    <li><strong>Vulnerability Tracking:</strong> Stay informed about the latest IoT security issues that have been fixed and contribute a little by writing articles.</li>
+                    <li><strong>Chat:</strong> Connect with other members in real-time through our integrated chat system.</li>
+                    <li><strong>Learning Hub:</strong> Access a wealth of educational content, including tutorials, webinars, and courses, in our YouTube-like learning platform.</li>
+                </ul>
+
+                <h3>Our Community</h3>
+                <p>CyberIOT Forum is home to a diverse group of professionals, hobbyists, and learners, including:</p>
+                <ul>
+                    <li>IoT Developers and Engineers</li>
+                    <li>Cybersecurity Experts</li>
+                    <li>Hardware Enthusiasts</li>
+                    <li>Data Scientists and Analysts</li>
+                    <li>Product Managers and Entrepreneurs</li>
+                    <li>Students and Educators</li>
+                </ul>
+
+                <h3>Join Us Today</h3>
+                <p>If you're an IoT professional or just starting your journey, CyberIOT Forum has something for you. Join our community today and be part of the future of secure, connected devices!</p>
+
+                <a href="{% url 'accounts:signup' %}" class="btn btn-primary">Sign Up Now</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>About Us</h4>
+                    <p>CyberIOT Blog - Your source for cybersecurity and IoT insights.</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'mainpage:main_page' %}">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="{% url 'terms:about' %}">About</a></li>
+                        <li><a href="{% url 'terms:contact_us' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h4>Connect With Us</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://facebook.com/"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://instagram.com/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center">&copy; 2024 CyberIOT Blog. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+{% block description %}New Video · {% endblock description %}
+{% block keywords %}New Vide · {% endblock keywords %}
+{% block title %}New Video · {% endblock title %}
+{% block content %}
+<div class="container d-flex justify-content-center mt-5">
+    <div class="col-md-8 col-sm-12">
+        <h1 class="text-center display-4 rounded" style="font-family: 'Roboto Serif', serif;">Create New Video</h1>
+        <div class="container">
+            <div class="col">
+                {% include 'base/message.html' %}
+                <hr>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="col">
+                        <label for="{{ videoForm.title.id_for_label }}" class="form-label" style="font-family: 'Roboto Serif', serif;">{{ videoForm.title.label }}</label>
+                        {{ videoForm.title }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ videoForm.content.id_for_label }}" class="form-label" style="font-family: 'Roboto Serif', serif;">{{ videoForm.content.label }}</label>
+                        {{ videoForm.media }}
+                        {{ videoForm.content }}
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="{{ videoForm.cover_image.id_for_label }}" class="form-label" style="font-family: 'Roboto Serif', serif;">{{ videoForm.cover_image.label }}</label>
+                            {{ videoForm.cover_image }}
+                        </div>
+                        <div class="col">
+                            <label for="{{ videoForm.video.id_for_label }}" class="form-label" style="font-family: 'Roboto Serif', serif;">{{ videoForm.video.label }}</label>
+                            {{ videoForm.video }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="{{ videoForm.status.id_for_label }}" class="form-label" style="font-family: 'Roboto Serif', serif;">{{ videoForm.status.label }}</label>
+                        {{ videoForm.status }}
+                    </div>
+                    <div class="mb-3 text-center">
+                        <input type="submit" value="Create New Video" class="btn btn-primary" style="font-family: 'Roboto Serif', serif;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Miha Frangež <miha.frangez@gmail.com>, 2016-2017
+# Miha Frangež <miha.frangez@gmail.com>, 2016
+# Miha Frangež <miha.frangez@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: django-machina\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-19 16:58-0500\n"
+"PO-Revision-Date: 2019-10-29 01:36+0000\n"
+"Last-Translator: Morgan Aubert <morgan@aubert.email>\n"
+"Language-Team: Slovenian (Slovenia) (http://www.transifex.com/django-machina-team/django-machina/language/sl_SI/)\n"
+"Language: sl_SI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "Parent"
+msgstr "Starš"
+
+msgid "Name"
+msgstr "Ime"
+
+msgid "Slug"
+msgstr ""
+
+msgid "Description"
+msgstr "Opis"
+
+msgid "Forum image"
+msgstr "Slika"
+
+msgid "Forum link"
+msgstr "Povezava"
+
+msgid "Track link redirects count"
+msgstr "Sledi število preusmeritev"
+
+msgid "Records the number of times a forum link was clicked"
+msgstr ""
+
+msgid "Default forum"
+msgstr "Navadni forum"
+
+msgid "Category forum"
+msgstr "Kategorija"
+
+msgid "Link forum"
+msgstr "Povezava"
+
+msgid "Forum type"
+msgstr "Vrsta foruma"
+
+msgid "Direct number of posts"
+msgstr ""
+
+msgid "Direct number of topics"
+msgstr ""
+
+msgid "Last post"
+msgstr "Najnovejše objave"
+
+msgid "Last post added on"
+msgstr "Zadnja objava dodana: "
+
+msgid "Display in parent-forums legend"
+msgstr ""
+
+msgid "Displays this forum on the legend of its parent-forum (sub forums list)"
+msgstr ""
+
+msgid "Forum"
+msgstr "Forum"
+
+msgid "Forums"
+msgstr "Forumi"
+
+msgid "A forum can not have a link forum as parent"
+msgstr ""
+
+msgid "A category can not have another category as parent"
+msgstr ""
+
+msgid "A link forum must have a link associated with it"
+msgstr ""
+
+msgid "Forum settings"
+msgstr "Nastavitve foruma"
+
+msgid "Link forum settings"
+msgstr ""
+
+msgid "'{}' forum successfully moved"
+msgstr "Forum '{}' premaknjen"
+
+msgid "Forum permissions"
+msgstr "Dovoljenja foruma"
+
+msgid "Global forum permissions"
+msgstr ""
+
+msgid "Permissions successfully copied"
+msgstr "Dovoljenja kopirana"
+
+msgid "Choose either a user ID, the anonymous user or the authenticated user"
+msgstr ""
+
+msgid "Choose a group ID"
+msgstr ""
+
+msgid "Anonymous user"
+msgstr "Anonimen uporabnik"
+
+msgid "Authenticated user"
+msgstr ""
+
+msgid "Permissions successfully applied"
+msgstr ""
+
+msgid "Machina: Forum"
+msgstr "Machina: Forum"
+
+msgid "Anonymous"
+msgstr "Anonimen"
+
+msgid "Please select this option if you want to edit the permissions of the anonymous user"
+msgstr ""
+
+msgid "Authenticated"
+msgstr ""
+
+msgid "Please select this option if you want to edit the permissions of every (non-specific) logged in user"
+msgstr ""
+
+msgid "Choose either a user ID or check either the anonymous or authenticated user checkbox"
+msgstr ""
+
+msgid "Not set"
+msgstr "Ni nastavljeno"
+
+msgid "Granted"
+msgstr ""
+
+msgid "Not granted"
+msgstr ""
+
+msgid "Topic forum"
+msgstr ""
+
+msgid "Poster"
+msgstr "Avtor"
+
+msgid "Subject"
+msgstr "Zadeva"
+
+msgid "Default topic"
+msgstr "Privzeta tema"
+
+msgid "Sticky"
+msgstr "Pripeto"
+
+msgid "Announce"
+msgstr "Razglas"
+
+msgid "Topic type"
+msgstr "Vrsta teme"
+
+msgid "Topic unlocked"
+msgstr "Tema odklenjena"
+
+msgid "Topic locked"
+msgstr "Tema zaklenjena"
+
+msgid "Topic moved"
+msgstr "Tema premaknjena"
+
+msgid "Topic status"
+msgstr "Stanje teme"
+
+msgid "Approved"
+msgstr "Potrjeno"
+
+msgid "Posts count"
+msgstr "Število objav"
+
+msgid "Views count"
+msgstr "Število ogledov"
+
+msgid "First post"
+msgstr "Prva objava"
+
+msgid "Subscribers"
+msgstr "Naročniki"
+
+msgid "Creation date"
+msgstr "Datum nastanka"
+
+msgid "Update date"
+msgstr "Datum spremembe"
+
+msgid "Topic"
+msgstr "Tema"
+
+msgid "Topics"
+msgstr "Teme"
+
+msgid "A topic can not be associated with a category or a link forum"
+msgstr ""
+
+msgid "Anonymous user forum key"
+msgstr ""
+
+msgid "Content"
+msgstr "Vsebina"
+
+msgid "Username"
+msgstr "Uporabniško ime"
+
+msgid "Attach a signature"
+msgstr "Dodaj podpis"
+
+msgid "Update reason"
+msgstr "Razlog posodobitve"
+
+msgid "Lastly updated by"
+msgstr "Nazadnje posodobil"
+
+msgid "Updates count"
+msgstr "Število posodobitev"
+
+msgid "Post"
+msgstr "Objava"
+
+msgid "Posts"
+msgstr "Objave"
+
+msgid "A user id or an anonymous key must be associated with a post."
+msgstr ""
+
+msgid "A user id or an anonymous key must be associated with a post, but not both."
+msgstr ""
+
+msgid "A username must be specified if the poster is anonymous"
+msgstr ""
+
+msgid "Machina: Forum conversations"
+msgstr ""
+
+msgid "Enter your subject"
+msgstr "Vpišite zadevo"
+
+msgid "Message"
+msgstr "Sporočilo"
+
+msgid "Enter your message"
+msgstr "Vpišite sporočilo"
+
+msgid "Lock topic"
+msgstr "Zakleni temo"
+
+msgid "Post topic as"
+msgstr "Objavi kot"
+
+msgid "Poll question"
+msgstr "Vprašanje ankete"
+
+msgid "Enter a question to associate a poll with the topic or leave blank to not create a poll."
+msgstr ""
+
+msgid "Maximum number of poll options per user"
+msgstr ""
+
+msgid "This is the number of options each user may select when voting."
+msgstr ""
+
+msgid "For how many days the poll should be run?"
+msgstr ""
+
+msgid "Enter 0 or leave blank for a never ending poll."
+msgstr ""
+
+msgid "Allow re-voting?"
+msgstr "Dovolote ponovno glasovanje"
+
+msgid "If enabled users are able to change their vote."
+msgstr ""
+
+#, fuzzy
+#| msgid "View results"
+msgid "Hide results?"
+msgstr "Poglej rezultate"
+
+msgid "If enabled results are hidden to everyone except topic creator."
+msgstr ""
+
+msgid "You must set the maximum number of poll options per user when creating polls"
+msgstr ""
+
+msgid "File"
+msgstr "Datoteka"
+
+msgid "Comment"
+msgstr "Komentar"
+
+msgid "Attachment"
+msgstr "Priloga"
+
+msgid "Attachments"
+msgstr "Priloge"
+
+msgid "Machina: Forum attachments"
+msgstr ""
+
+msgid "Poll duration, in days"
+msgstr "Trajanje ankete, v dnevih"
+
+msgid "Allow vote changes"
+msgstr "Dovoli spremembe glasov"
+
+#, fuzzy
+#| msgid "View results"
+msgid "Hide results"
+msgstr "Poglej rezultate"
+
+msgid "Topic poll"
+msgstr ""
+
+msgid "Topic polls"
+msgstr ""
+
+msgid "Poll"
+msgstr "Anketa"
+
+msgid "Poll option text"
+msgstr ""
+
+msgid "Topic poll option"
+msgstr ""
+
+msgid "Topic poll options"
+msgstr ""
+
+msgid "Voter"
+msgstr ""
+
+msgid "Poll option"
+msgstr ""
+
+msgid "Vote's date"
+msgstr ""
+
+msgid "Topic poll vote"
+msgstr ""
+
+msgid "Topic poll votes"
+msgstr ""
+
+msgid "A user id or an anonymous key must be used."
+msgstr ""
+
+msgid "A user id or an anonymous key must be used, but not both."
+msgstr ""
+
+msgid "Machina: Forum polls"
+msgstr ""
+
+msgid "Enter a poll option"
+msgstr ""
+
+msgid "You must specify an option when voting."
+msgstr ""
+
+msgid "You have tried to vote for too many options."
+msgstr ""
+
+msgid "Your vote has been cast."
+msgstr "Glas zabeležen"
+
+msgid "This message will be validated before appearing on the forum."
+msgstr "Sporočilo bo pregledano pred objavo"
+
+msgid "There are some errors in the attachments you submitted."
+msgstr "V prilogi so bile najdene napake"
+
+msgid "This message has been posted successfully."
+msgstr "Sporočilo poslano"
+
+msgid "There are some errors in the poll options you submitted."
+msgstr ""
+
+msgid "This message has been edited successfully."
+msgstr "Sporočilo spremenjeno"
+
+msgid "This message has been deleted successfully."
+msgstr "Sporočilo izbrisano"
+
+msgid "Machina: Forum feeds"
+msgstr ""
+
+msgid "Latest topics"
+msgstr "Najnovejše teme"
+
+msgid "Latest topics updated on the forums"
+msgstr "Zadnje teme, posodobljene na forumu"
+
+msgid "User"
+msgstr "Uporabnik"
+
+msgid "Avatar"
+msgstr "Slika"
+
+msgid "Signature"
+msgstr "Podpis"
+
+msgid "Total posts"
+msgstr "Število objav"
+
+msgid "Forum profile"
+msgstr "Profil"
+
+msgid "Forum profiles"
+msgstr "Profili"
+
+msgid "Machina: Forum members"
+msgstr ""
+
+msgid "The profile has been edited successfully."
+msgstr "Profil spremenjen"
+
+msgid "You subscribed to this topic successfully."
+msgstr "Uspešno naročeni"
+
+msgid "You unsubscribed from this topic successfully."
+msgstr "Naročnina preklicana"
+
+msgid "Machina: Forum moderation"
+msgstr "Machina: Moderacija"
+
+msgid "Select a destination forum"
+msgstr "Izberi končni forum"
+
+msgid "This topic has been locked successfully."
+msgstr "Tema zaklenjena"
+
+msgid "This topic has been unlocked successfully."
+msgstr "Tema odklenjena"
+
+msgid "This topic has been deleted successfully."
+msgstr "Tema izbrisana"
+
+msgid "This topic has been moved successfully."
+msgstr "Tema premaknjena"
+
+msgid "This topic type has been changed successfully."
+msgstr "Vrsta spremenjena"
+
+msgid "Would you want to change this topic to a default topic?"
+msgstr "Želite spremeniti temo v navadno?"
+
+msgid "Would you want to change this topic to a sticky topic?"
+msgstr "Želite spremeniti temo v pripeto?"
+
+msgid "Would you want to change this topic to an announce?"
+msgstr "Želite spremeniti temo v razglas?"
+
+msgid "This post has been approved successfully."
+msgstr "Objava uspešno potrjena"
+
+msgid "This post has been disapproved successfully."
+msgstr ""
+
+msgid "Permission codename"
+msgstr "Koda dovoljenja"
+
+msgid "Forum permission"
+msgstr "Dovoljenje foruma"
+
+msgid "Has perm"
+msgstr "Ima dovoljenje"
+
+msgid "Target anonymous user"
+msgstr ""
+
+msgid "Target any logged in user"
+msgstr ""
+
+msgid "User forum permission"
+msgstr ""
+
+msgid "User forum permissions"
+msgstr ""
+
+msgid "A permission should target either a specific user, an anonymous user or any authenticated user"
+msgstr ""
+
+msgid "Group"
+msgstr "Skupina"
+
+msgid "Group forum permission"
+msgstr ""
+
+msgid "Group forum permissions"
+msgstr ""
+
+msgid "Machina: Forum permissions"
+msgstr ""
+
+msgid "Can see forum"
+msgstr "Lahko vidi forum"
+
+msgid "Can read forum"
+msgstr "Lahko bere forum"
+
+msgid "Can start new topics"
+msgstr "Lahko objavlja nove teme"
+
+msgid "Can reply to topics"
+msgstr "Lahko odgovarja na objave"
+
+msgid "Can post announcements"
+msgstr "Lahko objavlja razglase"
+
+msgid "Can post stickies"
+msgstr "Lahko objavlja pripete objave"
+
+msgid "Can delete own posts"
+msgstr "Lahko briše lastne objave"
+
+msgid "Can edit own posts"
+msgstr "Lahko ureja lastne objave"
+
+msgid "Can post without approval"
+msgstr "Lahko objavlja brez potrditve"
+
+msgid "Can create polls"
+msgstr "Lahko ustvarja ankete"
+
+msgid "Can vote in polls"
+msgstr "Lahko glasuje v anketah"
+
+msgid "Can attach file"
+msgstr "Lahko pripenja datoteke"
+
+msgid "Can download file"
+msgstr "Lahko prenaša datoteke"
+
+msgid "Can lock topics"
+msgstr "Lahko zaklene teme"
+
+msgid "Can move topics"
+msgstr "Lahko premika teme"
+
+msgid "Can edit posts"
+msgstr "Lahko ureja objave"
+
+msgid "Can delete posts"
+msgstr "Lahko izbriše objave"
+
+msgid "Can approve posts"
+msgstr "Lahko potrdi objave"
+
+msgid "Can add posts in locked topics"
+msgstr ""
+
+msgid "Machina: Forum searches"
+msgstr ""
+
+msgid "Search only in topic subjects"
+msgstr "Išči samo zadeve"
+
+msgid "Search for poster"
+msgstr "Išči po avtorju"
+
+msgid "Enter a user name to limit the search to a specific user."
+msgstr "Uporabniško ime avtorja"
+
+msgid "Search in specific forums"
+msgstr "Išči v forumih"
+
+msgid "Select the forums you wish to search in."
+msgstr "Izberi forume"
+
+msgid "Search for keywords"
+msgstr "Išči po ključnih besedah"
+
+msgid "Keywords or phrase"
+msgstr "Ključne besede"
+
+msgid "Poster name"
+msgstr "Ime avtorja"
+
+msgid "Forum track"
+msgstr ""
+
+msgid "Forum tracks"
+msgstr ""
+
+msgid "Topic track"
+msgstr ""
+
+msgid "Topic tracks"
+msgstr ""
+
+msgid "Machina: Forum tracking"
+msgstr ""
+
+msgid "Forums have been marked read."
+msgstr "Forumi označeni kot prebrani"
+
+msgid "Topics have been marked read."
+msgstr "Objave označene kot prebrane"
+
+msgid "Neither Pillow nor PIL could be imported: {}"
+msgstr ""
+
+msgid "Could not import MACHINA MARKUP_MAX_LENGTH_VALIDATOR {}: {}"
+msgstr ""
+
+msgid "MACHINA_MARKUP_MAX_LENGTH_VALIDATOR setting is required"
+msgstr ""
+
+msgid "Could not import MACHINA_MARKUP_WIDGET {}: {}"
+msgstr ""
+
+msgid "Could not import MACHINA_MARKUP_LANGUAGE {}: {}"
+msgstr ""
+
+msgid "MACHINA_MARKUP_LANGUAGE setting is required"
+msgstr ""
+
+msgid "Files of size greater than {} are not allowed. Your file is {}"
+msgstr "Datoteke večje od {} niso dovoljene. Vaša datoteka je velika {}"
+
+msgid "Images of width lesser than {}px or greater than {}px or are not allowed. The width of your image is {}px"
+msgstr "Slike s širino manjšo od {}px ali večjo od {}px niso dovoljene. Širina vaše slike je {}px"
+
+msgid "Images of height lesser than {}px or greater than {}px or are not allowed. The height of your image is {}px"
+msgstr "Slike z višino manjšo od {}px ali večjo od {}px niso dovoljene. Višina vaše slike je {}px"
+
+msgid "List of forums"
+msgstr "Seznam forumov"
+
+msgid "Quick actions"
+msgstr ""
+
+msgid "Type"
+msgstr "Vrsta"
+
+msgid "Details"
+msgstr "Podrobnosti"
+
+msgid "Move up"
+msgstr "Premakni gor"
+
+msgid "Move down"
+msgstr "Premakni dol"
+
+msgid "Add a sub-forum"
+msgstr "Dodaj pod-forum"
+
+msgid "Delete"
+msgstr "Izbriši"
+
+msgid "Topics:"
+msgstr "Teme:"
+
+msgid "Posts:"
+msgstr "Objave:"
+
+msgid "Link:"
+msgstr "Povezave:"
+
+msgid "Edit user permissions"
+msgstr "Uredi dovoljenja uporabnika"
+
+msgid "Edit authenticated user permissions"
+msgstr ""
+
+msgid "Home"
+msgstr "Domov"
+
+msgid "Permission"
+msgstr "Dovoljenje"
+
+msgid "Save"
+msgstr "Shrani"
+
+msgid "Edit group permissions"
+msgstr "Uredi dovoljenja skupine"
+
+msgid "Please correct the error below."
+msgstr ""
+
+msgid "Please correct the errors below."
+msgstr ""
+
+msgid "Please select a user in order to update its permissions"
+msgstr ""
+
+msgid "Select"
+msgstr "Izberi"
+
+msgid "Please select a group in order to update its permissions"
+msgstr ""
+
+msgid "Copy permissions from another forum"
+msgstr ""
+
+msgid "Please select a forum in order to copy its permissions configuration to the current forum"
+msgstr ""
+
+msgid "Copy"
+msgstr "Kopiraj"
+
+msgid "Search"
+msgstr "Iskanje"
+
+msgid "Advanced search"
+msgstr "Napredno iskanje"
+
+msgid "Subscriptions"
+msgstr "Naročnine"
+
+msgid "View my posts"
+msgstr ""
+
+msgid "Moderation queue"
+msgstr "Moderacija"
+
+msgid "Mark subforums read"
+msgstr "Označi forume kot prebrane"
+
+msgid "New topic"
+msgstr "Nova tema"
+
+msgid "Mark topics read"
+msgstr "Označi teme kot prebrane"
+
+msgid "Announcements"
+msgstr "Obvestila"
+
+msgid "RSS feed"
+msgstr ""
+
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a>"
+msgstr "Avtor; <a href=\"%(poster_url)s\">%(username)s</a>"
+
+#, python-format
+msgid "By: %(poster_username)s"
+msgstr "Avtor: %(poster_username)s"
+
+msgid "No posts"
+msgstr "Ni objav"
+
+msgid "Total redirects:"
+msgstr "Preusmeritve: "
+
+msgid "Subforums:"
+msgstr "Podforumi:"
+
+msgid "No forums."
+msgstr "Ni forumov."
+
+msgid "Index"
+msgstr "Imenik"
+
+msgid "Mark forums read"
+msgstr "Označi forume kot prebrane"
+
+msgid "View unread topics"
+msgstr "Poglej neprebrane teme"
+
+msgid "Statistics"
+msgstr "Statistika"
+
+msgid "Total posts:"
+msgstr "Število objav:"
+
+msgid "Total topics:"
+msgstr "Število tem:"
+
+msgid "(optional)"
+msgstr "(neobvezno)"
+
+msgid "Add another file"
+msgstr "Dodaj še eno datoteko"
+
+msgid "You may select <b>1</b> option"
+msgstr ""
+
+#, python-format
+msgid "You may select up to <b>%(max_options)s</b> options"
+msgstr ""
+
+msgid "Vote"
+msgstr "Glasuj"
+
+msgid "Change your vote"
+msgstr "Spremeni glas"
+
+msgid "Poll options"
+msgstr ""
+
+msgid "Add a poll option"
+msgstr ""
+
+msgid "<b>Note:</b>&nbsp;Deleting poll options of an existing poll will delete the associated votes."
+msgstr ""
+
+msgid "Preview:"
+msgstr "Predogled:"
+
+msgid "Results are currently hidden."
+msgstr ""
+
+msgid "Total votes:"
+msgstr "Število glasov:"
+
+msgid "Submit"
+msgstr "Pošlji"
+
+msgid "View results"
+msgstr "Poglej rezultate"
+
+msgid "Options"
+msgstr "Možnosti"
+
+msgid "Post reply"
+msgstr "Odgovori"
+
+msgid "Subscribe"
+msgstr "Naroči se"
+
+msgid "Unsubscribe"
+msgstr "Odjavi se"
+
+msgid "Unlock topic"
+msgstr "Odkleni temo"
+
+msgid "Delete topic"
+msgstr "Izbriši temo"
+
+msgid "Move topic"
+msgstr "Premakni temo"
+
+msgid "Change to sticky topic"
+msgstr "Spremeni v pripeto temo"
+
+msgid "Change to announce"
+msgstr "Spremeni v razglas"
+
+msgid "Change to standard topic"
+msgstr "Spremeni v navadno temo"
+
+msgid "Preview"
+msgstr "Predogled"
+
+msgid "Post a reply"
+msgstr "Odgovori"
+
+msgid "Topic review"
+msgstr "Predogled"
+
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a> on %(creation_date)s"
+msgstr "<a href=\"%(poster_url)s\">%(username)s</a>, %(creation_date)s"
+
+#, python-format
+msgid "By: %(poster_username)s on %(creation_date)s"
+msgstr " %(poster_username)s, %(creation_date)s"
+
+msgid "Delete post"
+msgstr "Izbriši objavo"
+
+msgid "Are you sure you want to delete this post?"
+msgstr "Res želite izbrisati to objavo?"
+
+msgid "Yes, I'm sure"
+msgstr ""
+
+msgid "No, take me back"
+msgstr ""
+
+msgid "Edit post"
+msgstr "Uredi objavo"
+
+msgid "Post a new topic"
+msgstr "Ustvari novo temo"
+
+msgid "Edit"
+msgstr "Uredi"
+
+msgid "Last edited by:"
+msgstr "Nazadnje uredil: "
+
+msgid "Updated"
+msgstr "Posodobljeno"
+
+msgid "on"
+msgstr " "
+
+#, python-format
+msgid "edited %(counter)s time in total."
+msgid_plural "edited %(counter)s times in total."
+msgstr[0] "urejeno %(counter)s-krat"
+msgstr[1] "urejeno %(counter)s-krat"
+msgstr[2] "urejeno %(counter)s-krat"
+msgstr[3] "urejeno %(counter)s-krat"
+
+msgid "Reason:"
+msgstr "Razlog:"
+
+msgid "Replies"
+msgstr "Odgovori"
+
+msgid "Views"
+msgstr "Ogledi"
+
+msgid "This topic is locked"
+msgstr "Tema je zaklenjena"
+
+msgid "There are no topics in this forum."
+msgstr "V tem forumu ni tem"
+
+msgid "Go to the page:"
+msgstr "Pojdi na stran:"
+
+msgid "Posted by"
+msgstr "Objavil "
+
+#, python-format
+msgid "%(username)s profile"
+msgstr "Profil uporabnika %(username)s"
+
+msgid "Edit profile"
+msgstr "Uredi profil"
+
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Post</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Posts</small></p>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Topic</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Topics</small></p>"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+msgid "Recent posts"
+msgstr "Nove objave"
+
+msgid "View all"
+msgstr "Poglej vse"
+
+#, python-format
+msgid "On %(creation_date)s"
+msgstr "%(creation_date)s"
+
+msgid "Edit forum profile"
+msgstr "Uredi profil"
+
+msgid "Topics that you are subscribed to"
+msgstr "Teme, na katere ste naročeni"
+
+#, python-format
+msgid "%(counter)s topic found"
+msgid_plural "%(counter)s topics found"
+msgstr[0] "%(counter)s tema najdena"
+msgstr[1] "%(counter)s temi najdeni"
+msgstr[2] "%(counter)s teme najdene"
+msgstr[3] "%(counter)s tem najdenih"
+
+msgid "Not topics found."
+msgstr "Ni najdenih tem."
+
+msgid "Subscribe to topic"
+msgstr "Naroči se na temo"
+
+msgid "Would you like to subscribe to this topic?"
+msgstr "Se želite naročiti na to temo?"
+
+msgid "Unsubscribe from topic"
+msgstr "Prekliči naročnino"
+
+msgid "Would you like to unsubscribe from this topic?"
+msgstr "Se želite odjaviti od te teme?"
+
+msgid "My messages"
+msgstr "Sporočila"
+
+#, python-format
+msgid "%(username)s's posts"
+msgstr "Objave uporabnika %(username)s"
+
+#, python-format
+msgid "%(counter)s post found"
+msgid_plural "%(counter)s posts found"
+msgstr[0] "%(counter)s objava najdena"
+msgstr[1] "%(counter)s objavi najdeni"
+msgstr[2] "%(counter)s objav najdenih"
+msgstr[3] "%(counter)s objav najdenih"
+
+msgid "No posts found"
+msgstr "Ni najdenih objav"
+
+msgid "Disapprove"
+msgstr "Zavrži"
+
+msgid "Approve"
+msgstr "Potrdi"
+
+msgid "New post"
+msgstr "Nova objava"
+
+msgid "<b>1</b> option may be selected"
+msgstr "Izberete lahko največ <b>1</b> "
+
+#, python-format
+msgid "Up to <b>%(max_options)s</b> options may be selected"
+msgstr "Izberete lahko največ <b>%(max_options)s</b> "
+
+#, python-format
+msgid "%(topic_length)s posts found"
+msgstr "%(topic_length)s objav najdenih"
+
+msgid "No posts awaiting approval."
+msgstr "Ni nepotrjenih objav"
+
+msgid "Approve post"
+msgstr "Potrdi objavo"
+
+msgid "Are you sure you want to approve this post?"
+msgstr "Res želite potrditi to objavo?"
+
+msgid "Disapprove post"
+msgstr "Zavrži objavo"
+
+msgid "Are you sure you want to disapprove this post? This post will be deleted."
+msgstr ""
+
+msgid "Are you sure you want to delete this topic?"
+msgstr "Res želite izbrisati to temo?"
+
+msgid "Are you sure you want to lock this topic?"
+msgstr "Res želite zakleniti to objavo?"
+
+msgid "Are you sure you want to unlock this topic?"
+msgstr "Res želite odkleniti to objavo?"
+
+msgid "Change topic type"
+msgstr "Spremeni vrsto teme"
+
+msgid "Search forums"
+msgstr "Išči po forumih"
+
+msgid "New search"
+msgstr "Novo iskanje"
+
+#, python-format
+msgid "Your search has returned <b>%(number_of_results)s</b> result"
+msgid_plural "Your search has returned <b>%(number_of_results)s</b> results"
+msgstr[0] "Vaše iskanje je vrnilo <b>%(number_of_results)s</b> rezultat"
+msgstr[1] "Vaše iskanje je vrnilo <b>%(number_of_results)s</b> rezultata"
+msgstr[2] "Vaše iskanje je vrnilo <b>%(number_of_results)s</b> rezultate"
+msgstr[3] "Vaše iskanje je vrnilo <b>%(number_of_results)s</b> rezultatov"
+
+msgid "Results"
+msgstr "Rezultati"
+
+msgid "No results."
+msgstr "Ni rezultatov"
+
+msgid "Are you sure you want to mark forums read?"
+msgstr ""
+
+msgid "Are you sure you want to mark topics read?"
+msgstr ""
+
+#, fuzzy, python-format
+#| msgid "%(topic_length)s posts found"
+msgid "%(topic_length)s unread topic found"
+msgid_plural "%(topic_length)s unread topics found"
+msgstr[0] "%(topic_length)s objav najdenih"
+msgstr[1] "%(topic_length)s objav najdenih"
+msgstr[2] "%(topic_length)s objav najdenih"
+msgstr[3] "%(topic_length)s objav najdenih"
+
+msgid "There are no unread topics."
+msgstr "Ni novih tem"
+
+msgid "Forum index"
+msgstr "Imenik foruma"

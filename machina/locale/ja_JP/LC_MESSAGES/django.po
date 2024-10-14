@@ -1,0 +1,1098 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# I K <ki.foobar@gmail.com>, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: django-machina\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-19 16:58-0500\n"
+"PO-Revision-Date: 2019-10-29 01:36+0000\n"
+"Last-Translator: Morgan Aubert <morgan@aubert.email>\n"
+"Language-Team: Japanese (Japan) (http://www.transifex.com/django-machina-team/django-machina/language/ja_JP/)\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "Parent"
+msgstr "親フォーラム"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Slug"
+msgstr "スラッグ"
+
+msgid "Description"
+msgstr "説明"
+
+msgid "Forum image"
+msgstr "フォーラムの画像"
+
+msgid "Forum link"
+msgstr "フォーラムのリンク"
+
+msgid "Track link redirects count"
+msgstr "リンクのリダイレクトを追跡する"
+
+msgid "Records the number of times a forum link was clicked"
+msgstr "フォーラムのリンクがクリックされた数を記録します"
+
+msgid "Default forum"
+msgstr "デフォルトフォーラム"
+
+msgid "Category forum"
+msgstr "カテゴリーフォーラム"
+
+msgid "Link forum"
+msgstr "リンクフォーラム"
+
+msgid "Forum type"
+msgstr "フォーラムの種類"
+
+msgid "Direct number of posts"
+msgstr "投稿数"
+
+msgid "Direct number of topics"
+msgstr "トピック数"
+
+msgid "Last post"
+msgstr "最後の投稿"
+
+msgid "Last post added on"
+msgstr "最後に投稿された日時"
+
+msgid "Display in parent-forums legend"
+msgstr "親フォーラムに表示する"
+
+msgid "Displays this forum on the legend of its parent-forum (sub forums list)"
+msgstr "親フォーラムにこのフォーラムを表示します（サブフォーラムリスト）"
+
+msgid "Forum"
+msgstr "フォーラム"
+
+msgid "Forums"
+msgstr "フォーラム"
+
+msgid "A forum can not have a link forum as parent"
+msgstr "リンクフォーラムを親として持つことはできません"
+
+msgid "A category can not have another category as parent"
+msgstr "カテゴリーフォーラムは別のカテゴリーフォーラムを親として持つことはできません"
+
+msgid "A link forum must have a link associated with it"
+msgstr "リンクフォーラムは関連するリンクを持つ必要があります"
+
+msgid "Forum settings"
+msgstr "フォーラムの設定"
+
+msgid "Link forum settings"
+msgstr "リンクフォーラムの設定"
+
+msgid "'{}' forum successfully moved"
+msgstr "フォーラム '{}' を移動しました"
+
+msgid "Forum permissions"
+msgstr "フォーラム権限"
+
+msgid "Global forum permissions"
+msgstr "グローバルフォーラム権限"
+
+msgid "Permissions successfully copied"
+msgstr "権限をコピーしました"
+
+msgid "Choose either a user ID, the anonymous user or the authenticated user"
+msgstr ""
+
+msgid "Choose a group ID"
+msgstr ""
+
+msgid "Anonymous user"
+msgstr "匿名ユーザー"
+
+msgid "Authenticated user"
+msgstr ""
+
+msgid "Permissions successfully applied"
+msgstr "権限を適用しました"
+
+msgid "Machina: Forum"
+msgstr "Machina: フォーラム"
+
+msgid "Anonymous"
+msgstr "匿名"
+
+msgid "Please select this option if you want to edit the permissions of the anonymous user"
+msgstr "匿名ユーザーの権限を編集する場合はこのオプションを選んでください"
+
+msgid "Authenticated"
+msgstr ""
+
+msgid "Please select this option if you want to edit the permissions of every (non-specific) logged in user"
+msgstr ""
+
+msgid "Choose either a user ID or check either the anonymous or authenticated user checkbox"
+msgstr ""
+
+msgid "Not set"
+msgstr "未指定"
+
+msgid "Granted"
+msgstr "可"
+
+msgid "Not granted"
+msgstr "不可"
+
+msgid "Topic forum"
+msgstr "トピックフォーラム"
+
+msgid "Poster"
+msgstr "投稿者"
+
+msgid "Subject"
+msgstr "題名"
+
+msgid "Default topic"
+msgstr "デフォルトトピック"
+
+msgid "Sticky"
+msgstr "固定"
+
+msgid "Announce"
+msgstr "アナウンス"
+
+msgid "Topic type"
+msgstr "トピックの種類"
+
+msgid "Topic unlocked"
+msgstr "未凍結"
+
+msgid "Topic locked"
+msgstr "凍結済"
+
+msgid "Topic moved"
+msgstr "移動済"
+
+msgid "Topic status"
+msgstr "トピックの状態"
+
+msgid "Approved"
+msgstr "承認済"
+
+msgid "Posts count"
+msgstr "投稿数"
+
+msgid "Views count"
+msgstr "閲覧数"
+
+msgid "First post"
+msgstr "最初の投稿"
+
+msgid "Subscribers"
+msgstr "購読者"
+
+msgid "Creation date"
+msgstr "作成日"
+
+msgid "Update date"
+msgstr "更新日"
+
+msgid "Topic"
+msgstr "トピック"
+
+msgid "Topics"
+msgstr "トピック"
+
+msgid "A topic can not be associated with a category or a link forum"
+msgstr "トピックはカテゴリーフォーラムやリンクフォーラムと関連づけることはできません"
+
+msgid "Anonymous user forum key"
+msgstr "匿名ユーザーフォーラムキー"
+
+msgid "Content"
+msgstr "内容"
+
+msgid "Username"
+msgstr "ユーザー名"
+
+msgid "Attach a signature"
+msgstr "プロフィールを表示"
+
+msgid "Update reason"
+msgstr "更新理由"
+
+msgid "Lastly updated by"
+msgstr "最後に編集したユーザー"
+
+msgid "Updates count"
+msgstr "更新回数"
+
+msgid "Post"
+msgstr "投稿"
+
+msgid "Posts"
+msgstr "投稿"
+
+msgid "A user id or an anonymous key must be associated with a post."
+msgstr "投稿にはユーザーIDまたは匿名キーを指定する必要があります"
+
+msgid "A user id or an anonymous key must be associated with a post, but not both."
+msgstr "投稿にはユーザーIDまたは匿名キーを指定する必要がありますが、両方を指定することはできません"
+
+msgid "A username must be specified if the poster is anonymous"
+msgstr "投稿者が匿名の場合はユーザー名を指定する必要があります"
+
+msgid "Machina: Forum conversations"
+msgstr "Machina: フォーラム会話"
+
+msgid "Enter your subject"
+msgstr "タイトルを入力"
+
+msgid "Message"
+msgstr "メッセージ"
+
+msgid "Enter your message"
+msgstr "メッセージを入力"
+
+msgid "Lock topic"
+msgstr "トピックを凍結"
+
+msgid "Post topic as"
+msgstr "トピックの種類"
+
+msgid "Poll question"
+msgstr "投票の質問"
+
+msgid "Enter a question to associate a poll with the topic or leave blank to not create a poll."
+msgstr "投票を設置する場合は質問を入力してください。何も入力しなければ投票は作られません"
+
+msgid "Maximum number of poll options per user"
+msgstr "一人あたりの最大投票数"
+
+msgid "This is the number of options each user may select when voting."
+msgstr "投票の際、それぞれの投票者が一度に選べる選択肢の数です"
+
+msgid "For how many days the poll should be run?"
+msgstr "投票を何日で締め切るか"
+
+msgid "Enter 0 or leave blank for a never ending poll."
+msgstr "何も入力しないか0を指定した場合は締め切りなしとなります"
+
+msgid "Allow re-voting?"
+msgstr "再投票を認めるか"
+
+msgid "If enabled users are able to change their vote."
+msgstr "有効にした場合は、票を後から変更することができます"
+
+#, fuzzy
+#| msgid "View results"
+msgid "Hide results?"
+msgstr "結果を見る"
+
+msgid "If enabled results are hidden to everyone except topic creator."
+msgstr ""
+
+msgid "You must set the maximum number of poll options per user when creating polls"
+msgstr "投票を設置するときは、一人当たりの最大投票数を設定する必要があります"
+
+msgid "File"
+msgstr "ファイル"
+
+msgid "Comment"
+msgstr "コメント"
+
+msgid "Attachment"
+msgstr "添付ファイル"
+
+msgid "Attachments"
+msgstr "添付ファイル"
+
+msgid "Machina: Forum attachments"
+msgstr "Machina: フォーラム添付ファイル"
+
+msgid "Poll duration, in days"
+msgstr "投票受付時間 (単位: 日)"
+
+msgid "Allow vote changes"
+msgstr "票の変更を認める"
+
+#, fuzzy
+#| msgid "View results"
+msgid "Hide results"
+msgstr "結果を見る"
+
+msgid "Topic poll"
+msgstr "トピックの投票"
+
+msgid "Topic polls"
+msgstr "トピックの投票"
+
+msgid "Poll"
+msgstr "投票"
+
+msgid "Poll option text"
+msgstr "投票の選択肢"
+
+msgid "Topic poll option"
+msgstr "トピックの投票の選択肢"
+
+msgid "Topic poll options"
+msgstr "トピックの投票の選択肢"
+
+msgid "Voter"
+msgstr "投票者"
+
+msgid "Poll option"
+msgstr "投票の選択肢"
+
+msgid "Vote's date"
+msgstr "投票日時"
+
+msgid "Topic poll vote"
+msgstr "トピックの投票の投票"
+
+msgid "Topic poll votes"
+msgstr "トピックの投票の投票"
+
+msgid "A user id or an anonymous key must be used."
+msgstr "投票にはユーザーIDまたは匿名キーを指定する必要があります"
+
+msgid "A user id or an anonymous key must be used, but not both."
+msgstr "投票にはユーザーIDまたは匿名キーを指定する必要がありますが、両方を指定することはできません"
+
+msgid "Machina: Forum polls"
+msgstr "Machina: フォーラム投票"
+
+msgid "Enter a poll option"
+msgstr "投票の選択肢を入力"
+
+msgid "You must specify an option when voting."
+msgstr "投票する際は選択肢を指定する必要があります"
+
+msgid "You have tried to vote for too many options."
+msgstr "票を入れようとしている選択肢の数が多すぎます"
+
+msgid "Your vote has been cast."
+msgstr "投票しました"
+
+msgid "This message will be validated before appearing on the forum."
+msgstr "このメッセージが表示されるのは承認後です"
+
+msgid "There are some errors in the attachments you submitted."
+msgstr "添付ファイルを送信中にエラーが発生しました"
+
+msgid "This message has been posted successfully."
+msgstr "メッセージを投稿しました"
+
+msgid "There are some errors in the poll options you submitted."
+msgstr "投票内容を送信中にエラーが発生しました"
+
+msgid "This message has been edited successfully."
+msgstr "メッセージを編集しました"
+
+msgid "This message has been deleted successfully."
+msgstr "メッセージを削除しました"
+
+msgid "Machina: Forum feeds"
+msgstr "Machina: フォーラムフィード"
+
+msgid "Latest topics"
+msgstr "最新のトピック"
+
+msgid "Latest topics updated on the forums"
+msgstr "フォーラムで最後に更新されたトピック"
+
+msgid "User"
+msgstr "ユーザー"
+
+msgid "Avatar"
+msgstr "アバター"
+
+msgid "Signature"
+msgstr "プロフィール"
+
+msgid "Total posts"
+msgstr "合計投稿数"
+
+msgid "Forum profile"
+msgstr "フォーラムプロフィール"
+
+msgid "Forum profiles"
+msgstr "フォーラムプロフィール"
+
+msgid "Machina: Forum members"
+msgstr "Machina: フォーラムメンバー"
+
+msgid "The profile has been edited successfully."
+msgstr "プロフィールを編集しました"
+
+msgid "You subscribed to this topic successfully."
+msgstr "トピックを購読しました"
+
+msgid "You unsubscribed from this topic successfully."
+msgstr "トピックの購読を解除しました"
+
+msgid "Machina: Forum moderation"
+msgstr "Machina: フォーラム管理"
+
+msgid "Select a destination forum"
+msgstr "移動先のフォーラムを選択してください"
+
+msgid "This topic has been locked successfully."
+msgstr "トピックを凍結しました"
+
+msgid "This topic has been unlocked successfully."
+msgstr "トピックの凍結を解除しました"
+
+msgid "This topic has been deleted successfully."
+msgstr "トピックを削除しました"
+
+msgid "This topic has been moved successfully."
+msgstr "トピックを移動しました"
+
+msgid "This topic type has been changed successfully."
+msgstr "トピックの種類を変更しました"
+
+msgid "Would you want to change this topic to a default topic?"
+msgstr "このトピックをデフォルトトピックに変更しますか？"
+
+msgid "Would you want to change this topic to a sticky topic?"
+msgstr "このトピックを固定トピックに変更しますか？"
+
+msgid "Would you want to change this topic to an announce?"
+msgstr "このトピックをアナウンスに変更しますか？"
+
+msgid "This post has been approved successfully."
+msgstr "投稿を承認しました"
+
+msgid "This post has been disapproved successfully."
+msgstr "投稿を却下しました"
+
+msgid "Permission codename"
+msgstr "権限コードネーム"
+
+msgid "Forum permission"
+msgstr "フォーラムの権限"
+
+msgid "Has perm"
+msgstr "権限を持つかどうか"
+
+msgid "Target anonymous user"
+msgstr "匿名ユーザーを対象とする"
+
+msgid "Target any logged in user"
+msgstr ""
+
+msgid "User forum permission"
+msgstr "ユーザーフォーラム権限"
+
+msgid "User forum permissions"
+msgstr "ユーザーフォーラム権限"
+
+msgid "A permission should target either a specific user, an anonymous user or any authenticated user"
+msgstr ""
+
+msgid "Group"
+msgstr "グループ"
+
+msgid "Group forum permission"
+msgstr "グループフォーラム権限"
+
+msgid "Group forum permissions"
+msgstr "グループフォーラム権限"
+
+msgid "Machina: Forum permissions"
+msgstr "Machina: フォーラム権限"
+
+msgid "Can see forum"
+msgstr "フォーラムの閲覧(存在の有無)"
+
+msgid "Can read forum"
+msgstr "フォーラムの閲覧(内容)"
+
+msgid "Can start new topics"
+msgstr "新しいトピックの開始"
+
+msgid "Can reply to topics"
+msgstr "トピックへの返信"
+
+msgid "Can post announcements"
+msgstr "アナウンスの投稿"
+
+msgid "Can post stickies"
+msgstr "固定トピックの投稿"
+
+msgid "Can delete own posts"
+msgstr "自分の投稿の削除"
+
+msgid "Can edit own posts"
+msgstr "自分の投稿の編集"
+
+msgid "Can post without approval"
+msgstr "承認なしに投稿"
+
+msgid "Can create polls"
+msgstr "投票の設置"
+
+msgid "Can vote in polls"
+msgstr "投票"
+
+msgid "Can attach file"
+msgstr "ファイルの添付"
+
+msgid "Can download file"
+msgstr "ファイルのダウンロード"
+
+msgid "Can lock topics"
+msgstr "トピックの凍結"
+
+msgid "Can move topics"
+msgstr "トピックの移動"
+
+msgid "Can edit posts"
+msgstr "投稿の編集"
+
+msgid "Can delete posts"
+msgstr "投稿の削除"
+
+msgid "Can approve posts"
+msgstr "投稿の承認"
+
+msgid "Can add posts in locked topics"
+msgstr "凍結されたトピックへの投稿"
+
+msgid "Machina: Forum searches"
+msgstr "Machina: フォーラム検索"
+
+msgid "Search only in topic subjects"
+msgstr "検索範囲をトピックのタイトルに限定"
+
+msgid "Search for poster"
+msgstr "投稿者で検索"
+
+msgid "Enter a user name to limit the search to a specific user."
+msgstr "ユーザー名を入力することで検索範囲を特定のユーザーだけに限定できます"
+
+msgid "Search in specific forums"
+msgstr "特定のフォーラムから検索"
+
+msgid "Select the forums you wish to search in."
+msgstr "検索したいフォーラムを選択してください"
+
+msgid "Search for keywords"
+msgstr "キーワードで検索"
+
+msgid "Keywords or phrase"
+msgstr "キーワード"
+
+msgid "Poster name"
+msgstr "投稿者の名前"
+
+msgid "Forum track"
+msgstr "フォーラムトラック"
+
+msgid "Forum tracks"
+msgstr "フォーラムトラック"
+
+msgid "Topic track"
+msgstr "トピックトラック"
+
+msgid "Topic tracks"
+msgstr "トピックトラック"
+
+msgid "Machina: Forum tracking"
+msgstr "Machina: フォーラムトラッキング"
+
+msgid "Forums have been marked read."
+msgstr "フォーラムを既読にしました"
+
+msgid "Topics have been marked read."
+msgstr "トピックを既読にしました"
+
+msgid "Neither Pillow nor PIL could be imported: {}"
+msgstr "Pillow、PILのどちらもimportできませんでした: {}"
+
+#, fuzzy
+#| msgid "Could not import MACHINA_MARKUP_LANGUAGE {}: {}"
+msgid "Could not import MACHINA MARKUP_MAX_LENGTH_VALIDATOR {}: {}"
+msgstr "MACHINA_MARKUP_LANGUAGE {} をimportできません: {}"
+
+#, fuzzy
+#| msgid "MACHINA_MARKUP_LANGUAGE setting is required"
+msgid "MACHINA_MARKUP_MAX_LENGTH_VALIDATOR setting is required"
+msgstr "MACHINA_MARKUP_LANGUAGEの設定は必須です"
+
+msgid "Could not import MACHINA_MARKUP_WIDGET {}: {}"
+msgstr "MACHINA_MARKUP_WIDGET {} をimportできません: {}"
+
+msgid "Could not import MACHINA_MARKUP_LANGUAGE {}: {}"
+msgstr "MACHINA_MARKUP_LANGUAGE {} をimportできません: {}"
+
+msgid "MACHINA_MARKUP_LANGUAGE setting is required"
+msgstr "MACHINA_MARKUP_LANGUAGEの設定は必須です"
+
+msgid "Files of size greater than {} are not allowed. Your file is {}"
+msgstr "{} を超えるサイズのファイルは認められていません。このファイルは {} です"
+
+msgid "Images of width lesser than {}px or greater than {}px or are not allowed. The width of your image is {}px"
+msgstr "横幅が {}px より小さい画像、{}px より大きい画像は認められていません。この画像の横幅は {}px です"
+
+msgid "Images of height lesser than {}px or greater than {}px or are not allowed. The height of your image is {}px"
+msgstr "縦の高さが {}px より小さい画像、{}px より大きい画像は認められていません。この画像の縦の高さは {}px です"
+
+msgid "List of forums"
+msgstr "フォーラム一覧"
+
+msgid "Quick actions"
+msgstr "クイックアクション"
+
+msgid "Type"
+msgstr "種類"
+
+msgid "Details"
+msgstr "詳細"
+
+msgid "Move up"
+msgstr "上に移動"
+
+msgid "Move down"
+msgstr "下に移動"
+
+msgid "Add a sub-forum"
+msgstr "サブフォーラムを追加"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Topics:"
+msgstr "トピック:"
+
+msgid "Posts:"
+msgstr "投稿:"
+
+msgid "Link:"
+msgstr "リンク:"
+
+msgid "Edit user permissions"
+msgstr "ユーザーの権限を編集"
+
+msgid "Edit authenticated user permissions"
+msgstr ""
+
+msgid "Home"
+msgstr "ホーム"
+
+msgid "Permission"
+msgstr "権限"
+
+msgid "Save"
+msgstr "保存"
+
+msgid "Edit group permissions"
+msgstr "グループの権限を編集"
+
+msgid "Please correct the error below."
+msgstr "以下のエラーを修正してください"
+
+msgid "Please correct the errors below."
+msgstr "以下のエラーを修正してください"
+
+msgid "Please select a user in order to update its permissions"
+msgstr "権限を更新するにはユーザーを選んでください"
+
+msgid "Select"
+msgstr "選択"
+
+msgid "Please select a group in order to update its permissions"
+msgstr "権限を更新するにはグループを選んでください"
+
+msgid "Copy permissions from another forum"
+msgstr "権限を別のフォーラムからコピー"
+
+msgid "Please select a forum in order to copy its permissions configuration to the current forum"
+msgstr "権限の設定を現在のフォーラムにコピーするにはフォーラムを選んでください"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Search"
+msgstr "検索"
+
+msgid "Advanced search"
+msgstr "詳細な検索"
+
+msgid "Subscriptions"
+msgstr "購読"
+
+msgid "View my posts"
+msgstr "自分の投稿"
+
+msgid "Moderation queue"
+msgstr "管理"
+
+msgid "Mark subforums read"
+msgstr "サブフォーラムを既読にする"
+
+msgid "New topic"
+msgstr "新しいトピック"
+
+msgid "Mark topics read"
+msgstr "トピックを既読にする"
+
+msgid "Announcements"
+msgstr "アナウンス"
+
+msgid "RSS feed"
+msgstr "RSSフィード"
+
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a>"
+msgstr ""
+
+#, python-format
+msgid "By: %(poster_username)s"
+msgstr ""
+
+msgid "No posts"
+msgstr "投稿なし"
+
+msgid "Total redirects:"
+msgstr "合計リンク数:"
+
+msgid "Subforums:"
+msgstr "サブフォーラム"
+
+msgid "No forums."
+msgstr "現在フォーラムはありません"
+
+msgid "Index"
+msgstr "トップページ"
+
+msgid "Mark forums read"
+msgstr "フォーラムを既読にする"
+
+msgid "View unread topics"
+msgstr "未読のトピックを見る"
+
+msgid "Statistics"
+msgstr "統計"
+
+msgid "Total posts:"
+msgstr "合計投稿数:"
+
+msgid "Total topics:"
+msgstr "合計トピック数:"
+
+msgid "(optional)"
+msgstr "任意"
+
+msgid "Add another file"
+msgstr "別のファイルを追加"
+
+msgid "You may select <b>1</b> option"
+msgstr "選択肢を<b>1</b>つ選ぶことができます"
+
+#, python-format
+msgid "You may select up to <b>%(max_options)s</b> options"
+msgstr "選択肢を最大<b>%(max_options)s</b>つまで選ぶことができます"
+
+msgid "Vote"
+msgstr "投票"
+
+msgid "Change your vote"
+msgstr "投票先を変更"
+
+msgid "Poll options"
+msgstr "投票の選択肢"
+
+msgid "Add a poll option"
+msgstr "選択肢を追加"
+
+msgid "<b>Note:</b>&nbsp;Deleting poll options of an existing poll will delete the associated votes."
+msgstr "<b>注意:</b>&nbsp;選択肢を削除するとそれに投票した票も失われます"
+
+msgid "Preview:"
+msgstr "プレビュー:"
+
+msgid "Results are currently hidden."
+msgstr ""
+
+msgid "Total votes:"
+msgstr "合計投票数:"
+
+msgid "Submit"
+msgstr "送信"
+
+msgid "View results"
+msgstr "結果を見る"
+
+msgid "Options"
+msgstr "オプション"
+
+msgid "Post reply"
+msgstr "返信"
+
+msgid "Subscribe"
+msgstr "購読"
+
+msgid "Unsubscribe"
+msgstr "購読解除"
+
+msgid "Unlock topic"
+msgstr "トピックの凍結を解除"
+
+msgid "Delete topic"
+msgstr "トピックを削除"
+
+msgid "Move topic"
+msgstr "トピックを移動"
+
+msgid "Change to sticky topic"
+msgstr "固定トピックに変更"
+
+msgid "Change to announce"
+msgstr "アナウンスに変更"
+
+msgid "Change to standard topic"
+msgstr "通常のトピックに変更"
+
+msgid "Preview"
+msgstr "プレビュー"
+
+msgid "Post a reply"
+msgstr "返信を投稿"
+
+msgid "Topic review"
+msgstr "プレビュー"
+
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a> on %(creation_date)s"
+msgstr ""
+
+#, python-format
+msgid "By: %(poster_username)s on %(creation_date)s"
+msgstr ""
+
+msgid "Delete post"
+msgstr "投稿を削除"
+
+msgid "Are you sure you want to delete this post?"
+msgstr "本当にこの投稿を削除しますか？"
+
+msgid "Yes, I'm sure"
+msgstr "はい"
+
+msgid "No, take me back"
+msgstr "いいえ"
+
+msgid "Edit post"
+msgstr "投稿を編集"
+
+msgid "Post a new topic"
+msgstr "新しいトピックを投稿"
+
+msgid "Edit"
+msgstr "編集"
+
+msgid "Last edited by:"
+msgstr "最後の編集者:"
+
+msgid "Updated"
+msgstr ""
+
+msgid "on"
+msgstr ""
+
+#, python-format
+msgid "edited %(counter)s time in total."
+msgid_plural "edited %(counter)s times in total."
+msgstr[0] "計%(counter)s回編集"
+
+msgid "Reason:"
+msgstr ""
+
+msgid "Replies"
+msgstr "返信数"
+
+msgid "Views"
+msgstr "閲覧数"
+
+msgid "This topic is locked"
+msgstr "このトピックは凍結されています"
+
+msgid "There are no topics in this forum."
+msgstr "このフォーラムにはトピックがありません"
+
+msgid "Go to the page:"
+msgstr ""
+
+msgid "Posted by"
+msgstr ""
+
+#, python-format
+msgid "%(username)s profile"
+msgstr ""
+
+msgid "Edit profile"
+msgstr "プロフィールを編集"
+
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Post</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Posts</small></p>"
+msgstr[0] ""
+
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Topic</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Topics</small></p>"
+msgstr[0] ""
+
+msgid "Recent posts"
+msgstr "最近の投稿"
+
+msgid "View all"
+msgstr "すべて見る"
+
+#, python-format
+msgid "On %(creation_date)s"
+msgstr ""
+
+msgid "Edit forum profile"
+msgstr "プロフィールを編集"
+
+msgid "Topics that you are subscribed to"
+msgstr "購読中のトピック"
+
+#, python-format
+msgid "%(counter)s topic found"
+msgid_plural "%(counter)s topics found"
+msgstr[0] "%(counter)s件のトピックが見つかりました"
+
+msgid "Not topics found."
+msgstr "トピックなし"
+
+msgid "Subscribe to topic"
+msgstr "トピックを編集"
+
+msgid "Would you like to subscribe to this topic?"
+msgstr "トピックを購読しますか？"
+
+msgid "Unsubscribe from topic"
+msgstr "トピックの購読を解除"
+
+msgid "Would you like to unsubscribe from this topic?"
+msgstr "トピックの購読を解除しますか？"
+
+msgid "My messages"
+msgstr "自分のメッセージ"
+
+#, python-format
+msgid "%(username)s's posts"
+msgstr "%(username)sの投稿"
+
+#, python-format
+msgid "%(counter)s post found"
+msgid_plural "%(counter)s posts found"
+msgstr[0] "%(counter)s件の投稿が見つかりました"
+
+msgid "No posts found"
+msgstr "投稿はありません"
+
+msgid "Disapprove"
+msgstr "却下"
+
+msgid "Approve"
+msgstr "承認"
+
+msgid "New post"
+msgstr "新規投稿"
+
+msgid "<b>1</b> option may be selected"
+msgstr "選択肢を<b>1</b>つ選ぶことができます"
+
+#, python-format
+msgid "Up to <b>%(max_options)s</b> options may be selected"
+msgstr "選択肢を最大<b>%(max_options)s</b>つまで選ぶことができます"
+
+#, python-format
+msgid "%(topic_length)s posts found"
+msgstr "%(topic_length)s件の投稿が見つかりました"
+
+msgid "No posts awaiting approval."
+msgstr "承認待ちの投稿はありません"
+
+msgid "Approve post"
+msgstr "投稿を承認"
+
+msgid "Are you sure you want to approve this post?"
+msgstr "本当にこの投稿を承認しますか？"
+
+msgid "Disapprove post"
+msgstr "投稿を却下"
+
+msgid "Are you sure you want to disapprove this post? This post will be deleted."
+msgstr "本当にこの投稿を却下しますか？　却下した場合投稿は削除されます"
+
+msgid "Are you sure you want to delete this topic?"
+msgstr "本当にこのトピックを削除しますか？"
+
+msgid "Are you sure you want to lock this topic?"
+msgstr "本当にこのトピックを凍結しますか？"
+
+msgid "Are you sure you want to unlock this topic?"
+msgstr "本当にこのトピックの凍結を解除しますか？"
+
+msgid "Change topic type"
+msgstr "トピックの種類を変更"
+
+msgid "Search forums"
+msgstr "フォーラム内を検索"
+
+msgid "New search"
+msgstr "別の条件で検索"
+
+#, python-format
+msgid "Your search has returned <b>%(number_of_results)s</b> result"
+msgid_plural "Your search has returned <b>%(number_of_results)s</b> results"
+msgstr[0] "<b>%(number_of_results)s</b> 件の検索結果が見つかりました"
+
+msgid "Results"
+msgstr "検索結果"
+
+msgid "No results."
+msgstr "該当なし"
+
+msgid "Are you sure you want to mark forums read?"
+msgstr "本当にフォーラムを既読にしますか？"
+
+msgid "Are you sure you want to mark topics read?"
+msgstr "本当にトピックを既読にしますか？"
+
+#, fuzzy, python-format
+#| msgid "      %(topic_length)s unread topic found"
+#| msgid_plural ""
+#| "%(topic_length)s unread topics found\n"
+#| "      "
+msgid "%(topic_length)s unread topic found"
+msgid_plural "%(topic_length)s unread topics found"
+msgstr[0] ""
+"%(topic_length)s件の未読のトピック\n"
+"      "
+
+msgid "There are no unread topics."
+msgstr "未読のトピックはありません"
+
+msgid "Forum index"
+msgstr "フォーラムトップ"

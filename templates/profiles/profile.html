@@ -1,0 +1,274 @@
+{% extends 'profiles/profiles_base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .profile-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: 'Poppins', sans-serif;
+        text-align: center; /* Center content */
+    }
+
+    .cover-photo-container {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 10px 10px 0 0;
+        margin-bottom: 100px;
+    }
+
+    .cover-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .cover-photo-placeholder {
+        width: 100%;
+        height: 100%;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #999;
+        font-size: 1.2em;
+    }
+
+    .profile-content {
+        margin-top: -100px;
+        background-color: var(--bg-color);
+        border-radius: 15px 15px 0 0;
+        padding: 20px;
+        box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Center profile image, username, and description */
+    .profile-sidebar {
+        width: 100%;
+        padding: 20px;
+        background-color: var(--module-bg);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        text-align: center; /* Centered content */
+        margin: 0 auto; /* Ensuring it is centered */
+        top: 200px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid var(--bg-color);
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .profile-username {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: var(--text-color);
+    }
+
+    .profile-fullname {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+        color: var(--text-color);
+    }
+
+    .profile-title, .profile-job-title {
+        font-size: 1em;
+        color: var(--text-color);
+        margin-bottom: 5px;
+    }
+
+    .profile-main {
+        padding: 20px;
+        background-color: var(--module-bg);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-top: 20px; /* Separated from bio */
+    }
+
+    .profile-section {
+        margin-bottom: 30px;
+    }
+
+    .profile-section h3 {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        color: var(--text-color);
+    }
+
+    .profile-info-list, .profile-social-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .profile-info-list li, .profile-social-list li {
+        margin-bottom: 10px;
+        color: var(--text-color);
+    }
+
+    .social-link {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 25px;
+        color: var(--nav-text);
+        text-decoration: none;
+        margin-right: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .social-link:hover {
+        background-color: var(--nav-hover);
+    }
+
+    .social-link.twitter { background-color: #1DA1F2; }
+    .social-link.instagram { background-color: #E1306C; }
+    .social-link.facebook { background-color: #4267B2; }
+    .social-link.github { background-color: #24292e; }
+
+    .profile-actions {
+        text-align: center; /* Centered profile action buttons */
+        margin-top: 20px;
+    }
+
+    .btn-primary {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        background-color: var(--primary-color);
+        color: var(--nav-text);
+        border: 2px solid var(--nav-text);
+        border-radius: 25px;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--primary-hover);
+    }
+
+    @media (max-width: 768px) {
+        .cover-photo-container {
+            height: 200px;
+        }
+        .profile-content {
+            margin-top: -50px;
+        }
+         .profile-sidebar {
+            top: 150px; /* Adjusted for smaller screens */
+        }
+        .social-link {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+</style>
+
+<div class="profile-container">
+    <div class="cover-photo-container">
+        {% if profile.cover_photo %}
+            <img src="{{ profile.cover_photo.url }}" alt="Cover photo" class="cover-photo">
+        {% else %}
+            <div class="cover-photo-placeholder">No cover photo available</div>
+        {% endif %}
+    </div>
+
+    <div class="profile-content">
+        <div class="profile-sidebar">
+            <div class="profile-image">
+                {% if profile.profile_picture %}
+                    <img src="{{ profile.profile_picture.url }}" alt="{{ user.username }}'s profile picture" class="profile-picture">
+                {% else %}
+                    <img src="{% static 'images/profile-pic-default.jpg' %}" alt="Default profile picture" class="profile-picture">
+                {% endif %}
+            </div>
+            <h1 class="profile-username">{{ user.username }}</h1>
+            <h2 class="profile-fullname">{{ profile.full_name }}</h2>
+            <p class="profile-title">{{ profile.title|default:"" }}</p>
+            <p class="profile-job-title">{{ profile.job_title|default:"" }}</p>
+        </div>
+
+        <div class="profile-main">
+            <section class="profile-section">
+                <h3>About</h3>
+                <p>{{ profile.bio|default:"No bio provided" }}</p>
+            </section>
+
+            <section class="profile-section">
+                <h3>Contact Information</h3>
+                <ul class="profile-info-list">
+                    <li><strong>Email:</strong> {{ user.email }}</li>
+                    {% if is_owner_or_admin %}
+                        <li><strong>Phone:</strong> {{ profile.phone_number|default:"Not provided" }}</li>
+                    {% endif %}
+                    <li><strong>Address:</strong> {{ profile.address|default:"Not provided" }}</li>
+                    <li><strong>City:</strong> {{ profile.city|default:"Not provided" }}</li>
+                    <li><strong>Country:</strong> {{ profile.country|default:"Not provided" }}</li>
+                    <li><strong>Zip Code:</strong> {{ profile.zip_code|default:"Not provided" }}</li>
+                </ul>
+            </section>
+
+            <section class="profile-section">
+                <h3>Skills</h3>
+                <p>{{ profile.skills|default:"Not provided" }}</p>
+            </section>
+
+            <section class="profile-section">
+                <h3>Education</h3>
+                <p>{{ profile.education|default:"Not provided" }}</p>
+            </section>
+
+            <section class="profile-section">
+                <h3>Experience</h3>
+                <p>{{ profile.experience|default:"Not provided" }}</p>
+            </section>
+
+            <section class="profile-section">
+                <h3>Social Media</h3>
+                <ul class="profile-social-list">
+                    {% if profile.twitter_url %}
+                        <li><a href="{{ profile.twitter_url }}" target="_blank" class="social-link twitter">Twitter</a></li>
+                    {% endif %}
+                    {% if profile.instagram_url %}
+                        <li><a href="{{ profile.instagram_url }}" target="_blank" class="social-link instagram">Instagram</a></li>
+                    {% endif %}
+                    {% if profile.facebook_url %}
+                        <li><a href="{{ profile.facebook_url }}" target="_blank" class="social-link facebook">Facebook</a></li>
+                    {% endif %}
+                    {% if profile.github_url %}
+                        <li><a href="{{ profile.github_url }}" target="_blank" class="social-link github">GitHub</a></li>
+                    {% endif %}
+                </ul>
+            </section>
+
+            <section class="profile-section">
+                <h3>Account Information</h3>
+                <ul class="profile-info-list">
+                    <li><strong>Date Joined:</strong> {{ user.date_joined|date:"F d, Y" }}</li>
+                    <li><strong>Last Login:</strong> {{ user.last_login|date:"F d, Y H:i" }}</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+   <!-- Add Edit Profile Button -->
+    <div class="profile-actions">
+        <a href="{% url 'profiles:edit_profile' %}" class="btn-primary">Edit Profile</a>
+    </div>
+
+</div>
+{% endblock %}

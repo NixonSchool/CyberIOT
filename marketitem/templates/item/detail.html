@@ -1,0 +1,216 @@
+{% extends 'core/base.html' %}
+{% block title %}{{ item.name }}{% endblock %}
+{% block content %}
+
+<!-- CSS -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .star-rating {
+        font-size: 1.5rem;
+        color: #ddd;
+    }
+
+    .star-rating .filled {
+        color: #ffc107;
+    }
+
+    .comment-box {
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .comment-box:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .comment-form textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        resize: vertical;
+    }
+
+    .comment-form input[type="number"] {
+        width: 4rem;
+        padding: 0.5rem;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+    }
+
+    .btn-submit {
+        background-color: #007bff;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<!-- Main Item Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="col-span-1 lg:col-span-3">
+        <img src="{{ item.image.url }}" class="w-full h-auto rounded-xl" alt="{{ item.name }}">
+    </div>
+
+    <div class="col-span-1 lg:col-span-2 p-6 bg-gray-100 rounded-xl">
+        <h1 class="mb-6 text-2xl lg:text-3xl">{{ item.name }}</h1>
+
+        {% if item.status == 'subscription' %}
+            <p class="text-gray-500"><strong>Monthly Price:</strong> Ksh.{{ item.monthly_price }} /month</p>
+            <p class="text-gray-500"><strong>Status:</strong> Available Monthly Subscription</p>
+        {% else %}
+            <p class="text-gray-500"><strong>Price:</strong> ${{ item.price }}</p>
+            <p class="text-gray-500"><strong>Quantity Available:</strong> {{ item.quantity }}</p>
+        {% endif %}
+
+
+        <p class="text-gray-500"><strong>Seller:</strong> {{ item.created_by.username }}</p>
+
+        {% if item.description %}
+            <p class="text-gray-700 mt-4"><strong>Description:</strong><br>{{ item.description }}</p>
+        {% endif %}
+
+        {% if average_rating %}
+            <p class="mt-4">
+                <strong>Average Rating:</strong>
+                <span class="star-rating" data-rating="{{ average_rating|floatformat:1 }}"></span>
+                ({{ average_rating|floatformat:1 }} / 5)
+            </p>
+        {% endif %}
+
+        <!-- Item Availability and Status -->
+        <p class="mt-4 {% if item.is_available %}text-green-500{% else %}text-red-500{% endif %}">
+        <strong>Status:</strong>
+        {% if item.is_available %}
+            Available ({{ item.quantity }} left)
+        {% else %}
+            {% if item.status == 'sold_out' or item.quantity == 0 %}
+                Sold Out
+            {% elif item.status == 'coming_soon' %}
+                Coming Soon
+            {% elif item.status == 'monthly_sub' %}
+                Monthly sub
+            {% elif item.status == 'unavailable' %}
+                Currently Unavailable
+            {% endif %}
+        {% endif %}
+    </p>
+
+
+        <!-- Available From -->
+        {% if item.available_from and item.available_from > now %}
+            <p class="mt-2 text-blue-500">
+                <strong>Available from:</strong> {{ item.available_from|date:"F d, Y H:i" }}
+            </p>
+        {% endif %}
+
+        <!-- Item Action Buttons -->
+        {% if request.user == item.created_by %}
+            <div class="mt-6 p-6 bg-white rounded-xl">
+                <p class="text-gray-500">This is your item!</p>
+                <a href="{% url 'marketitem:edit' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-[#007bff] text-white rounded-xl hover:bg-[#0056b3]">Edit</a>
+                <a href="{% url 'marketitem:delete' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-red-500 text-white rounded-xl hover:bg-red-600">Delete</a>
+            </div>
+        {% elif item.is_available %}
+            <div class="mt-6 p-6 bg-white rounded-xl">
+                <a href="{% url 'marketitem:checkout' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-green-500 text-white rounded-xl hover:bg-green-600">Checkout</a>
+            </div>
+        {% endif %}
+
+        <a href="{% url 'marketchat:new' item.id %}" class="inline-block mt-6 px-6 py-3 text-lg font-semibold bg-[#007bff] text-white rounded-xl hover:bg-[#0056b3]">Contact Seller</a>
+    </div>
+</div>
+
+<!-- Comments and Ratings Section -->
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+    <h2 class="mb-12 text-2xl text-center">Comments and Ratings</h2>
+
+    {% if user.is_authenticated %}
+        <form method="post" action="." class="mb-6 comment-form">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="{{ form.content.id_for_label }}">Your Comment:</label>
+                {{ form.content }}
+            </div>
+            <div class="mb-4">
+                <label for="{{ form.rating.id_for_label }}">Your Rating:</label>
+                {{ form.rating }}
+            </div>
+            <button type="submit" class="btn-submit">Submit Comment</button>
+        </form>
+    {% endif %}
+
+    {% for comment in comments %}
+        <div class="comment-box">
+            <p class="mb-2">
+                <strong>{{ comment.user.username }}</strong> - {{ comment.created_at|date:"F d, Y" }}
+            </p>
+            <p class="mb-2">Rating: <span class="star-rating" data-rating="{{ comment.rating }}"></span></p>
+            <p>{{ comment.content }}</p>
+        </div>
+    {% empty %}
+        <p class="text-gray-500 text-center">No comments yet.</p>
+    {% endfor %}
+</div>
+
+<!-- Related Items Section -->
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+    <h2 class="mb-12 text-2xl text-center">Related Items</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {% for related_item in related_items %}
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+                <a href="{% url 'marketitem:detail' related_item.id %}">
+                    <img src="{{ related_item.image.url }}" class="w-full h-48 object-cover rounded-t-xl" alt="{{ related_item.name }}">
+                </a>
+                <div class="p-6">
+                    <h3 class="text-xl">{{ related_item.name }}</h3>
+                    <p class="text-gray-500">Price: {{ related_item.price }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- JavaScript for Star Ratings -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const starRatings = document.querySelectorAll('.star-rating');
+
+    starRatings.forEach(function(rating) {
+        const ratingValue = parseFloat(rating.getAttribute('data-rating'));
+        let starsHtml = '';
+
+        for (let i = 1; i <= 5; i++) {
+            if (i <= ratingValue) {
+                starsHtml += '<span class="filled">★</span>';
+            } else {
+                starsHtml += '<span>☆</span>';
+            }
+        }
+
+        rating.innerHTML = starsHtml;
+    });
+});
+</script>
+
+{% endblock %}

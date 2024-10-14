@@ -1,0 +1,322 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="description" content="{% block description %}{% endblock description %}"/>
+    <meta name="keywords" content="{% block keywords %}{% endblock keywords %}" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <title>{% block title %}{% endblock title %}LearningHub</title>
+
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-dark: #0056b3;
+            --primary-light: #cce5ff;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --input-bg: #fff;
+            --input-border: #ced4da;
+            --input-border-focus: var(--primary-color);
+            --input-shadow-focus: rgba(0, 123, 255, 0.25);
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        main {
+            padding-top: 80px;
+            flex-grow: 1;
+        }
+
+        .navbar-custom {
+            padding: 0.5rem 1rem 1rem;
+            background-color: var(--primary-color);
+            box-shadow: var(--box-shadow);
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        .navbar-hidden {
+            top: -80px;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        .navbar-custom .navbar-toggler {
+            border-color: white;
+        }
+
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .navbar-custom .nav-link {
+            color: white;
+            margin-right: 10px;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: var(--primary-light);
+        }
+
+        .navbar-custom .navbar-nav {
+            align-items: center;
+        }
+
+        .navbar-custom .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+        }
+
+        .navbar-custom .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .navbar-custom .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+
+        .navbar-custom .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar-custom .nav-item {
+            margin-right: 10px;
+        }
+
+        .navbar-custom .btn-custom {
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s;
+        }
+
+        .navbar-custom .btn-custom:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .navbar-custom .user-avatar {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+        }
+
+        .navbar-custom .d-flex {
+            flex-direction: row;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .navbar-custom .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 300px;
+        }
+
+        .navbar-custom .btn-custom {
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+        }
+
+        .dropdown-menu {
+            background-color: var(--primary-color);
+        }
+
+        .dropdown-menu {
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        .dropdown-item {
+            color: white;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--primary-dark);
+        }
+
+
+
+        @media (max-width: 992px) {
+            main {
+                padding-top: 60px;
+            }
+            .navbar-custom .collapse {
+                background-color: var(--primary-color);
+                padding: 1rem;
+            }
+
+            .navbar-custom .form-inline {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .navbar-custom .nav-item {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'video:index' %}">
+                    <img src="{% static 'images/logo.png' %}" alt="LearningHub" width="50" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'video:index' %}"><i class="fa-brands fa-youtube"></i> Home</a></li>
+                                <li><a class="dropdown-item {% if 'channels' in request.path %}active{% endif %}" href="{% url 'channel:channelList' %}"><i class="fa-solid fa-border-all"></i> All Channels</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item {% if 'author' in request.path %}active{% endif %}" href="{% url 'video:authorVideos' %}"><i class="fa-solid fa-clapperboard"></i> Your Videos</a></li>
+                                <li><a class="dropdown-item {% if 'library' in request.path %}active{% endif %}" href="{% url 'video:userLibrary' %}"><i class="fa-solid fa-photo-film"></i> Library</a></li>
+                                <li><a class="dropdown-item {% if 'like' in request.path %}active{% endif %}" href="{% url 'video:likeVideoList' %}"><i class="fa-solid fa-heart"></i> Your Favorite Videos</a></li>
+                                <li><a class="dropdown-item {% if 'subscriptions' in request.path %}active{% endif %}" href="{% url 'channel:subscriptonsList' %}"><i class="fa-solid fa-film"></i> Subscriptions</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex mb-3 mb-lg-0 me-lg-3" action="{% url 'channel:search' %}" method="GET">
+                        <input class="form-control me-2" type="search" name="q" value="{{ request.GET.q }}" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-custom" type="submit">Search</button>
+                    </form>
+
+                    {% if request.user.is_authenticated %}
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% if request.user.channel %}
+                                    <img src="{{ request.user.channel.avatar.url }}" alt="{{ request.user.username }}" class="rounded-circle user-avatar">
+                                {% else %}
+                                    <img src="{% static 'images/channel/avatar/avatar.png' %}" alt="{{ request.user.username }}" class="rounded-circle user-avatar">
+                                {% endif %}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="{% url 'channelaccount:userProfile' %}">{{ request.user.get_full_name }}</a></li>
+                                <li><a class="dropdown-item" href="{% url 'video:createVideo' %}"><i class="fa-solid fa-video"></i> New Video</a></li>
+                                <li><a class="dropdown-item" href="{% url 'mainpage:main_page' %}"><i class="fa-solid fa-arrow-left"></i> Mainpage</a></li>
+                                <li><a class="dropdown-item" href="{% url 'channelaccount:updateUserProfile' %}"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                                {% if request.user.channel %}
+                                    <li><a class="dropdown-item" href="{% url 'channel:channelDetail' request.user.channel.id %}"><i class="fa-solid fa-table-columns"></i> Your Channel</a></li>
+                                {% else %}
+                                    <li><a class="dropdown-item" href="{% url 'channel:createChannel' %}"><i class="fa-solid fa-square-plus"></i> Create Channel</a></li>
+                                {% endif %}
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="{% url 'accounts:logout' %}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    {% else %}
+                        <a href="{% url 'accounts:login' %}" class="btn btn-outline-light">Login</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // Initialize Bootstrap dropdown
+        dropdowns.forEach(dropdown => {
+            const dropdownInstance = new bootstrap.Dropdown(dropdown.querySelector('.dropdown-toggle'), {
+                toggle: false // Prevents default click toggle behavior
+            });
+
+            // Handle hover to show and hide the dropdown
+            dropdown.addEventListener('mouseenter', function () {
+                dropdownInstance.show(); // Show dropdown on hover
+            });
+
+            dropdown.addEventListener('mouseleave', function () {
+                dropdownInstance.hide(); // Hide dropdown when not hovered
+            });
+        });
+
+        // Navbar hide on scroll down, show on scroll up
+        let prevScrollPos = window.scrollY; // Updated to use scrollY
+        const navbar = document.querySelector('.navbar-custom');
+
+        window.addEventListener('scroll', function () {
+            const currentScrollPos = window.scrollY; // Use scrollY instead of pageYOffset
+
+            if (prevScrollPos > currentScrollPos) {
+                // Scrolling up - show navbar
+                navbar.classList.remove('navbar-hidden');
+            } else {
+                // Scrolling down - hide navbar
+                navbar.classList.add('navbar-hidden');
+            }
+
+            prevScrollPos = currentScrollPos;
+        });
+    });
+</script>
+
+</body>
+</html>

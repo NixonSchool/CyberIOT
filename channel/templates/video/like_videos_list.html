@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block description %}{{ channel.slogan }}{% endblock description %}
+{% block keywords %}{{ channel.slogan }}{% endblock keywords %}
+{% block title %}Videos liked by {{ channel.channel_name }}{% endblock title %}
+
+{% block content %}
+<div class="container py-5">
+    {% include 'base/message.html' %}
+
+    {% if request.user.is_authenticated %}
+        {% if videos %}
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                {% for video in videos %}
+                    <div class="col">
+                        <a href="{{ video.get_absolute_url }}" class="text-decoration-none">
+                            <div class="card h-100 bg-dark text-white">
+                                <img src="{{ video.cover_image.url }}" class="card-img-top" alt="{{ video.title }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ video.title }}</h5>
+                                    <div class="d-flex align-items-center mt-2">
+                                        {% if video.channel.avatar %}
+                                            <img src="{{ video.channel.avatar.url }}" class="rounded-circle me-2" width="30" height="30" alt="{{ video.user.get_full_name }}">
+                                        {% else %}
+                                            <img src="{% static 'images/default-avatar.png' %}" class="rounded-circle me-2" width="30" height="30" alt="{{ video.user.get_full_name }}">
+                                        {% endif %}
+                                        <small>{{ video.user.get_full_name }}</small>
+                                    </div>
+                                    <small class="text-muted d-block mt-2">
+                                        <i class="bi bi-clock me-1"></i>{{ video.publishing_date|timesince }} ago
+                                    </small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-info text-center" role="alert">
+                No liked videos found. <a href="{% url 'video:index' %}" class="alert-link">Explore videos</a>
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="alert alert-warning text-center" role="alert">
+            Sign in to see updates from your YouTube videos. <a href="{% url 'account:login' %}" class="alert-link">Log in</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

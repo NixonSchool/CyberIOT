@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberIOT Settings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .btn {
+            @apply font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out;
+        }
+        .btn-primary {
+            @apply bg-[#007bff] text-white hover:bg-[#0056b3];
+        }
+        .btn-secondary {
+            @apply bg-gray-500 text-white hover:bg-gray-600;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <h1 class="text-3xl font-bold text-center text-[#007bff] mb-8">CyberIOT Settings</h1>
+        
+        <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative mb-6" role="alert">
+            <p class="text-center">This is a test settings page with simulated functionality. Changes made here will not be saved or affect any real system.</p>
+        </div>
+        
+        <div class="bg-white shadow-md rounded-lg mb-6 p-6">
+            <h2 class="text-xl font-semibold text-[#007bff] mb-4">Account Preferences</h2>
+            <div class="flex justify-between items-center mb-4">
+                <span>Dark Mode</span>
+                <label class="switch relative inline-block w-14 h-8">
+                    <input type="checkbox" class="opacity-0 w-0 h-0 peer">
+                    <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 peer-checked:bg-[#007bff] transition-all duration-300 rounded-full before:absolute before:content-[''] before:h-6 before:w-6 before:left-1 before:bottom-1 before:bg-white before:transition-all before:duration-300 before:rounded-full peer-checked:before:translate-x-6"></span>
+                </label>
+            </div>
+            <div class="flex justify-between items-center">
+                <span>Language</span>
+                <label>
+                    <select class="border rounded px-2 py-1">
+                        <option>English</option>
+                        <option>Spanish</option>
+                        <option>French</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        
+        <div class="bg-white shadow-md rounded-lg mb-6 p-6">
+            <h2 class="text-xl font-semibold text-[#007bff] mb-4">Notifications</h2>
+            <div class="flex justify-between items-center mb-4">
+                <span>Email Notifications</span>
+                <label class="switch relative inline-block w-14 h-8">
+                    <input type="checkbox" class="opacity-0 w-0 h-0 peer">
+                    <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 peer-checked:bg-[#007bff] transition-all duration-300 rounded-full before:absolute before:content-[''] before:h-6 before:w-6 before:left-1 before:bottom-1 before:bg-white before:transition-all before:duration-300 before:rounded-full peer-checked:before:translate-x-6"></span>
+                </label>
+            </div>
+            <div class="flex justify-between items-center">
+                <span>Push Notifications</span>
+                <label class="switch relative inline-block w-14 h-8">
+                    <input type="checkbox" class="opacity-0 w-0 h-0 peer">
+                    <span class="slider absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 peer-checked:bg-[#007bff] transition-all duration-300 rounded-full before:absolute before:content-[''] before:h-6 before:w-6 before:left-1 before:bottom-1 before:bg-white before:transition-all before:duration-300 before:rounded-full peer-checked:before:translate-x-6"></span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="bg-white shadow-md rounded-lg mb-6 p-6">
+            <h2 class="text-xl font-semibold text-[#007bff] mb-4">Privacy</h2>
+            <div class="flex justify-between items-center mb-4">
+                <span>Profile Visibility</span>
+                <label>
+                    <select class="border rounded px-2 py-1">
+                        <option>Public</option>
+                        <option>Friends Only</option>
+                        <option>Private</option>
+                    </select>
+                </label>
+            </div>
+            <div class="flex justify-between items-center">
+                <span>Data Download</span>
+                <button id="dataDownloadBtn" class="btn btn-primary">Request Data</button>
+            </div>
+        </div>
+        
+        <div class="flex justify-between mt-6">
+            <a href="{% url 'mainpage:main_page' %}" class="btn" style="background-color: #007bff; color: white; border-radius: 30px; padding: 0.5rem 1rem; transition: background-color 0.3s ease;">
+                Main Page
+            </a>
+            <button id="resetDefaultsBtn" class="btn" style="background-color: #007bff; color: white; border-radius: 30px; padding: 0.5rem 1rem; transition: background-color 0.3s ease;">
+                Reset Defaults
+            </button>
+        </div>
+
+
+    </div>
+
+    <div id="popup-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white p-8 rounded-lg">
+            <h2 class="text-xl font-bold mb-4">Enter Your Email</h2>
+            <label for="emailInput"></label><input type="email" id="emailInput" placeholder="Your email address" class="w-full p-2 border rounded mb-4">
+            <button id="submitEmail" class="btn btn-primary w-full">Submit</button>
+            <p class="mt-4 text-sm text-gray-600">We'll send you information about how to download your data.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dataDownloadBtn = document.getElementById('dataDownloadBtn');
+            const popupOverlay = document.getElementById('popup-overlay');
+            const submitEmailBtn = document.getElementById('submitEmail');
+            const emailInput = document.getElementById('emailInput');
+            const toggles = document.querySelectorAll('input[type="checkbox"]');
+            const resetDefaultsBtn = document.getElementById('resetDefaultsBtn');
+
+            // Toggle functionality
+            toggles.forEach(toggle => {
+                toggle.addEventListener('change', function() {
+                    const settingName = this.closest('.flex').querySelector('span').textContent;
+                    const state = this.checked ? 'enabled' : 'disabled';
+                    alert(`${settingName} has been ${state}.`);
+                });
+            });
+
+            // Data download popup
+            dataDownloadBtn.addEventListener('click', function() {
+                popupOverlay.classList.remove('hidden');
+                popupOverlay.classList.add('flex');
+            });
+
+            submitEmailBtn.addEventListener('click', function() {
+                const email = emailInput.value;
+                if (email) {
+                    alert('Thank you! We will send instructions to ' + email + ' shortly, if it is a valid registered and verified email.');
+                    popupOverlay.classList.add('hidden');
+                    popupOverlay.classList.remove('flex');
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+
+            popupOverlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.add('hidden');
+                    this.classList.remove('flex');
+                }
+            });
+
+            // Reset Defaults functionality
+            resetDefaultsBtn.addEventListener('click', function() {
+                toggles.forEach(toggle => {
+                    toggle.checked = false;
+                });
+                document.querySelectorAll('select').forEach(select => {
+                    select.selectedIndex = 0;
+                });
+                alert('All settings have been reset to their default values.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# alexander fedorov <elf607@gmail.com>, 2017
+# georgekpg <konstantinpopov@inbox.ru>, 2018
+# Emelyan Marakhovsky <savelmtr@gmail.com>, 2019
+# Za Ars <zaars.progger@gmail.com>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: django-machina\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-19 16:58-0500\n"
+"PO-Revision-Date: 2019-12-16 08:00+0000\n"
+"Last-Translator: Emelyan Marakhovsky <savelmtr@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/django-machina-team/django-machina/language/ru/)\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "Parent"
+msgstr "Родитель"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Slug"
+msgstr "Имя для ссылки"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Forum image"
+msgstr "Изображение форума"
+
+msgid "Forum link"
+msgstr "Ссылка форума"
+
+msgid "Track link redirects count"
+msgstr "Отслеживать количество перенаправлений по ссылке"
+
+msgid "Records the number of times a forum link was clicked"
+msgstr "Записывать количество переходов по форумной ссылке"
+
+msgid "Default forum"
+msgstr "Форум по умолчанию"
+
+msgid "Category forum"
+msgstr "Форум по категориям"
+
+msgid "Link forum"
+msgstr "Форум-ссылка"
+
+msgid "Forum type"
+msgstr "Тип форума"
+
+msgid "Direct number of posts"
+msgstr "Кол-во ответов"
+
+msgid "Direct number of topics"
+msgstr "Кол-во тем"
+
+msgid "Last post"
+msgstr "Последний ответ"
+
+msgid "Last post added on"
+msgstr "Последний ответ добавлен в"
+
+msgid "Display in parent-forums legend"
+msgstr "Отображать в легенде родительских форумов"
+
+msgid "Displays this forum on the legend of its parent-forum (sub forums list)"
+msgstr "Показывать этот форум в легенде родительского форума (списке подфорумов)"
+
+msgid "Forum"
+msgstr "Форум"
+
+msgid "Forums"
+msgstr "Форумы"
+
+msgid "A forum can not have a link forum as parent"
+msgstr "У форума не может быть указан родителем форум-ссылка"
+
+msgid "A category can not have another category as parent"
+msgstr "Категория не может иметь другую категорию в качестве родителя"
+
+msgid "A link forum must have a link associated with it"
+msgstr "Форум-ссылка должен иметь ссылку"
+
+msgid "Forum settings"
+msgstr "Настройки форума"
+
+msgid "Link forum settings"
+msgstr "Настройки форума-ссылки"
+
+msgid "'{}' forum successfully moved"
+msgstr "Форум '{}' успешно перемещён"
+
+msgid "Forum permissions"
+msgstr "Разрешения форума"
+
+msgid "Global forum permissions"
+msgstr "Глобальные разрешения форума"
+
+msgid "Permissions successfully copied"
+msgstr "Разрешения успешно скопированы"
+
+msgid "Choose either a user ID, the anonymous user or the authenticated user"
+msgstr "Выберите или ID конкретного пользователя, или анонимного пользователя, или зарегистрированного пользователя"
+
+msgid "Choose a group ID"
+msgstr "Выберите ID группы"
+
+msgid "Anonymous user"
+msgstr "Анонимный пользователь"
+
+msgid "Authenticated user"
+msgstr "Зарегистрированный пользователь"
+
+msgid "Permissions successfully applied"
+msgstr "Разрешения успешно применены"
+
+msgid "Machina: Forum"
+msgstr "Machina: Форум"
+
+msgid "Anonymous"
+msgstr "Аноним"
+
+msgid "Please select this option if you want to edit the permissions of the anonymous user"
+msgstr "Выберите этот вариант, если вы хотите отредактировать разрешения анонимного пользоватея"
+
+msgid "Authenticated"
+msgstr "Зарегистрированный"
+
+msgid "Please select this option if you want to edit the permissions of every (non-specific) logged in user"
+msgstr "Выберите этот вариант, если вы хотите отредактировать разрешения для всех зарегистрированных пользователей "
+
+msgid "Choose either a user ID or check either the anonymous or authenticated user checkbox"
+msgstr "Выберите ID конкретного пользователя или поставьте галочку в соответствующем чекбоксе, чтобы настроить разрешения для анонимных или зарегистрированных пользователей"
+
+msgid "Not set"
+msgstr "Не установлено"
+
+msgid "Granted"
+msgstr "Предоставлено"
+
+msgid "Not granted"
+msgstr "Не предоставлено"
+
+msgid "Topic forum"
+msgstr "Тематический форум"
+
+msgid "Poster"
+msgstr "Автор"
+
+msgid "Subject"
+msgstr "Заголовок"
+
+msgid "Default topic"
+msgstr "Тема по умолчанию"
+
+msgid "Sticky"
+msgstr "Прикрепленный"
+
+msgid "Announce"
+msgstr "Объявить"
+
+msgid "Topic type"
+msgstr "Тип темы"
+
+msgid "Topic unlocked"
+msgstr "Тема разблокирована"
+
+msgid "Topic locked"
+msgstr "Тема заблокирована"
+
+msgid "Topic moved"
+msgstr "Тема перемещена"
+
+msgid "Topic status"
+msgstr "Статус темы"
+
+msgid "Approved"
+msgstr "Подтверждено"
+
+msgid "Posts count"
+msgstr "Количество ответов"
+
+msgid "Views count"
+msgstr "Количество просмотров"
+
+msgid "First post"
+msgstr "Первый ответ"
+
+msgid "Subscribers"
+msgstr "Подписчики"
+
+msgid "Creation date"
+msgstr "Дата создания"
+
+msgid "Update date"
+msgstr "Дата обновления"
+
+msgid "Topic"
+msgstr "Тема"
+
+msgid "Topics"
+msgstr "Темы"
+
+msgid "A topic can not be associated with a category or a link forum"
+msgstr "Тема не может быть связана с категорией или форумом-ссылкой"
+
+msgid "Anonymous user forum key"
+msgstr "Форумный ключ анонимного пользователя"
+
+msgid "Content"
+msgstr "Содержимое"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Attach a signature"
+msgstr "Прикрепить подпись"
+
+msgid "Update reason"
+msgstr "Причина изменения"
+
+msgid "Lastly updated by"
+msgstr "Последнее изменение"
+
+msgid "Updates count"
+msgstr "Количество изменений"
+
+msgid "Post"
+msgstr "Ответ"
+
+msgid "Posts"
+msgstr "Ответы"
+
+msgid "A user id or an anonymous key must be associated with a post."
+msgstr "Пользовательский ID или ключ анонимного пользователя должен быть связан с ответом"
+
+msgid "A user id or an anonymous key must be associated with a post, but not both."
+msgstr "Пользовательский ID или ключ анонимного пользователя должен быть связан с ответом, но не оба одновременно"
+
+msgid "A username must be specified if the poster is anonymous"
+msgstr "Имя пользователя должно быть указано, если автор - анонимный пользователь"
+
+msgid "Machina: Forum conversations"
+msgstr "Machina: Беседы форума"
+
+msgid "Enter your subject"
+msgstr "Введите заголовок"
+
+msgid "Message"
+msgstr "Сообщение"
+
+msgid "Enter your message"
+msgstr "Введите ваше сообщение"
+
+msgid "Lock topic"
+msgstr "Закрыть тему"
+
+msgid "Post topic as"
+msgstr "Создать тему под"
+
+msgid "Poll question"
+msgstr "Добавить вариант опроса"
+
+msgid "Enter a question to associate a poll with the topic or leave blank to not create a poll."
+msgstr "Введите вариант, чтобы создать опрос в теме, или оставьте пустым, чтобы не создавать опрос"
+
+msgid "Maximum number of poll options per user"
+msgstr "Максимальное количество вариантов для пользователя."
+
+msgid "This is the number of options each user may select when voting."
+msgstr "Это количество вариантов, которые пользователь сможет выбрать при голосовании."
+
+msgid "For how many days the poll should be run?"
+msgstr "Сколько дней должен идти опрос?"
+
+msgid "Enter 0 or leave blank for a never ending poll."
+msgstr "Введите 0 или оставьте пустым для бесконечного опроса."
+
+msgid "Allow re-voting?"
+msgstr "Позволить голосовать заново?"
+
+msgid "If enabled users are able to change their vote."
+msgstr "Если отмечено, пользователи будут иметь возможность изменить своё выбор."
+
+#, fuzzy
+#| msgid "View results"
+msgid "Hide results?"
+msgstr "Посмотреть результаты"
+
+msgid "If enabled results are hidden to everyone except topic creator."
+msgstr ""
+
+msgid "You must set the maximum number of poll options per user when creating polls"
+msgstr "Вы должны установить максимальное количество вариантов, которые может выбрать пользователь, когда создаёте опрос"
+
+msgid "File"
+msgstr "Файл"
+
+msgid "Comment"
+msgstr "Комментарий"
+
+msgid "Attachment"
+msgstr "Вложение"
+
+msgid "Attachments"
+msgstr "Вложения"
+
+msgid "Machina: Forum attachments"
+msgstr "Machina: Вложения форума"
+
+msgid "Poll duration, in days"
+msgstr "Продолжительность опроса в днях"
+
+msgid "Allow vote changes"
+msgstr "Позволить изменение выбора"
+
+#, fuzzy
+#| msgid "View results"
+msgid "Hide results"
+msgstr "Посмотреть результаты"
+
+msgid "Topic poll"
+msgstr "Опрос темы"
+
+msgid "Topic polls"
+msgstr "Опросы темы"
+
+msgid "Poll"
+msgstr "Опрос"
+
+msgid "Poll option text"
+msgstr "Текст варианта опроса"
+
+msgid "Topic poll option"
+msgstr "Вариант опроса темы"
+
+msgid "Topic poll options"
+msgstr "Варианты опроса темы"
+
+msgid "Voter"
+msgstr "Участник голосования"
+
+msgid "Poll option"
+msgstr "Вариант опроса"
+
+msgid "Vote's date"
+msgstr "Дата голосования"
+
+msgid "Topic poll vote"
+msgstr "Голосование опроса темы"
+
+msgid "Topic poll votes"
+msgstr "Голосования опроса темы"
+
+msgid "A user id or an anonymous key must be used."
+msgstr "Должен быть использован пользовательский ID или ключ анонимного пользователя "
+
+msgid "A user id or an anonymous key must be used, but not both."
+msgstr "Пользовательский ID или ключ анонимного пользователя должен быть использован, но не оба одновременно"
+
+msgid "Machina: Forum polls"
+msgstr "Machina: Опросы форума"
+
+msgid "Enter a poll option"
+msgstr "Введите вариант опроса"
+
+msgid "You must specify an option when voting."
+msgstr "Вы должны выбрать вариант, когда голосуете."
+
+msgid "You have tried to vote for too many options."
+msgstr "Вы выбрали слишком много вариантов при голосовании."
+
+msgid "Your vote has been cast."
+msgstr "Ваш голос был учтен"
+
+msgid "This message will be validated before appearing on the forum."
+msgstr "Сообщение будет проверено, прежде чем появится на форуме."
+
+msgid "There are some errors in the attachments you submitted."
+msgstr "В вашем вложении есть ошибки."
+
+msgid "This message has been posted successfully."
+msgstr "Сообщение было успешно опубликовано."
+
+msgid "There are some errors in the poll options you submitted."
+msgstr "В вариантах опроса есть ошибки."
+
+msgid "This message has been edited successfully."
+msgstr "Сообщение было успешно изменено."
+
+msgid "This message has been deleted successfully."
+msgstr "Сообщение было успешно удалено."
+
+msgid "Machina: Forum feeds"
+msgstr "Machina: Каналы форума"
+
+msgid "Latest topics"
+msgstr "Последние темы"
+
+msgid "Latest topics updated on the forums"
+msgstr "Последние измененные темы на форумах"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Avatar"
+msgstr "Аватар"
+
+msgid "Signature"
+msgstr "Подпись"
+
+msgid "Total posts"
+msgstr "Всего ответов"
+
+msgid "Forum profile"
+msgstr "Форумный профиль"
+
+msgid "Forum profiles"
+msgstr "Форумные профили"
+
+msgid "Machina: Forum members"
+msgstr "Machina: Участники форума"
+
+msgid "The profile has been edited successfully."
+msgstr "Профиль успешно изменен."
+
+msgid "You subscribed to this topic successfully."
+msgstr "Вы успешно подписались на эту тему."
+
+msgid "You unsubscribed from this topic successfully."
+msgstr "вы успешно отписались от этой темы."
+
+msgid "Machina: Forum moderation"
+msgstr "Machina: Модерация форума"
+
+msgid "Select a destination forum"
+msgstr "Выберете форум назначения"
+
+msgid "This topic has been locked successfully."
+msgstr "Тема была успешно заблокирована."
+
+msgid "This topic has been unlocked successfully."
+msgstr "Тема была успешно разблокирована."
+
+msgid "This topic has been deleted successfully."
+msgstr "Тема была успешно удалена."
+
+msgid "This topic has been moved successfully."
+msgstr "Тема была успешно перемещена"
+
+msgid "This topic type has been changed successfully."
+msgstr "Тип темы был успешно изменён."
+
+msgid "Would you want to change this topic to a default topic?"
+msgstr "Хотите сменить эту тему на тему по умолчанию?"
+
+msgid "Would you want to change this topic to a sticky topic?"
+msgstr "Хотите изменить эту тему на прикреплённую тему?"
+
+msgid "Would you want to change this topic to an announce?"
+msgstr "Хотите изменить эту тему на объявление?"
+
+msgid "This post has been approved successfully."
+msgstr "Ответ был одобрен."
+
+msgid "This post has been disapproved successfully."
+msgstr "Ответ не был одобрен."
+
+msgid "Permission codename"
+msgstr "Кодовое название разрешения"
+
+msgid "Forum permission"
+msgstr "Разрешение форума"
+
+msgid "Has perm"
+msgstr "Есть разрешение"
+
+msgid "Target anonymous user"
+msgstr "Цель анонимный пользователь"
+
+msgid "Target any logged in user"
+msgstr "Цель — все зарегистрированные пользователи"
+
+msgid "User forum permission"
+msgstr "Разрешение пользователя форума"
+
+msgid "User forum permissions"
+msgstr "Разрешения пользователя форума"
+
+msgid "A permission should target either a specific user, an anonymous user or any authenticated user"
+msgstr "Для разрешения следует указать цель - конкретный пользователь, анонимный пользователь или все зарегистрированные пользователи"
+
+msgid "Group"
+msgstr "Группа"
+
+msgid "Group forum permission"
+msgstr "Разрешение группы форума"
+
+msgid "Group forum permissions"
+msgstr "Разрешения группы форума"
+
+msgid "Machina: Forum permissions"
+msgstr "Machina: Разрешения форума"
+
+msgid "Can see forum"
+msgstr "Может видеть форумы"
+
+msgid "Can read forum"
+msgstr "Может читать форумы"
+
+msgid "Can start new topics"
+msgstr "Может начать новую тему"
+
+msgid "Can reply to topics"
+msgstr "Может отвечать на темы"
+
+msgid "Can post announcements"
+msgstr "Может писать объявления"
+
+msgid "Can post stickies"
+msgstr "Может отправлять закрепленные сообщения"
+
+msgid "Can delete own posts"
+msgstr "Может удалять свои ответы"
+
+msgid "Can edit own posts"
+msgstr "Может редактировать свои ответы"
+
+msgid "Can post without approval"
+msgstr "Может отвечать без проверки"
+
+msgid "Can create polls"
+msgstr "Может создавать опросы"
+
+msgid "Can vote in polls"
+msgstr "Может голосовать в опросах"
+
+msgid "Can attach file"
+msgstr "Может прикреплять файл"
+
+msgid "Can download file"
+msgstr "Может загружать файл"
+
+msgid "Can lock topics"
+msgstr "Может закреплять темы"
+
+msgid "Can move topics"
+msgstr "Может перемещать темы"
+
+msgid "Can edit posts"
+msgstr "Может редактировать ответы"
+
+msgid "Can delete posts"
+msgstr "Может удалять ответы"
+
+msgid "Can approve posts"
+msgstr "Может проверять ответы"
+
+msgid "Can add posts in locked topics"
+msgstr "Может отвечать в закрытые темы"
+
+msgid "Machina: Forum searches"
+msgstr "Machina: Поиск по форуму"
+
+msgid "Search only in topic subjects"
+msgstr "Искать только в названиях тем"
+
+msgid "Search for poster"
+msgstr "Искать по автору"
+
+msgid "Enter a user name to limit the search to a specific user."
+msgstr "Введите имя пользователя для ограничения поиска по определенному лицу"
+
+msgid "Search in specific forums"
+msgstr "Искать в определенных форумах"
+
+msgid "Select the forums you wish to search in."
+msgstr "Выберите форумы, по которым хотите произвести поиск"
+
+msgid "Search for keywords"
+msgstr "Искать по ключевым словам"
+
+msgid "Keywords or phrase"
+msgstr "Ключевые слова или фраза"
+
+msgid "Poster name"
+msgstr "Имя автора"
+
+msgid "Forum track"
+msgstr "Отслеживание форума"
+
+msgid "Forum tracks"
+msgstr "Отслеживания форума"
+
+msgid "Topic track"
+msgstr "Отслеживание темы"
+
+msgid "Topic tracks"
+msgstr "Отслеживания темы"
+
+msgid "Machina: Forum tracking"
+msgstr "Machina: Отслеживание форума"
+
+msgid "Forums have been marked read."
+msgstr "Форумы были отмечены как прочитанные."
+
+msgid "Topics have been marked read."
+msgstr "Темы были отмечены как прочитанные."
+
+msgid "Neither Pillow nor PIL could be imported: {}"
+msgstr "Ни Pillow, ни PIL не могут быть импортированы: {}"
+
+#, fuzzy
+#| msgid "Could not import MACHINA_MARKUP_LANGUAGE {}: {}"
+msgid "Could not import MACHINA MARKUP_MAX_LENGTH_VALIDATOR {}: {}"
+msgstr "Невозможно импортировать MACHINA_MARKUP_LANGUAGE {}: {}"
+
+#, fuzzy
+#| msgid "MACHINA_MARKUP_LANGUAGE setting is required"
+msgid "MACHINA_MARKUP_MAX_LENGTH_VALIDATOR setting is required"
+msgstr "Настройка MACHINA_MARKUP_LANGUAGE обязательна "
+
+msgid "Could not import MACHINA_MARKUP_WIDGET {}: {}"
+msgstr "Невозможно импортировать MACHINA_MARKUP_WIDGET {}: {}"
+
+msgid "Could not import MACHINA_MARKUP_LANGUAGE {}: {}"
+msgstr "Невозможно импортировать MACHINA_MARKUP_LANGUAGE {}: {}"
+
+msgid "MACHINA_MARKUP_LANGUAGE setting is required"
+msgstr "Настройка MACHINA_MARKUP_LANGUAGE обязательна "
+
+msgid "Files of size greater than {} are not allowed. Your file is {}"
+msgstr "Файлы размера больше чем {} не доступны для загрузки. Ваш файл {}"
+
+msgid "Images of width lesser than {}px or greater than {}px or are not allowed. The width of your image is {}px"
+msgstr "Изображения имеют ширину меньше {}px, больше {}px или не разрешены. Ширина вашего изображения: {}px"
+
+msgid "Images of height lesser than {}px or greater than {}px or are not allowed. The height of your image is {}px"
+msgstr "Изображения имеют высоту меньше {}px, больше {}px или не разрешены. Высота вашего изображения: {}px"
+
+msgid "List of forums"
+msgstr "Список форумов"
+
+msgid "Quick actions"
+msgstr "Быстрые действия"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Details"
+msgstr "Детали"
+
+msgid "Move up"
+msgstr "Переместить вверх"
+
+msgid "Move down"
+msgstr "Переместить вниз"
+
+msgid "Add a sub-forum"
+msgstr "Добавить подфорум"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Topics:"
+msgstr "Темы:"
+
+msgid "Posts:"
+msgstr "Ответы:"
+
+msgid "Link:"
+msgstr "Ссылки:"
+
+msgid "Edit user permissions"
+msgstr "Редактировать разрешения пользователя"
+
+msgid "Edit authenticated user permissions"
+msgstr "Редактировать разрешения зарегистрированных пользователей "
+
+msgid "Home"
+msgstr "Домой"
+
+msgid "Permission"
+msgstr "Разрешения"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Edit group permissions"
+msgstr "Настроить разрешения группы"
+
+msgid "Please correct the error below."
+msgstr "Пожалуйста, исправьте ошибку"
+
+msgid "Please correct the errors below."
+msgstr "Пожалуйста, исправьте ошибки"
+
+msgid "Please select a user in order to update its permissions"
+msgstr "Выберите пользователя, чтобы обновить его разрешения"
+
+msgid "Select"
+msgstr "Выбрать"
+
+msgid "Please select a group in order to update its permissions"
+msgstr "Выберите группу, чтобы обновить ее разрешения"
+
+msgid "Copy permissions from another forum"
+msgstr "Скопировать разрешения из другого форума"
+
+msgid "Please select a forum in order to copy its permissions configuration to the current forum"
+msgstr "Выберите форум, чтобы скопировать его параметры разрешений в текущий форум "
+
+msgid "Copy"
+msgstr "Скопировать"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Advanced search"
+msgstr "Продвинутый поиск"
+
+msgid "Subscriptions"
+msgstr "Подписки"
+
+msgid "View my posts"
+msgstr "Посмотреть мои ответы"
+
+msgid "Moderation queue"
+msgstr "Очередь модерации"
+
+msgid "Mark subforums read"
+msgstr "Отметить подфорумы прочитанными"
+
+msgid "New topic"
+msgstr "Новая тема"
+
+msgid "Mark topics read"
+msgstr "Отметить темы прочитанными"
+
+msgid "Announcements"
+msgstr "Объявления"
+
+msgid "RSS feed"
+msgstr "RSS канал"
+
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a>"
+msgstr "От: <a href=\"%(poster_url)s\">%(username)s</a>"
+
+#, python-format
+msgid "By: %(poster_username)s"
+msgstr "От: %(poster_username)s"
+
+msgid "No posts"
+msgstr "Ответов нет"
+
+msgid "Total redirects:"
+msgstr "Общее количество перенаправлений:"
+
+msgid "Subforums:"
+msgstr "Подфорумы:"
+
+msgid "No forums."
+msgstr "Форумов нет."
+
+msgid "Index"
+msgstr "Главная"
+
+msgid "Mark forums read"
+msgstr "Отметить форумы прочитанными"
+
+msgid "View unread topics"
+msgstr "Показать непрочитанные темы"
+
+msgid "Statistics"
+msgstr "Статистика"
+
+msgid "Total posts:"
+msgstr "Всего ответов:"
+
+msgid "Total topics:"
+msgstr "Всего тем:"
+
+msgid "(optional)"
+msgstr "(необязательно)"
+
+msgid "Add another file"
+msgstr "Добавить ещё файл"
+
+msgid "You may select <b>1</b> option"
+msgstr "Вы можете выбрать <b>1</b> вариант "
+
+#, python-format
+msgid "You may select up to <b>%(max_options)s</b> options"
+msgstr "Вы можете выбрать до <b>%(max_options)s</b> вариантов "
+
+msgid "Vote"
+msgstr "Голосовать"
+
+msgid "Change your vote"
+msgstr "Изменить свой голос"
+
+msgid "Poll options"
+msgstr "Варианты опроса"
+
+msgid "Add a poll option"
+msgstr "Добавить вариант опроса"
+
+msgid "<b>Note:</b>&nbsp;Deleting poll options of an existing poll will delete the associated votes."
+msgstr "<b>Внимание:</b>&nbsp;Удаление варианта из существующего опроса удалит и связанные с ним голоса. "
+
+msgid "Preview:"
+msgstr "Предпросмотр:"
+
+msgid "Results are currently hidden."
+msgstr ""
+
+msgid "Total votes:"
+msgstr "Всего голосов:"
+
+msgid "Submit"
+msgstr "Отправить"
+
+msgid "View results"
+msgstr "Посмотреть результаты"
+
+msgid "Options"
+msgstr "Варианты"
+
+msgid "Post reply"
+msgstr "Ответить"
+
+msgid "Subscribe"
+msgstr "Подписаться"
+
+msgid "Unsubscribe"
+msgstr "Отписаться"
+
+msgid "Unlock topic"
+msgstr "Разблокировать тему"
+
+msgid "Delete topic"
+msgstr "Удалить тему"
+
+msgid "Move topic"
+msgstr "Переместить тему"
+
+msgid "Change to sticky topic"
+msgstr "Изменить на закреплённую тему"
+
+msgid "Change to announce"
+msgstr "Изменить на объявление"
+
+msgid "Change to standard topic"
+msgstr "Изменить на стандартную тему"
+
+msgid "Preview"
+msgstr "Предпросмотр"
+
+msgid "Post a reply"
+msgstr "Ответить"
+
+msgid "Topic review"
+msgstr "Ревью темы"
+
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a> on %(creation_date)s"
+msgstr "От: <a href=\"%(poster_url)s\">%(username)s</a> %(creation_date)s "
+
+#, python-format
+msgid "By: %(poster_username)s on %(creation_date)s"
+msgstr "От: %(poster_username)s %(creation_date)s "
+
+msgid "Delete post"
+msgstr "Удалить ответ"
+
+msgid "Are you sure you want to delete this post?"
+msgstr "Вы уверены, что хотите удалить ответ?"
+
+msgid "Yes, I'm sure"
+msgstr "Да, уверен"
+
+msgid "No, take me back"
+msgstr "Нет, отмена"
+
+msgid "Edit post"
+msgstr "Редактировать ответ"
+
+msgid "Post a new topic"
+msgstr "Добавить новую тему"
+
+msgid "Edit"
+msgstr "Редактировать"
+
+msgid "Last edited by:"
+msgstr "Последний раз отредактировано:"
+
+msgid "Updated"
+msgstr "Обновлено"
+
+msgid "on"
+msgstr "на"
+
+#, python-format
+msgid "edited %(counter)s time in total."
+msgid_plural "edited %(counter)s times in total."
+msgstr[0] "всего отредактировано %(counter)s раз"
+msgstr[1] "всего отредактировано %(counter)s раза"
+msgstr[2] "всего отредактировано %(counter)s раз"
+msgstr[3] "всего отредактировано %(counter)s раз"
+
+msgid "Reason:"
+msgstr "Причина:"
+
+msgid "Replies"
+msgstr "Ответов:"
+
+msgid "Views"
+msgstr "Просмотры"
+
+msgid "This topic is locked"
+msgstr "Эта тема заблокирована"
+
+msgid "There are no topics in this forum."
+msgstr "В этом форуме нет тем."
+
+msgid "Go to the page:"
+msgstr "Перейти на страницу:"
+
+msgid "Posted by"
+msgstr "Добавлено "
+
+#, python-format
+msgid "%(username)s profile"
+msgstr "Профиль пользователя %(username)s"
+
+msgid "Edit profile"
+msgstr "Изменить профиль"
+
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Post</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Posts</small></p>"
+msgstr[0] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"<p><small>Ответ</small></p>"
+msgstr[1] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"<p><small>Ответа</small></p>"
+msgstr[2] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"<p><small>Ответов</small></p>"
+msgstr[3] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"<p class=\"mb-1\"><small>Ответов</small></p>"
+
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Topic</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Topics</small></p>"
+msgstr[0] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"<p><small>Тема</small></p>"
+msgstr[1] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"<p class=\"mb-1\"><small>Темы</small></p>"
+msgstr[2] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"<p class=\"mb-1\"><small>Тем</small></p>"
+msgstr[3] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"<p class=\"mb-1\"><small>Тем</small></p>"
+
+msgid "Recent posts"
+msgstr "Последние ответы"
+
+msgid "View all"
+msgstr "Просмотреть все"
+
+#, python-format
+msgid "On %(creation_date)s"
+msgstr " %(creation_date)s"
+
+msgid "Edit forum profile"
+msgstr "Редактировать форумный профиль"
+
+msgid "Topics that you are subscribed to"
+msgstr "Темы на которые вы подписаны"
+
+#, python-format
+msgid "%(counter)s topic found"
+msgid_plural "%(counter)s topics found"
+msgstr[0] "%(counter)s тема найдена"
+msgstr[1] "%(counter)s тем найдено"
+msgstr[2] "%(counter)s тем найдено"
+msgstr[3] "%(counter)s тем найдено"
+
+msgid "Not topics found."
+msgstr "Темы не найдены"
+
+msgid "Subscribe to topic"
+msgstr "Подписаться на тему"
+
+msgid "Would you like to subscribe to this topic?"
+msgstr "Вы хотите подписаться на тему?"
+
+msgid "Unsubscribe from topic"
+msgstr "Отписаться от темы"
+
+msgid "Would you like to unsubscribe from this topic?"
+msgstr "Вы хотите отписаться от темы?"
+
+msgid "My messages"
+msgstr "Мои сообщения"
+
+#, python-format
+msgid "%(username)s's posts"
+msgstr "Ответы пользователя %(username)s"
+
+#, python-format
+msgid "%(counter)s post found"
+msgid_plural "%(counter)s posts found"
+msgstr[0] "%(counter)s сообщение найдено"
+msgstr[1] "%(counter)s сообщений найдено"
+msgstr[2] "%(counter)s сообщений найдено"
+msgstr[3] "%(counter)s ответов найдено"
+
+msgid "No posts found"
+msgstr "Ответов не найдено"
+
+msgid "Disapprove"
+msgstr "Отвергнуть"
+
+msgid "Approve"
+msgstr "Одобрить"
+
+msgid "New post"
+msgstr "Новый ответ"
+
+msgid "<b>1</b> option may be selected"
+msgstr "<b>1</b> вариант может быть выбран"
+
+#, python-format
+msgid "Up to <b>%(max_options)s</b> options may be selected"
+msgstr " Может быть выбрано до <b>%(max_options)s</b> опций"
+
+#, python-format
+msgid "%(topic_length)s posts found"
+msgstr "%(topic_length)s ответов найдено"
+
+msgid "No posts awaiting approval."
+msgstr "Нет ответов, ожидающих одобрения"
+
+msgid "Approve post"
+msgstr "Одобрить ответ"
+
+msgid "Are you sure you want to approve this post?"
+msgstr "Вы уверены, что хотите одобрить этот ответ?"
+
+msgid "Disapprove post"
+msgstr "Отклонить ответ"
+
+msgid "Are you sure you want to disapprove this post? This post will be deleted."
+msgstr "Вы уверены. что хотите отклонить этот ответ?"
+
+msgid "Are you sure you want to delete this topic?"
+msgstr "Вы уверены, что хотите удалить эту тему?"
+
+msgid "Are you sure you want to lock this topic?"
+msgstr "Вы уверены, что хотите заблокировать эту тему?"
+
+msgid "Are you sure you want to unlock this topic?"
+msgstr "Вы уверены, что хотите разблокировать эту тему?"
+
+msgid "Change topic type"
+msgstr "Изменить тип темы"
+
+msgid "Search forums"
+msgstr "Поиск по форумам"
+
+msgid "New search"
+msgstr "Новый поиск"
+
+#, python-format
+msgid "Your search has returned <b>%(number_of_results)s</b> result"
+msgid_plural "Your search has returned <b>%(number_of_results)s</b> results"
+msgstr[0] "По вашему запросу было найден <b>%(number_of_results)s</b>результат"
+msgstr[1] "По вашему запросу было найдено <b>%(number_of_results)s</b> результатов"
+msgstr[2] "По вашему запросу было найдено <b>%(number_of_results)s</b> результатов"
+msgstr[3] "По вашему запросу было найдено <b>%(number_of_results)s</b> результатов"
+
+msgid "Results"
+msgstr "Результаты"
+
+msgid "No results."
+msgstr "Результатов нет."
+
+msgid "Are you sure you want to mark forums read?"
+msgstr "Вы уверены, что хотите отметить форумы прочитанными?"
+
+msgid "Are you sure you want to mark topics read?"
+msgstr "Вы уверены, что хотите отметить темы прочитанными?"
+
+#, python-format
+msgid "%(topic_length)s unread topic found"
+msgid_plural "%(topic_length)s unread topics found"
+msgstr[0] "найдена %(topic_length)s непрочитанная тема"
+msgstr[1] "найдено %(topic_length)s непрочитанные темы"
+msgstr[2] "найдено %(topic_length)s непрочитанных тем"
+msgstr[3] "найдено %(topic_length)s непрочитанных тем"
+
+msgid "There are no unread topics."
+msgstr "Непрочитанных тем не найдено."
+
+msgid "Forum index"
+msgstr "Главная страница форума"

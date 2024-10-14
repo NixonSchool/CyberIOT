@@ -1,0 +1,86 @@
+{% extends "chatzone/chatzone_base.html" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: white;
+        color: #333;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #007bff;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+    }
+    h1 {
+        color: #007bff;
+        text-align: center;
+    }
+    .friend-request {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #007bff;
+    }
+    .friend-request:last-child {
+        border-bottom: none;
+    }
+    .friend-name {
+        font-weight: 600;
+    }
+    .buttons {
+        display: flex;
+        gap: 10px;
+    }
+    .btn {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .accept-btn {
+        background-color: #007bff;
+    }
+    .accept-btn:hover {
+        background-color: #0056b3;
+    }
+    .decline-btn {
+        background-color: #dc3545;
+    }
+    .decline-btn:hover {
+        background-color: #c82333;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Friend Requests</h1>
+    {% if requests %}
+        {% for request in requests %}
+            <div class="friend-request">
+                <span class="friend-name">{{ request.sender.username }}</span>
+                <div class="buttons">
+                    <form action="{% url 'chatzone2:accept_friend_request' request.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn accept-btn">Accept</button>
+                    </form>
+                    <form action="{% url 'chatzone2:decline_friend_request' request.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn decline-btn">Decline</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No friend requests available.</p>
+    {% endif %}
+</div>
+{% endblock %}

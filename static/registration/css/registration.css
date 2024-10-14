@@ -1,0 +1,168 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --background-color: #01cdff;
+    --surface-color: #ffffff;
+    --text-color: #2c3e50;
+    --error-color: #e74c3c;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: var(--surface-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.site-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.form-container {
+    text-align: center;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.form-links {
+    margin-top: 1rem;
+}
+
+.form-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Ensure "Forgot Password?" link is visible and styled */
+.forgot-password-link {
+    color: var(--primary-color);
+    font-size: 0.875rem; /* Adjust as needed */
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+    color: var(--secondary-color);
+}
+
+.errorlist {
+    color: var(--error-color);
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.forgot-password-link {
+    color: var(--primary-color);
+    font-size: 0.875rem; /* Adjust as needed */
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline; /* Optional: Adds underline on hover */
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .site-name {
+        font-size: 1.5rem;
+    }
+}

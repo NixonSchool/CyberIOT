@@ -1,0 +1,42 @@
+{% load i18n %}
+
+<!DOCTYPE html>
+<html {% get_current_language as LANGUAGE_CODE %} lang="{{ LANGUAGE_CODE }}">
+<head>
+    {% block head %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+    <title>{% block title %}{{ site.name }}{% endblock %}</title>
+    <meta name="created" content="{% now "jS M Y h:i" %}" />
+    <meta name="description" content="{% block meta_description %}{% endblock meta_description %}" />
+    <meta name="keywords" content="{% block meta_keywords %}{% endblock meta_keywords %}"/>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    {% endblock head %}
+
+    {% block css %}
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;  /* Apply Poppins font to the body */
+        }
+    </style>
+    {% endblock css %}
+
+    {% block extra_css %}
+    {% endblock extra_css %}
+
+</head>
+<body>
+    {% block js %}
+    {% endblock js %}
+
+    {% block body %}
+      {# The forum content will go in this 'body' block #}
+    {% endblock body %}
+
+    {% block extra_js %}
+    {% endblock extra_js %}
+</body>
+</html>

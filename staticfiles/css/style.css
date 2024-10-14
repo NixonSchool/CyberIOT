@@ -1,0 +1,101 @@
+/* Root Variables */
+:root {
+    --primary-color: #007bff;
+    --hover-color: #0056b3;
+    --text-color: #333333;
+    --background-color: #f4f4f4;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --divider-color: rgba(0, 0, 0, 0.1);
+    --icon-color: #ffffff;
+    --icon-bg: var(--primary-color);
+    --text-shadow-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Example Divider */
+.b-example-divider {
+    height: 3rem;
+    background-color: var(--divider-color);
+    border: solid rgba(0, 0, 0, 0.15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em var(--divider-color), inset 0 .125em .5em rgba(0, 0, 0, 0.15);
+}
+
+/* Icons */
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+/* Feature Icons */
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--icon-color);
+    background-color: var(--icon-bg);
+    border-radius: .75rem;
+}
+
+/* Icon Links */
+.icon-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon-link > .bi {
+    margin-top: .125rem;
+    margin-left: .125rem;
+    transition: transform .25s ease-in-out;
+    fill: currentColor;
+}
+
+.icon-link:hover > .bi {
+    transform: translate(.25rem);
+}
+
+/* Square Icons */
+.icon-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    background-color: var(--icon-bg);
+    color: var(--icon-color);
+    border-radius: .75rem;
+}
+
+/* Rounded Corners */
+.rounded-4 {
+    border-radius: .5rem;
+}
+
+.rounded-5 {
+    border-radius: 1rem;
+}
+
+/* Text Shadows */
+.text-shadow-1 {
+    text-shadow: 0 .125rem .25rem var(--text-shadow-color);
+}
+
+.text-shadow-2 {
+    text-shadow: 0 .25rem .5rem var(--text-shadow-color);
+}
+
+.text-shadow-3 {
+    text-shadow: 0 .5rem 1.5rem var(--text-shadow-color);
+}
+
+/* Card Cover */
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}

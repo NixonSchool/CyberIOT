@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}All Channel List · {{ block.super }}{% endblock title %}
+{% block description %}All Channel List · {{ block.super }}{% endblock description %}
+{% block keywords %}All Channel List · {{ block.super }}{% endblock keywords %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">All Channels</h1>
+    {% include 'base/message.html' %}
+
+    {% if channels %}
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for channel in channels %}
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{ channel.avatar.url }}" class="card-img-top" alt="{{ channel.channel_name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ channel.channel_name }}</h5>
+                            <p class="card-text">{{ channel.description|safe|truncatechars:100 }}</p>
+                            <p class="card-text"><small class="text-muted">{{ channel.total_subscribers }} subscribers</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ channel.get_absolute_url }}" class="btn btn-primary btn-sm stretched-link">View Channel</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            Channels will be added soon...
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}

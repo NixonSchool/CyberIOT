@@ -1,0 +1,51 @@
+{% extends "base/base.html" %}
+{% load widget_tweaks %}
+
+{% block title %}Create Channel{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center mb-4" style="font-family: 'Poppins', sans-serif; font-size: 2.5rem;">Create Channel</h1>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    {% include 'base/message.html' %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% if error %}
+                            <div class="alert alert-danger" style="font-family: 'Poppins', sans-serif;">
+                                {{ error }}
+                            </div>
+                        {% endif %}
+                        <div class="mb-3">
+                            {{ channelForm.channel_name.label_tag }}
+                            {{ channelForm.channel_name|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            {{ channelForm.slogan.label_tag }}
+                            {{ channelForm.slogan|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            {{ channelForm.description.label_tag }}
+                            {{ channelForm.media }}
+                            {{ channelForm.description|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            {{ channelForm.avatar.label_tag }}
+                            {{ channelForm.avatar|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            {{ channelForm.banner_image.label_tag }}
+                            {{ channelForm.banner_image|add_class:"form-control" }}
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" style="font-family: 'Poppins', sans-serif;">Create Channel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}404 - Page Not Found{% endblock title %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <img src="{% static 'images/monkey.png' %}" alt="404 Error" class="img-fluid mb-4" width="300" height="300">
+            <h1 class="mb-4">404 Page Not Found</h1>
+            <p class="lead mb-4">This page is unavailable. We apologize.<br>Try looking for something else.</p>
+            <a href="{% url 'video:index' %}" class="btn btn-success btn-lg rounded-pill">Go Home</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

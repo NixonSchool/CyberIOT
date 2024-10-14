@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection Information - CyberIOT</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'terms/css/data_collection.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <img src="{% static 'images/logo.png' %}" alt="CyberIOT Logo" class="logo">
+        <h1>Data Collection Information</h1>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Personal Data</h2>
+            <p>This includes identifiable information such as your full name, username, email address, and any other information you voluntarily provide through our platform.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Technical Data</h2>
+            <p>We collect information about your device, browser type, IP address, and operating system. This data helps us troubleshoot issues, enhance security, and provide a better user experience.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Usage Data</h2>
+            <p>We track your interactions with our platform, including the pages you visit, the time you spend on the site, and your navigation patterns. This data allows us to understand user behavior and optimize our content.</p>
+        </div>
+        
+        <div class="card">
+            <h2>Forum Participation</h2>
+            <p>For users participating in our forums, we may collect additional information, including IP addresses, device information, and activity logs to enhance the security of our platform and ensure compliance with our community guidelines.</p>
+        </div>
+        
+        <div class="button-container">
+            <a href="{% url 'terms:privacy_policy' %}" class="button">Back to Privacy Policy</a>
+        </div>
+    </main>
+</body>
+</html>

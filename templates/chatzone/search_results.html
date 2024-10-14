@@ -1,0 +1,282 @@
+{% extends "chatzone/chatzone_base.html" %}
+{% load custom_filters %}
+{% load static %}
+{% block title %}Search Results{% endblock %}
+
+{% block extra_css %}
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+           
+        }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+    .search-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+    .user-item { background-color: #fff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 20px; text-align: center; }
+    .user-avatar { width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 10px; }
+    .user-name { font-size: 1.2em; font-weight: bold; margin-bottom: 10px; }
+    .btn { display: inline-block; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-align: center; text-decoration: none; }
+    .btn-primary { background-color: #007bff; color: white; }
+    .btn-secondary { background-color: #6c757d; color: white; }
+    .btn-success { background-color: #28a745; color: white; }
+    .btn-disabled { background-color: #ccc; color: #666; cursor: not-allowed; }
+    .mt-20 { margin-top: 20px; }
+
+    /* Styling for filter and sort boxes */
+    .filter-sort-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .filter-sort-container label {
+        font-weight: bold;
+    }
+    
+    #searchBox, #sortBy {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+        width: 100%;
+        max-width: 300px; /* Limit width for larger screens */
+    }
+    
+    @media (min-width: 600px) {
+        .filter-sort-container {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        #searchBox, #sortBy {
+            max-width: none; /* Full width on larger screens */
+            margin-right: 10px; /* Space between inputs */
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Search Results</h1>
+    
+    <div class="filter-sort-container">
+        <div>
+            Filter Users:
+            <input type="text" placeholder="Search users..." class="form-control">
+        </div>
+
+        <div>
+            Sort By:
+            <select name="sort" class="form-control">
+                <option value="">Select sorting</option>
+                <option value="az">Name A-Z</option>
+                <option value="za">Name Z-A</option>
+            </select>
+        </div>
+    </div>
+
+    
+  <div id="userList" class="search-results">
+        {% for user in users %}
+            <div class="user-item" username="{{ user.username|lower }}">
+                <a href="{% url 'profiles:profile' username=user.username %}" class="user-profile-link">
+                    <img src="{{ users_profiles|get_item:user.id|get_attr:'profile_picture'|get_attr:'url' }}" alt="{{ user.username }}" class="user-avatar">
+                </a>
+                <h2 class="user-name">
+                    <a href="{% url 'profiles:profile' username=user.username %}">{{ user.username }}</a>
+                </h2>
+                <p>{{ users_profiles|get_item:user.id|get_attr:'bio'|truncatechars:100 }}</p>
+                
+                <div class="friend-actions" data-user-id="{{ user.id }}">
+                    {% if user.id in friends %}
+                        <span class="btn btn-secondary">Already Friends</span>
+                    {% elif user.id in sent_requests %}
+                        <button class="btn btn-warning cancel-request" data-request-id="{{ sent_requests|get_item:user.id }}">Cancel Friend Request</button>
+                    {% elif user.id in received_requests %}
+                        <button class="btn btn-success accept-request" data-request-id="{{ received_requests|get_item:user.id }}">Accept Friend Request</button>
+                        <button class="btn btn-danger decline-request" data-request-id="{{ received_requests|get_item:user.id }}">Decline Friend Request</button>
+                    {% else %}
+                        <button class="btn btn-primary send-request">Add Friend</button>
+                    {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p>No users found matching your search.</p>
+        {% endfor %}
+    </div>
+</div>
+    <br>
+  
+   <div style="margin-top: 20px; text-align: center;">
+        <a href="{% url 'chatzone2:chat_home' %}" class="btn btn-primary" style="display: inline-block; margin: 0 auto;">Back to Chat</a>
+    </div>
+
+    
+    <br><br>
+    
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'chatzone/message.js' %}"></script>
+
+<script>
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the necessary elements
+    const userList = document.getElementById('userList');
+    const filterInput = document.querySelector('input[type="text"]'); // Add this input to your HTML
+    const sortSelect = document.querySelector('select[name="sort"]');  // Add this select to your HTML
+    const users = Array.from(userList.getElementsByClassName('user-item'));
+
+    // Filter functionality
+    function filterUsers(searchTerm) {
+        searchTerm = searchTerm.toLowerCase();
+        users.forEach(user => {
+            const username = user.getAttribute('username').toLowerCase();
+            if (username.includes(searchTerm)) {
+                user.style.display = '';
+            } else {
+                user.style.display = 'none';
+            }
+        });
+    }
+
+    // Sorting functionality
+    function sortUsers(sortOption) {
+        const sortedUsers = users.sort((a, b) => {
+            const usernameA = a.getAttribute('username').toLowerCase();
+            const usernameB = b.getAttribute('username').toLowerCase();
+
+            if (sortOption === 'az') {
+                return usernameA.localeCompare(usernameB);
+            } else if (sortOption === 'za') {
+                return usernameB.localeCompare(usernameA);
+            }
+        });
+
+        // Remove existing users from DOM
+        users.forEach(user => user.remove());
+
+        // Append sorted users
+        sortedUsers.forEach(user => userList.appendChild(user));
+    }
+
+    // Add event listeners
+    if (filterInput) {
+        filterInput.addEventListener('input', (e) => {
+            filterUsers(e.target.value);
+        });
+    }
+
+    if (sortSelect) {
+        sortSelect.addEventListener('change', (e) => {
+            sortUsers(e.target.value);
+        });
+    }
+});
+
+$(document).ready(function() {
+    $('.send-request').click(function() {
+        var userId = $(this).closest('.friend-actions').data('user-id');
+        sendFriendRequest(userId, $(this));
+    });
+
+    $('.cancel-request').click(function() {
+        var requestId = $(this).data('request-id');
+        cancelFriendRequest(requestId, $(this));
+    });
+
+    $('.accept-request').click(function() {
+        var requestId = $(this).data('request-id');
+        acceptFriendRequest(requestId, $(this));
+    });
+
+    $('.decline-request').click(function() {
+        var requestId = $(this).data('request-id');
+        declineFriendRequest(requestId, $(this));
+    });
+
+    function sendFriendRequest(userId, button) {
+        $.ajax({
+            url: '/chatzone/send_friend_request/' + userId + '/',
+            method: 'POST',
+            headers: {'X-CSRFToken': getCookie('csrftoken')},
+            success: function(response) {
+                if (response.status === 'success') {
+                    button.replaceWith('<button class="btn btn-warning cancel-request" data-request-id="' + response.request_id + '">Cancel Friend Request</button>');
+                    $('.cancel-request').click(function() {
+                        var requestId = $(this).data('request-id');
+                        cancelFriendRequest(requestId, $(this));
+                    });
+                }
+            }
+        });
+    }
+
+    function cancelFriendRequest(requestId, button) {
+        $.ajax({
+            url: '/chatzone/cancel_friend_request/' + requestId + '/',
+            method: 'POST',
+            headers: {'X-CSRFToken': getCookie('csrftoken')},
+            success: function(response) {
+                if (response.status === 'success') {
+                    button.replaceWith('<button class="btn btn-primary send-request">Add Friend</button>');
+                    $('.send-request').click(function() {
+                        var userId = $(this).closest('.friend-actions').data('user-id');
+                        sendFriendRequest(userId, $(this));
+                    });
+                }
+            }
+        });
+    }
+
+    function acceptFriendRequest(requestId, button) {
+        $.ajax({
+            url: '/chatzone/accept_friend_request/' + requestId + '/',
+            method: 'POST',
+            headers: {'X-CSRFToken': getCookie('csrftoken')},
+            success: function(response) {
+                if (response.status === 'success') {
+                    button.closest('.friend-actions').html('<span class="btn btn-secondary">Already Friends</span>');
+                }
+            }
+        });
+    }
+
+    function declineFriendRequest(requestId, button) {
+        $.ajax({
+            url: '/chatzone/decline_friend_request/' + requestId + '/',
+            method: 'POST',
+            headers: {'X-CSRFToken': getCookie('csrftoken')},
+            success: function(response) {
+                if (response.status === 'success') {
+                    button.closest('.friend-actions').html('<button class="btn btn-primary send-request">Add Friend</button>');
+                    $('.send-request').click(function() {
+                        var userId = $(this).closest('.friend-actions').data('user-id');
+                        sendFriendRequest(userId, $(this));
+                    });
+                }
+            }
+        });
+    }
+
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+});
+</script>
+{% endblock %}

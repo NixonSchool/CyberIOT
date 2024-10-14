@@ -1,0 +1,2 @@
+[pytest11]
+test_plus = test_plus.plugin

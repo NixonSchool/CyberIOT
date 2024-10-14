@@ -1,0 +1,1113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Translators:
+# Davinia MC, 2019
+msgid ""
+msgstr ""
+"Project-Id-Version: django-machina\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-19 16:58-0500\n"
+"PO-Revision-Date: 2019-10-29 01:36+0000\n"
+"Last-Translator: Morgan Aubert <morgan@aubert.email>\n"
+"Language-Team: Spanish (http://www.transifex.com/django-machina-team/django-machina/language/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.4\n"
+
+msgid "Parent"
+msgstr "Padre"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "Forum image"
+msgstr "Imagen del foro"
+
+msgid "Forum link"
+msgstr "Link del foro"
+
+msgid "Track link redirects count"
+msgstr "Registrar el número de redirecciones de links"
+
+msgid "Records the number of times a forum link was clicked"
+msgstr "Grabar las veces que se pulsa un link de foro"
+
+msgid "Default forum"
+msgstr "Foro por defecto"
+
+msgid "Category forum"
+msgstr "Categoría de foro"
+
+msgid "Link forum"
+msgstr "Link de foro"
+
+msgid "Forum type"
+msgstr "Tipo de foro"
+
+msgid "Direct number of posts"
+msgstr "Número de mensajes directos"
+
+msgid "Direct number of topics"
+msgstr "Número de hilos directos"
+
+msgid "Last post"
+msgstr "Último mensaje"
+
+msgid "Last post added on"
+msgstr "Último mensaje añadido el"
+
+msgid "Display in parent-forums legend"
+msgstr "Mostrar en la leyenda de los foros padre"
+
+msgid "Displays this forum on the legend of its parent-forum (sub forums list)"
+msgstr "Mostrar este foro en la leyenda de los foros padre (lista de subforos)"
+
+msgid "Forum"
+msgstr "Foro"
+
+msgid "Forums"
+msgstr "Foros"
+
+msgid "A forum can not have a link forum as parent"
+msgstr "Un foro no puede tener un foro de tipo link como padre"
+
+msgid "A category can not have another category as parent"
+msgstr "Una categoría no puede tener otra categoría como padre"
+
+msgid "A link forum must have a link associated with it"
+msgstr "Un foro de tipo link debe tener un link asociado a él"
+
+msgid "Forum settings"
+msgstr "Configuración del foro"
+
+msgid "Link forum settings"
+msgstr "Configuración de foro de tipo link"
+
+msgid "'{}' forum successfully moved"
+msgstr "El foro '{}' ha sido movido con éxito"
+
+msgid "Forum permissions"
+msgstr "Permisos del foro"
+
+msgid "Global forum permissions"
+msgstr "Permisos globales del foro"
+
+msgid "Permissions successfully copied"
+msgstr "Los permisos se han copiado satisfactoriamente"
+
+msgid "Choose either a user ID, the anonymous user or the authenticated user"
+msgstr ""
+
+msgid "Choose a group ID"
+msgstr ""
+
+msgid "Anonymous user"
+msgstr "Usuario anónimo"
+
+msgid "Authenticated user"
+msgstr ""
+
+msgid "Permissions successfully applied"
+msgstr "Los permisos se han aplicado correctamente"
+
+msgid "Machina: Forum"
+msgstr "Machina: Foro"
+
+msgid "Anonymous"
+msgstr "Anónimo"
+
+msgid "Please select this option if you want to edit the permissions of the anonymous user"
+msgstr "Por favor, selecciona esta opción si quieres editar los permisos del usuario anónimo"
+
+msgid "Authenticated"
+msgstr ""
+
+msgid "Please select this option if you want to edit the permissions of every (non-specific) logged in user"
+msgstr ""
+
+msgid "Choose either a user ID or check either the anonymous or authenticated user checkbox"
+msgstr ""
+
+msgid "Not set"
+msgstr "Sin asignar"
+
+msgid "Granted"
+msgstr "Concedido"
+
+msgid "Not granted"
+msgstr "Sin conceder"
+
+msgid "Topic forum"
+msgstr "Hilo de foro"
+
+msgid "Poster"
+msgstr "Participante"
+
+msgid "Subject"
+msgstr "Asunto"
+
+msgid "Default topic"
+msgstr "Hilo por defecto"
+
+msgid "Sticky"
+msgstr "Fijado"
+
+msgid "Announce"
+msgstr "Anuncio"
+
+msgid "Topic type"
+msgstr "Tipo de hilo"
+
+msgid "Topic unlocked"
+msgstr "Hilo desbloqueado"
+
+msgid "Topic locked"
+msgstr "Hilo bloqueado"
+
+msgid "Topic moved"
+msgstr "Hilo movido"
+
+msgid "Topic status"
+msgstr "Estado del hilo"
+
+msgid "Approved"
+msgstr "Aprobado"
+
+msgid "Posts count"
+msgstr "Contador de mensajes"
+
+msgid "Views count"
+msgstr "Contador de visitas"
+
+msgid "First post"
+msgstr "Primer mensaje"
+
+msgid "Subscribers"
+msgstr "Suscriptores"
+
+msgid "Creation date"
+msgstr "Fecha de creación"
+
+msgid "Update date"
+msgstr "Fecha de actualización"
+
+msgid "Topic"
+msgstr "Hilo"
+
+msgid "Topics"
+msgstr "Hilos"
+
+msgid "A topic can not be associated with a category or a link forum"
+msgstr "No se puede asociar un hilo con un foro de tipo categoría o link"
+
+msgid "Anonymous user forum key"
+msgstr "Clave del foro para usuario anónimo"
+
+msgid "Content"
+msgstr "Contenido"
+
+msgid "Username"
+msgstr "Nombre de usuario"
+
+msgid "Attach a signature"
+msgstr "Adjuntar firma"
+
+msgid "Update reason"
+msgstr "Actualizar motivo"
+
+msgid "Lastly updated by"
+msgstr "Última actualización por"
+
+msgid "Updates count"
+msgstr "Número de actualizaciones"
+
+msgid "Post"
+msgstr "Mensaje"
+
+msgid "Posts"
+msgstr "Mensajes"
+
+msgid "A user id or an anonymous key must be associated with a post."
+msgstr "Se debe asociar un identificador de usuario o una clave anónima a un mensaje."
+
+msgid "A user id or an anonymous key must be associated with a post, but not both."
+msgstr "Se debe asociar un identificador de usuario o una clave anónima a un mensaje, pero no ambos."
+
+msgid "A username must be specified if the poster is anonymous"
+msgstr "Se debe especificar un nombre de usuario si el participante es anónimo"
+
+msgid "Machina: Forum conversations"
+msgstr "Machina: conversaciones de los foros"
+
+msgid "Enter your subject"
+msgstr "Escribe el asunto"
+
+msgid "Message"
+msgstr "Mensaje"
+
+msgid "Enter your message"
+msgstr "Escribe el mensaje"
+
+msgid "Lock topic"
+msgstr "Bloquear un hilo"
+
+msgid "Post topic as"
+msgstr "Publicar hilo como"
+
+msgid "Poll question"
+msgstr "Pregunta de la encuesta"
+
+msgid "Enter a question to associate a poll with the topic or leave blank to not create a poll."
+msgstr "Escribe una pregunta para asociar una encuesta al hilo o déjala en blanco para no crear una encuesta."
+
+msgid "Maximum number of poll options per user"
+msgstr "Número máximo de opciones de la encuesta por usuario"
+
+msgid "This is the number of options each user may select when voting."
+msgstr "Este es el número de opciones que cada usuario puede seleccionar al votar."
+
+msgid "For how many days the poll should be run?"
+msgstr "¿Cuántos días debe estar activa la encuesta?"
+
+msgid "Enter 0 or leave blank for a never ending poll."
+msgstr "Escribe 0 o deja en blanco para una encuesta sin fin."
+
+msgid "Allow re-voting?"
+msgstr "¿Permitir volver a votar?"
+
+msgid "If enabled users are able to change their vote."
+msgstr "Si está activo, los usuarios pueden cambiar su voto."
+
+#, fuzzy
+#| msgid "View results"
+msgid "Hide results?"
+msgstr "Ver resultados"
+
+msgid "If enabled results are hidden to everyone except topic creator."
+msgstr ""
+
+msgid "You must set the maximum number of poll options per user when creating polls"
+msgstr "Debes seleccionar el número máximo de opciones por usuario cuando creas una encuesta"
+
+msgid "File"
+msgstr "Fichero"
+
+msgid "Comment"
+msgstr "Comentario"
+
+msgid "Attachment"
+msgstr "Adjunto"
+
+msgid "Attachments"
+msgstr "Adjuntos"
+
+msgid "Machina: Forum attachments"
+msgstr "Machina: Adjuntos del foro"
+
+msgid "Poll duration, in days"
+msgstr "Duración de la encuesta, en días"
+
+msgid "Allow vote changes"
+msgstr "Permitir cambiar el voto"
+
+#, fuzzy
+#| msgid "View results"
+msgid "Hide results"
+msgstr "Ver resultados"
+
+msgid "Topic poll"
+msgstr "Encuesta sobre el hilo"
+
+msgid "Topic polls"
+msgstr "Encuesta sobre los hilos"
+
+msgid "Poll"
+msgstr "Encuesta"
+
+msgid "Poll option text"
+msgstr "Texto de la opción de la encuesta"
+
+msgid "Topic poll option"
+msgstr "Opción de la encuesta del hilo"
+
+msgid "Topic poll options"
+msgstr "Opciones de la encuesta del hilo"
+
+msgid "Voter"
+msgstr "Votante"
+
+msgid "Poll option"
+msgstr "Opción de la encuesta"
+
+msgid "Vote's date"
+msgstr "Fecha del voto"
+
+msgid "Topic poll vote"
+msgstr "Voto de la encuesta del hilo"
+
+msgid "Topic poll votes"
+msgstr "Votos de la encuesta del hilo"
+
+msgid "A user id or an anonymous key must be used."
+msgstr "Se debe usar un identificador de usuario o una clave de usuario anónimo."
+
+msgid "A user id or an anonymous key must be used, but not both."
+msgstr "Se debe usar un identificador de usuario o una clave de usuario anónimo, pero no ambos."
+
+msgid "Machina: Forum polls"
+msgstr "Machina: encuestas del foro"
+
+msgid "Enter a poll option"
+msgstr "Escribe una opción de la encuesta"
+
+msgid "You must specify an option when voting."
+msgstr "Debes especificar una opción al votar."
+
+msgid "You have tried to vote for too many options."
+msgstr "Has intentado votar demasiadas opciones."
+
+msgid "Your vote has been cast."
+msgstr "Tu voto ha sido grabado."
+
+msgid "This message will be validated before appearing on the forum."
+msgstr "Este mensaje tiene que validarse antes de aparecer en el foro."
+
+msgid "There are some errors in the attachments you submitted."
+msgstr "Existen algunos errores en los adjuntos enviados."
+
+msgid "This message has been posted successfully."
+msgstr "El mensaje se ha enviado correctamente."
+
+msgid "There are some errors in the poll options you submitted."
+msgstr "Hay errores en las opciones de la encuesta enviadas."
+
+msgid "This message has been edited successfully."
+msgstr "El mensaje se ha editado correctamente."
+
+msgid "This message has been deleted successfully."
+msgstr "El mensaje ha sido borrado correctamente."
+
+msgid "Machina: Forum feeds"
+msgstr "Machina: Feeds del foro"
+
+msgid "Latest topics"
+msgstr "Últimos hilos"
+
+msgid "Latest topics updated on the forums"
+msgstr "Últimos hilos modificados del foro"
+
+msgid "User"
+msgstr "Usuario"
+
+msgid "Avatar"
+msgstr "Avatar"
+
+msgid "Signature"
+msgstr "Firma"
+
+msgid "Total posts"
+msgstr "Mensajes totales"
+
+msgid "Forum profile"
+msgstr "Perfil del foro"
+
+msgid "Forum profiles"
+msgstr "Perfiles del foro"
+
+msgid "Machina: Forum members"
+msgstr "Machina: Miembros del foro"
+
+msgid "The profile has been edited successfully."
+msgstr "El perfil se ha editado correctamente."
+
+msgid "You subscribed to this topic successfully."
+msgstr "Te has suscrito correctamente a este hilo."
+
+msgid "You unsubscribed from this topic successfully."
+msgstr "Te has dado de baja de este hilo correctamente."
+
+msgid "Machina: Forum moderation"
+msgstr "Machina: Moderación del foro"
+
+msgid "Select a destination forum"
+msgstr "Selecciona un foro de destino"
+
+msgid "This topic has been locked successfully."
+msgstr "Se ha bloqueado el hilo correctamente."
+
+msgid "This topic has been unlocked successfully."
+msgstr "Se ha desbloqueado el hilo correctamente."
+
+msgid "This topic has been deleted successfully."
+msgstr "El hilo se ha borrado correctamente."
+
+msgid "This topic has been moved successfully."
+msgstr "Se ha movido el hilo correctamente."
+
+msgid "This topic type has been changed successfully."
+msgstr "Este hilo se ha modificado correctamente."
+
+msgid "Would you want to change this topic to a default topic?"
+msgstr "¿Quieres convertir este hilo en hilo por defecto?"
+
+msgid "Would you want to change this topic to a sticky topic?"
+msgstr "¿Quieres convertir este hilo en hilo fijado?"
+
+msgid "Would you want to change this topic to an announce?"
+msgstr "¿Quieres convertir este hilo en anuncio?"
+
+msgid "This post has been approved successfully."
+msgstr "Este mensaje ha sido aprobado correctamente."
+
+msgid "This post has been disapproved successfully."
+msgstr "Se ha rechazado este mensaje correctamente."
+
+msgid "Permission codename"
+msgstr "Clave del permiso"
+
+msgid "Forum permission"
+msgstr "Permiso de foro"
+
+msgid "Has perm"
+msgstr "Tiene permiso"
+
+msgid "Target anonymous user"
+msgstr "Usuario anónimo como objetivo"
+
+msgid "Target any logged in user"
+msgstr ""
+
+msgid "User forum permission"
+msgstr "Permiso para el foro de usuarios"
+
+msgid "User forum permissions"
+msgstr "Permisos para el foro de usuarios"
+
+msgid "A permission should target either a specific user, an anonymous user or any authenticated user"
+msgstr ""
+
+msgid "Group"
+msgstr "Grupo"
+
+msgid "Group forum permission"
+msgstr "Permiso del foro de grupos"
+
+msgid "Group forum permissions"
+msgstr "Permisos del foro de grupos"
+
+msgid "Machina: Forum permissions"
+msgstr "Machina: Permisos del foro"
+
+msgid "Can see forum"
+msgstr "Puede ver el foro"
+
+msgid "Can read forum"
+msgstr "Puede leer el foro"
+
+msgid "Can start new topics"
+msgstr "Puede comenzar nuevos hilos"
+
+msgid "Can reply to topics"
+msgstr "Puede contestar a los hilos"
+
+msgid "Can post announcements"
+msgstr "Puede  publicar anuncios"
+
+msgid "Can post stickies"
+msgstr "Puede publicar hilos fijados"
+
+msgid "Can delete own posts"
+msgstr "Puede borrar sus propios mensajes"
+
+msgid "Can edit own posts"
+msgstr "Puede editar sus propios mensajes"
+
+msgid "Can post without approval"
+msgstr "Puede publicar sin necesidad de aprobación"
+
+msgid "Can create polls"
+msgstr "Puede crear encuestas"
+
+msgid "Can vote in polls"
+msgstr "Puede votar en encuestas"
+
+msgid "Can attach file"
+msgstr "Puede adjuntar ficheros"
+
+msgid "Can download file"
+msgstr "Puede bajarse ficheros"
+
+msgid "Can lock topics"
+msgstr "Puede bloquear hilos"
+
+msgid "Can move topics"
+msgstr "Puede mover hilos"
+
+msgid "Can edit posts"
+msgstr "Puede editar mensajes"
+
+msgid "Can delete posts"
+msgstr "Puede borrar mensajes"
+
+msgid "Can approve posts"
+msgstr "Puede aprobar mensajes"
+
+msgid "Can add posts in locked topics"
+msgstr "Puede añadir mensajes a hilos bloqueados"
+
+msgid "Machina: Forum searches"
+msgstr "Machina: Búsquedas en foros"
+
+msgid "Search only in topic subjects"
+msgstr "Buscar solo en los asuntos de los hilos"
+
+msgid "Search for poster"
+msgstr "Búsqueda de participante"
+
+msgid "Enter a user name to limit the search to a specific user."
+msgstr "Introduce un nombre de usuario para limitar la búsqueda a un usuario concreto."
+
+msgid "Search in specific forums"
+msgstr "Buscar en foros concretos"
+
+msgid "Select the forums you wish to search in."
+msgstr "Selecciona los foros en los que quieres buscar."
+
+msgid "Search for keywords"
+msgstr "Buscar por palabras clave"
+
+msgid "Keywords or phrase"
+msgstr "Palabras clave o frase"
+
+msgid "Poster name"
+msgstr "Nombre de participante"
+
+msgid "Forum track"
+msgstr "Registro del foro"
+
+msgid "Forum tracks"
+msgstr "Registros del foro"
+
+msgid "Topic track"
+msgstr "Registro del hilo"
+
+msgid "Topic tracks"
+msgstr "Registro de los hilos"
+
+msgid "Machina: Forum tracking"
+msgstr "Machina: Registros del foro"
+
+msgid "Forums have been marked read."
+msgstr "Los foros se han marcado como leídos."
+
+msgid "Topics have been marked read."
+msgstr "Los hilos se han marcado como leídos."
+
+msgid "Neither Pillow nor PIL could be imported: {}"
+msgstr "No se puede importar ni Pillow ni PIL: {}"
+
+#, fuzzy
+#| msgid "Could not import MACHINA_MARKUP_LANGUAGE {}: {}"
+msgid "Could not import MACHINA MARKUP_MAX_LENGTH_VALIDATOR {}: {}"
+msgstr "No se puede importar MACHINA_MARKUP_LANGUAGE {}: {}"
+
+#, fuzzy
+#| msgid "MACHINA_MARKUP_LANGUAGE setting is required"
+msgid "MACHINA_MARKUP_MAX_LENGTH_VALIDATOR setting is required"
+msgstr "Se requiere el parámetro MACHINA_MARKUP_LANGUAGE"
+
+msgid "Could not import MACHINA_MARKUP_WIDGET {}: {}"
+msgstr "No se puede importar MACHINA_MARKUP_WIDGET {}: {}"
+
+msgid "Could not import MACHINA_MARKUP_LANGUAGE {}: {}"
+msgstr "No se puede importar MACHINA_MARKUP_LANGUAGE {}: {}"
+
+msgid "MACHINA_MARKUP_LANGUAGE setting is required"
+msgstr "Se requiere el parámetro MACHINA_MARKUP_LANGUAGE"
+
+msgid "Files of size greater than {} are not allowed. Your file is {}"
+msgstr "No se permiten ficheros mayores de {}. Tu fichero tiene {}"
+
+msgid "Images of width lesser than {}px or greater than {}px or are not allowed. The width of your image is {}px"
+msgstr "No se permiten imágenes menores de {}px o mayores de {}px de ahcho. El ancho de tu imagen es {}px"
+
+msgid "Images of height lesser than {}px or greater than {}px or are not allowed. The height of your image is {}px"
+msgstr "No se permiten imágenes menores de {}px o mayores de {}px de alto. Tu imagen tiene {}px de alto"
+
+msgid "List of forums"
+msgstr "Listado de foros"
+
+msgid "Quick actions"
+msgstr "Acciones rápidas"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "Details"
+msgstr "Detalles"
+
+msgid "Move up"
+msgstr "Mover arriba"
+
+msgid "Move down"
+msgstr "Mover abajo"
+
+msgid "Add a sub-forum"
+msgstr "Añadir al subforo"
+
+msgid "Delete"
+msgstr "Borrar"
+
+msgid "Topics:"
+msgstr "Hilos:"
+
+msgid "Posts:"
+msgstr "Mensajes:"
+
+msgid "Link:"
+msgstr "Enlace:"
+
+msgid "Edit user permissions"
+msgstr "Editar permisos de usuario"
+
+msgid "Edit authenticated user permissions"
+msgstr ""
+
+msgid "Home"
+msgstr "Inicio"
+
+msgid "Permission"
+msgstr "Permiso"
+
+msgid "Save"
+msgstr "Guardar"
+
+msgid "Edit group permissions"
+msgstr "Editar permisos de grupo"
+
+msgid "Please correct the error below."
+msgstr "Por favor corrige el siguiente error."
+
+msgid "Please correct the errors below."
+msgstr "Por favor corrige los siguientes errores."
+
+msgid "Please select a user in order to update its permissions"
+msgstr "Por favor, selecciona un usuario para modificar sus permisos"
+
+msgid "Select"
+msgstr "Seleccionar"
+
+msgid "Please select a group in order to update its permissions"
+msgstr "Por favor, selecciona un grupo para modificar sus permisos"
+
+msgid "Copy permissions from another forum"
+msgstr "Copiar los permisos de otro foro"
+
+msgid "Please select a forum in order to copy its permissions configuration to the current forum"
+msgstr "Por favor, selecciona un foro para copiar la configuración de sus permisos a este foro"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Search"
+msgstr "Buscar"
+
+msgid "Advanced search"
+msgstr "Búsqueda avanzada"
+
+msgid "Subscriptions"
+msgstr "Suscripciones"
+
+msgid "View my posts"
+msgstr "Ver mis mensajes"
+
+msgid "Moderation queue"
+msgstr "Cola de moderación"
+
+msgid "Mark subforums read"
+msgstr "Marcar subforos como leídos"
+
+msgid "New topic"
+msgstr "Nuevo hilo"
+
+msgid "Mark topics read"
+msgstr "Marcar hilo como leído"
+
+msgid "Announcements"
+msgstr "Anuncios"
+
+msgid "RSS feed"
+msgstr "Feed RSS"
+
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a>"
+msgstr "Por: <a href=\"%(poster_url)s\">%(username)s</a>"
+
+#, python-format
+msgid "By: %(poster_username)s"
+msgstr "Por: %(poster_username)s"
+
+msgid "No posts"
+msgstr "Sin mensajes"
+
+msgid "Total redirects:"
+msgstr "Total redirecciones:"
+
+msgid "Subforums:"
+msgstr "Subforos:"
+
+msgid "No forums."
+msgstr "Sin foros."
+
+msgid "Index"
+msgstr "Índice"
+
+msgid "Mark forums read"
+msgstr "Marcar foros como leídos"
+
+msgid "View unread topics"
+msgstr "Mostrar hilos no leídos"
+
+msgid "Statistics"
+msgstr "Estadísticas"
+
+msgid "Total posts:"
+msgstr "Mesajes totales:"
+
+msgid "Total topics:"
+msgstr "Hilos totales:"
+
+msgid "(optional)"
+msgstr "(opcional)"
+
+msgid "Add another file"
+msgstr "Añadir otro fichero"
+
+msgid "You may select <b>1</b> option"
+msgstr "Debes seleccionar <b>1</b> opción"
+
+#, python-format
+msgid "You may select up to <b>%(max_options)s</b> options"
+msgstr "Debes seleccionar un máximo de <b>%(max_options)s</b> opciones"
+
+msgid "Vote"
+msgstr "Votar"
+
+msgid "Change your vote"
+msgstr "Cambiar tu voto"
+
+msgid "Poll options"
+msgstr "Opciones de la encuesta"
+
+msgid "Add a poll option"
+msgstr "Añadir opción a la encuesta"
+
+msgid "<b>Note:</b>&nbsp;Deleting poll options of an existing poll will delete the associated votes."
+msgstr "Nota:</b>&nbsp;Borrar las opciones de una encuestra existente borrará los votos asociados."
+
+msgid "Preview:"
+msgstr "Previsualización:"
+
+msgid "Results are currently hidden."
+msgstr ""
+
+msgid "Total votes:"
+msgstr "Votos totales:"
+
+msgid "Submit"
+msgstr "Enviar"
+
+msgid "View results"
+msgstr "Ver resultados"
+
+msgid "Options"
+msgstr "Opciones"
+
+msgid "Post reply"
+msgstr "Enviar respuesta"
+
+msgid "Subscribe"
+msgstr "Suscribirse"
+
+msgid "Unsubscribe"
+msgstr "Darse de baja"
+
+msgid "Unlock topic"
+msgstr "Desbloquear hilo"
+
+msgid "Delete topic"
+msgstr "Borrar hilo"
+
+msgid "Move topic"
+msgstr "Mover hilo"
+
+msgid "Change to sticky topic"
+msgstr "Convertir en hilo fijado"
+
+msgid "Change to announce"
+msgstr "Convertir en anuncio"
+
+msgid "Change to standard topic"
+msgstr "Convertir en hilo normal"
+
+msgid "Preview"
+msgstr "Previsualizar"
+
+msgid "Post a reply"
+msgstr "Enviar una respuesta"
+
+msgid "Topic review"
+msgstr "Revisar un hilo"
+
+#, python-format
+msgid "By: <a href=\"%(poster_url)s\">%(username)s</a> on %(creation_date)s"
+msgstr "Por: <a href=\"%(poster_url)s\">%(username)s</a> el %(creation_date)s"
+
+#, python-format
+msgid "By: %(poster_username)s on %(creation_date)s"
+msgstr "Por: %(poster_username)s el %(creation_date)s"
+
+msgid "Delete post"
+msgstr "Eliminar mensaje"
+
+msgid "Are you sure you want to delete this post?"
+msgstr "¿Seguro que quieres eliminar este mensaje?"
+
+msgid "Yes, I'm sure"
+msgstr "Sí, seguro"
+
+msgid "No, take me back"
+msgstr "No, volver atrás"
+
+msgid "Edit post"
+msgstr "Editar post"
+
+msgid "Post a new topic"
+msgstr "Enviar un nuevo hilo"
+
+msgid "Edit"
+msgstr "Editar"
+
+msgid "Last edited by:"
+msgstr "Última edición por:"
+
+msgid "Updated"
+msgstr "Modificado"
+
+msgid "on"
+msgstr "el"
+
+#, python-format
+msgid "edited %(counter)s time in total."
+msgid_plural "edited %(counter)s times in total."
+msgstr[0] "editado %(counter)s vez en total."
+msgstr[1] "editado %(counter)s veces en total"
+
+msgid "Reason:"
+msgstr "Motivo:"
+
+msgid "Replies"
+msgstr "Respuestas"
+
+msgid "Views"
+msgstr "Vistas"
+
+msgid "This topic is locked"
+msgstr "Este hilo está bloqueado"
+
+msgid "There are no topics in this forum."
+msgstr "No hay hilos en este foro."
+
+msgid "Go to the page:"
+msgstr "Ir a la página:"
+
+msgid "Posted by"
+msgstr "Escrito por"
+
+#, python-format
+msgid "%(username)s profile"
+msgstr "Perfil de %(username)s"
+
+msgid "Edit profile"
+msgstr "Editar perfil"
+
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Post</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Posts</small></p>"
+msgstr[0] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Mensaje</small></p>"
+msgstr[1] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Mensajes</small></p>"
+
+#, python-format
+msgid ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Topic</small></p>"
+msgid_plural ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Topics</small></p>"
+msgstr[0] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p><small>Hilo</small></p>"
+msgstr[1] ""
+"<h2><strong>%(counter)s</strong></h2>\n"
+"                      <p class=\"mb-1\"><small>Hilos</small></p>"
+
+msgid "Recent posts"
+msgstr "Mensajes recientes"
+
+msgid "View all"
+msgstr "Ver todos"
+
+#, python-format
+msgid "On %(creation_date)s"
+msgstr "El %(creation_date)s"
+
+msgid "Edit forum profile"
+msgstr "Editar perfil del foro"
+
+msgid "Topics that you are subscribed to"
+msgstr "Hilos a los que estás suscrito"
+
+#, python-format
+msgid "%(counter)s topic found"
+msgid_plural "%(counter)s topics found"
+msgstr[0] "%(counter)s hilo encontrado"
+msgstr[1] "%(counter)s hilos encontrados"
+
+msgid "Not topics found."
+msgstr "No se han encontrado hilos."
+
+msgid "Subscribe to topic"
+msgstr "Suscribirse al hilo"
+
+msgid "Would you like to subscribe to this topic?"
+msgstr "¿Quieres suscribirte al hilo?"
+
+msgid "Unsubscribe from topic"
+msgstr "Darse de baja del hilo"
+
+msgid "Would you like to unsubscribe from this topic?"
+msgstr "¿Quieres darte de baja de este hilo?"
+
+msgid "My messages"
+msgstr "Mis mensajes"
+
+#, python-format
+msgid "%(username)s's posts"
+msgstr "Mensajes de %(username)s"
+
+#, python-format
+msgid "%(counter)s post found"
+msgid_plural "%(counter)s posts found"
+msgstr[0] "%(counter)s mensaje encontrado"
+msgstr[1] "%(counter)s mensajes encontrados"
+
+msgid "No posts found"
+msgstr "Ningún mensaje encontrado"
+
+msgid "Disapprove"
+msgstr "Rechazar"
+
+msgid "Approve"
+msgstr "Aprobar"
+
+msgid "New post"
+msgstr "Nuevo mensaje"
+
+msgid "<b>1</b> option may be selected"
+msgstr "Se debe seleccionar <b>1</b> opción"
+
+#, python-format
+msgid "Up to <b>%(max_options)s</b> options may be selected"
+msgstr "Se deben seleccionar como mucho <b>%(max_options)s</b> opciones"
+
+#, python-format
+msgid "%(topic_length)s posts found"
+msgstr "%(topic_length)s mensajes encontrados"
+
+msgid "No posts awaiting approval."
+msgstr "Ningún mensaje esperando ser aprobado."
+
+msgid "Approve post"
+msgstr "Aprobar mensaje"
+
+msgid "Are you sure you want to approve this post?"
+msgstr "¿Estás seguro de que quieres aprobar este mensaje?"
+
+msgid "Disapprove post"
+msgstr "Rechazar mensaje"
+
+msgid "Are you sure you want to disapprove this post? This post will be deleted."
+msgstr "¿Seguro que quieres rechazar este mensaje? El mensaje se borrará."
+
+msgid "Are you sure you want to delete this topic?"
+msgstr "¿Seguro que quieres borrar este hilo?"
+
+msgid "Are you sure you want to lock this topic?"
+msgstr "¿Seguro que quieres bloquear este hilo?"
+
+msgid "Are you sure you want to unlock this topic?"
+msgstr "¿Seguro que quieres desbloquear este hilo?"
+
+msgid "Change topic type"
+msgstr "Modificar el tipo de hilo"
+
+msgid "Search forums"
+msgstr "Buscar en los foros"
+
+msgid "New search"
+msgstr "Nueva búsqueda"
+
+#, python-format
+msgid "Your search has returned <b>%(number_of_results)s</b> result"
+msgid_plural "Your search has returned <b>%(number_of_results)s</b> results"
+msgstr[0] "Tu búsqueda ha devuelto <b>%(number_of_results)s</b> resultado"
+msgstr[1] "Tu búsqueda ha devuelto <b>%(number_of_results)s</b> resultados"
+
+msgid "Results"
+msgstr "Resultados"
+
+msgid "No results."
+msgstr "Sin resultados."
+
+msgid "Are you sure you want to mark forums read?"
+msgstr "¿Seguro que quieres marcar los foros como leídos?"
+
+msgid "Are you sure you want to mark topics read?"
+msgstr "¿Seguro que quieres marcar los hilos como leídos?"
+
+#, fuzzy, python-format
+#| msgid "      %(topic_length)s unread topic found"
+#| msgid_plural ""
+#| "%(topic_length)s unread topics found\n"
+#| "      "
+msgid "%(topic_length)s unread topic found"
+msgid_plural "%(topic_length)s unread topics found"
+msgstr[0] "     encontrado %(topic_length)s hilo sin leer"
+msgstr[1] ""
+"Encontrados %(topic_length)s hilos sin leer\n"
+"      "
+
+msgid "There are no unread topics."
+msgstr "No hay hilos sin leer."
+
+msgid "Forum index"
+msgstr "Índice del foro"

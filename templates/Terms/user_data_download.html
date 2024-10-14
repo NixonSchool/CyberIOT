@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Download</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Root Variables */
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --text-color: #333333;
+            --bg-color: #ffffff;
+            --nav-bg: #007bff;
+            --nav-text: #ffffff;
+            --nav-hover: #0056b3;
+            --footer-bg: #007bff;
+            --footer-text: #ffffff;
+            --border-color: #007bff;
+            --module-bg: #ffffff;
+            --module-text: #333333;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+        }
+
+        /* Container and Main Content */
+        .container {
+            margin-top: 60px;
+            min-height: calc(100vh - 60px);
+            padding: 1rem;
+            max-width: 500px;
+            width: 100%;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        input[type="email"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        #progress-bar {
+            width: 0;
+            height: 30px;
+            background-color: var(--primary-color);
+            text-align: center;
+            color: white;
+            line-height: 30px;
+            transition: width 0.2s ease;
+        }
+
+        #popup-message {
+            display: none;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .additional-info {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Download Your Data</h1>
+        <form id="dataForm" method="post" action="{% url 'terms:user_data_download' %}">
+            {% csrf_token %}
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="popup-message">Your download will begin shortly...</div>
+        
+        <div id="progress-container" style="display:none;">
+            <div id="progress-bar">0%</div>
+        </div>
+
+        <div class="additional-info">
+            Please ensure that you enter a valid email address. The data will be generated and available for download shortly after the progress bar completes.
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('dataForm').onsubmit = function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById('email').value;
+            if (!email) {
+                alert('Please enter your email address.');
+                return;
+            }
+
+            // Show confirmation dialog
+            if (confirm('Do you want to proceed with the download?')) {
+                // Show popup message
+                var popupMessage = document.getElementById('popup-message');
+                popupMessage.style.display = 'block';
+
+                // Hide popup message after 3 seconds
+                setTimeout(function() {
+                    popupMessage.style.display = 'none';
+                }, 3000);
+
+                // Show progress bar
+                document.getElementById('progress-container').style.display = 'block';
+                var progressBar = document.getElementById('progress-bar');
+                var width = 0;
+
+                var interval = setInterval(function() {
+                    if (width >= 100) {
+                        clearInterval(interval);
+                        // Submit the form via AJAX (no page reload)
+                        fetch("{% url 'terms:download_data' %}", {
+                            method: 'POST',
+                            body: new FormData(document.getElementById('dataForm')),
+                        }).then(response => {
+                            if (response.ok) {
+                                return response.blob();
+                            }
+                            throw new Error('Network response was not ok.');
+                        }).then(blob => {
+                            var url = window.URL.createObjectURL(blob);
+                            var a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'user_data.zip';
+                            document.body.appendChild(a); // Required for Firefox
+                            a.click();
+                            a.remove();
+                        }).catch(error => {
+                            console.error('There was a problem with the download:', error);
+                        });
+                    } else {
+                        width++;
+                        progressBar.style.width = width + '%';
+                        progressBar.textContent = width + '%';
+                    }
+                }, 100); // 100ms interval for a total of 10 seconds
+            }
+        };
+    </script>
+</body>
+</html>

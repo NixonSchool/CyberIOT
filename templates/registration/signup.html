@@ -1,0 +1,146 @@
+{% extends "registration/base.html" %}
+{% load static %}
+{% block title %}Sign Up - CyberIOT{% endblock %}
+{% block content %}
+<style>
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Root Variables */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --text-color: #333333;
+  --bg-color: #ffffff;
+  --border-color: #007bff;
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Form Container */
+.form-container {
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+.form-container h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-hover);
+}
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Error Messages */
+.error {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Form Links */
+.form-links {
+  text-align: center;
+  margin-top: 1rem;
+}
+.form-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+.form-links a:hover {
+  color: var(--primary-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+}
+</style>
+<div class="form-container">
+  <h2>Sign Up</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-group">
+      {{ field.label_tag }}
+      {{ field }}
+      {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+      {% endif %}
+      {% if field.errors %}
+        {% for error in field.errors %}
+          <div class="error">{{ error }}</div>
+        {% endfor %}
+      {% endif %}
+    </div>
+    {% endfor %}
+    <button type="submit">Sign Up</button>
+  </form>
+  <div class="form-links">
+    Already have an account? <a href="{% url 'accounts:login' %}">Login</a>
+  </div>
+</div>
+{% endblock %}

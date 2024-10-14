@@ -1,0 +1,30 @@
+{% load render %}
+{% load can_post %}
+{% for comment_data in comments %}
+    <div class="pw-card fluid mt-4 comment">
+        <div class="pw-card-header">
+            Comment by <a href="{% url 'forums:profile' comment_data.comment.user.id %}">{{ comment_data.comment.user.username }}</a>
+        </div>
+        <div class="pw-card-content">
+            <div class="comment-content">
+                {{ comment_data.comment.content|render }}
+            </div>
+            <div class="comment-date">
+                <time datetime="{{ comment_data.comment.created_at|date:'c' }}">{{ comment_data.comment.created_at|date:'M j, Y' }}</time>
+            </div>
+        </div>
+        <!-- Reply button -->
+        {% if user.is_authenticated and thread|can_post:user %}
+            <button class="pw-button secondary" hx-get="{% url 'forums:comment_reply_form' comment_data.comment.id %}" hx-target="#reply-form-{{ comment_data.comment.id }}">
+                Reply
+            </button>
+            <div id="reply-form-{{ comment_data.comment.id }}"></div>
+        {% endif %}
+        <!-- Recursively display child comments -->
+        {% if comment_data.children %}
+            <div class="comment-replies">
+                {% include 'forums/partials/comments.html' with comments=comment_data.children %}
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}

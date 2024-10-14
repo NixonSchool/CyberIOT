@@ -1,0 +1,101 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block extra_css %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f8f9fa;
+    }
+
+    /* Make sure the grid adjusts well for smaller screens */
+    .grid {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .grid-cols-1 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Responsive layout for small devices */
+    @media (max-width: 640px) {
+        .grid-cols-2, .grid-cols-3 {
+            grid-template-columns: 1fr; /* Single column on small screens */
+        }
+        .p-6 {
+            padding: 1rem;
+        }
+        .text-xl {
+            font-size: 1.25rem;
+        }
+        .h-48 {
+            height: 12rem; /* Adjust the image height for smaller screens */
+        }
+    }
+
+    /* Further adjustments for tablets and small laptops */
+    @media (min-width: 640px) and (max-width: 1024px) {
+        .grid-cols-3 {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+        }
+    }
+
+    /* Ensure hidden-android div is hidden on Android */
+    @media (max-width: 640px) {
+        .hidden-android {
+            display: none;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
+  <h2 class="mb-12 text-2xl text-center">Newest Items</h2>  <!-- Removed font-serif -->
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {% for item in items %}
+    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+      <a href="{% url 'marketitem:detail' item.id %}">
+        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-6">
+          <h2 class="text-xl">{{ item.name }}</h2>  <!-- Removed font-serif -->
+          <p class="text-gray-500 mt-2">Price: {{ item.price }}</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl hidden-android">
+  <h2 class="mb-12 text-2xl text-center">Categories</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {% for category in categories %}
+    <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+      <a href="#">
+        <div class="p-6">
+          <h2 class="text-xl">{{ category.name }}</h2>
+          <p class="text-gray-500 mt-2">{{ category.items.count }} item{% if category.items.count > 1 %}s{% endif %}</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

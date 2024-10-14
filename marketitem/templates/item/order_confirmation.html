@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Order Confirmation{% endblock %}
+
+{% block extra_css %}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    .fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="max-w-2xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden fade-in">
+        <div class="bg-green-500 text-white p-6 text-center">
+            <h1 class="text-3xl font-bold">Order Confirmation</h1>
+            <p class="mt-2">Thank you for your order!</p>
+        </div>
+
+        <div class="p-6">
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2 text-gray-700">Order Details</h2>
+                <p>Order ID: <span class="font-medium">{{ order.id }}</span></p>
+                <p>Total Price: <span class="font-medium text-green-600">${{ order.total_price }}</span></p>
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2 text-gray-700">Ordered Items</h2>
+                {% for item in order.items.all %}
+                    <p><span class="font-medium">{{ item.name }}</span> <span class="text-green-600">${{ item.price }}</span></p>
+                {% endfor %}
+            </div>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold mb-2 text-gray-700">Payment Information</h2>
+                <p>Payment Method: <span class="font-medium">{{ order.get_payment_method_display }}</span></p>
+                <p>Payment Status:
+                    <span class="font-medium {% if order.is_paid %}text-green-600{% else %}text-yellow-600{% endif %}">
+                        {% if order.is_paid %}Paid{% else %}Pending{% endif %}
+                    </span>
+                </p>
+                {% if order.payment_method == 'paypal' %}
+                    <p>PayPal Email: <span class="font-medium">{{ order.paypal_email }}</span></p>
+                {% endif %}
+            </div>
+
+            <div class="mb-6 p-4 bg-blue-50 rounded-lg text-blue-700">
+                CyberIOT has held your funds until the seller delivers the products. We will then pay the seller after deducting a small fee for running the platform. Thanks for being here!
+            </div>
+
+            {% if can_cancel %}
+            <div class="mb-6">
+                <form method="POST" action="{% url 'marketitem:order_confirmation' order_id=order.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                        Cancel Order
+                    </button>
+                </form>
+                <p class="mt-2 text-sm text-gray-600">You can cancel this order within 24 hours of placing it. </p>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="bg-gray-100 p-6 text-center">
+            <p class="mb-4">We'll process your order as soon as possible.</p>
+            <a href="{% url 'marketcore:index' %}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                Return to Home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

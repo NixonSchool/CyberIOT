@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: gitdb2
+Version: 4.0.2
+Summary: A mirror package for gitdb
+Home-page: https://github.com/gitpython-developers/gitdb
+Author: Sebastian Thiel
+Author-email: byronimo@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: gitdb (>=4.0.1)
+
+This is a mirror package for `gitdb <https://pypi.org/project/gitdb/>`_. Consider installing it directly instead.
+
+

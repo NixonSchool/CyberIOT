@@ -1,0 +1,220 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block description %}{{ channel.description|truncatechars:150|striptags }} · {% endblock description %}
+{% block keywords %}{{ channel.description|truncatechars:150|striptags }} · {% endblock keywords %}
+{% block title %}{{ channel.channel_name }} · {% endblock title %}
+
+{% block content %}
+<style>
+    .banner-container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-top: 25%; /* 4:1 Aspect Ratio */
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+    .banner-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .avatar-container {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .avatar-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+    .video-card {
+        height: 100%;
+    }
+    .video-card .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    @media (max-width: 767px) {
+        .banner-container {
+            padding-top: 50%; /* 2:1 Aspect Ratio for mobile */
+        }
+        .avatar-container {
+            width: 80px;
+            height: 80px;
+        }
+        .container {
+            padding: 10px;
+        }
+        .video-card {
+            margin-bottom: 15px;
+        }
+    }
+</style>
+
+<div class="container mt-3">
+    {% include 'base/message.html' %}
+
+    <div class="banner-container mb-4"
+         style="background-image: url('{% if channel.banner_image %}{{ channel.banner_image.url }}{% else %}{% static 'images/channel/banner/sage.png' %}{% endif %}');">
+        <div class="banner-content text-white">
+            <div class="avatar-container">
+                <img src="{% if channel.avatar %}{{ channel.avatar.url }}{% else %}{% static 'images/channel/avatar/avatar.jpg' %}{% endif %}"
+                     alt="{{ channel.channel_name }}" class="avatar-image">
+            </div>
+            <h1 class="h2 mb-2" style="text-shadow: 1px 1px #000;">{{ channel.channel_name }}</h1>
+            <p class="lead mb-2">{{ channel.slogan|striptags }}</p>
+            <p class="mb-0">{{ subscribe_total }} Subscribers</p>
+        </div>
+    </div>
+
+    {% if user.is_authenticated and channel.user_id == request.user.id %}
+        <div class="d-flex justify-content-center mb-3">
+            <button type="button" class="btn btn-danger btn-sm me-2" data-bs-toggle="modal" data-bs-target="#deleteChannelModal">Delete</button>
+            <a href="{{ channel.get_update_url }}" class="btn btn-info btn-sm me-2">Update</a>
+            <a href="{% url 'video:createVideo' %}" class="btn btn-warning btn-sm">New Video</a>
+        </div>
+    {% endif %}
+
+    <div class="row g-3 align-items-center justify-content-center mb-3">
+        {% if user.is_authenticated and not channel.user_id == request.user.id %}
+            <form action="{% url 'channel:subscribeChannel' channel.pk %}" method="post" class="col-auto">
+                {% csrf_token %}
+                <button type="submit" class="btn {% if subscribe %}btn-secondary{% else %}btn-danger{% endif %}">
+                    {% if subscribe %}Unsubscribe{% else %}Subscribe{% endif %}
+                </button>
+            </form>
+        {% elif not user.is_authenticated %}
+            <a href="{% url 'account:login' %}" class="btn btn-danger btn-sm col-auto">Login to Subscribe</a>
+        {% endif %}
+
+        <div class="col-auto">
+            <h4 class="mb-0">Share</h4>
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                <a class="a2a_button_facebook"></a>
+                <a class="a2a_button_twitter"></a>
+                <a class="a2a_button_email"></a>
+                <a class="a2a_button_whatsapp"></a>
+                <a class="a2a_button_telegram"></a>
+                <a class="a2a_button_linkedin"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4 mb-3">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">Home</a>
+                <a class="list-group-item list-group-item-action" id="list-videos-list" data-bs-toggle="list" href="#list-videos" role="tab" aria-controls="list-videos">Videos</a>
+                <a class="list-group-item list-group-item-action" id="list-about-list" data-bs-toggle="list" href="#list-about" role="tab" aria-controls="list-about">About</a>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                    {% if last_video %}
+                        <div class="card mb-3">
+                            <div class="ratio ratio-16x9">
+                                <video controls>
+                                    <source src="{{ last_video.video.url }}" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ last_video.title|striptags }}</h5>
+                                <p class="card-text">{{ last_video.content|striptags|truncatechars:100 }}</p>
+                                <p class="card-text"><small class="text-muted">{{ last_video.publishing_date|date:"M d, Y" }}</small></p>
+                                <a href="{{ last_video.get_absolute_url }}" class="btn btn-info">See More</a>
+                                {% if user.is_authenticated and channel.user_id == request.user.id %}
+                                    <a href="{{ last_video.get_update_url }}" class="btn btn-primary">Update</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-success text-center" role="alert">
+                            Video will be added soon...
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="tab-pane fade" id="list-videos" role="tabpanel" aria-labelledby="list-videos-list">
+                    <div class="row row-cols-1 row-cols-sm-2 g-3">
+                        {% if videos %}
+                            {% for video in videos %}
+                                <div class="col">
+                                    <a href="{{ video.get_absolute_url }}" class="text-decoration-none">
+                                        <div class="card bg-dark text-white shadow-sm video-card">
+                                            <img src="{{ video.cover_image.url }}" class="card-img-top" alt="{{ video.title }}">
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ video.title|striptags }}</h5>
+                                                <p class="card-text">{{ video.user.channel.channel_name|upper }}</p>
+                                                <p class="card-text"><small>{{ video.publishing_date|timesince }} ago</small></p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <div class="col-12">
+                                <div class="alert alert-success text-center" role="alert">
+                                    Videos will be added soon...
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-about" role="tabpanel" aria-labelledby="list-about-list">
+                    <h2 class="text-center">About</h2>
+                    <p>{{ channel.description|safe|linebreaksbr }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteChannelModal" tabindex="-1" aria-labelledby="deleteChannelModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteChannelModalLabel">Confirm Channel Deletion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete the channel "{{ channel.channel_name }}"?</p>
+        <p class="text-danger"><strong>Warning:</strong> This action cannot be undone.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <a href="{% url 'channel:deleteChannel' channel.id %}" class="btn btn-danger">Delete Channel</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var deleteModal = new bootstrap.Modal(document.getElementById('deleteChannelModal'));
+
+        document.querySelector('[data-bs-target="#deleteChannelModal"]').addEventListener('click', function() {
+            deleteModal.show();
+        });
+    });
+</script>
+{% endblock extra_js %}

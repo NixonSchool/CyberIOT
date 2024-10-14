@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Inbox{% endblock %}
+{% block content %}
+<h1 class="mb-6 text-3xl">Inbox</h1>
+<div class="space-y-6">
+    {% for conversation in conversations %}
+        <a href="{% url 'marketchat:detail' conversation.id %}">
+            <div class="p-6 flex bg-gray-100 rounded-xl {% if conversation.unread_count > 0 %}border-2 border-blue-500{% endif %}">
+                <div class="pr-6">
+                    {% if conversation.item.image %}
+                        <img src="{{ conversation.item.image.url }}" alt="{{ conversation.item.name }}" class="w-20 rounded-xl">
+                    {% else %}
+                        <img src="{% static 'images/default.jpg' %}" alt="Default Image" class="w-20 rounded-xl">
+                    {% endif %}
+                </div>
+                <div>
+                    {% for member in conversation.members.all %}
+                        {% if member != request.user %}
+                            <p class="mb-4 {% if conversation.unread_count > 0 %}font-bold text-blue-600{% endif %}">
+                                <strong>{{ member.username }}</strong> | {{ conversation.modified_at }}
+                                {% if conversation.unread_count > 0 %}
+                                    <span class="ml-2 bg-blue-500 text-white rounded-full px-2 py-1 text-xs">
+                                        {{ conversation.unread_count }} new
+                                    </span>
+                                {% endif %}
+                            </p>
+                            <p>{{ conversation.item.name }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

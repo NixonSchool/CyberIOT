@@ -1,0 +1,144 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<style>
+  :root {
+    --primary-color: #007bff;
+    --secondary-color: #020201;
+    --background-color: #007bff;
+    --text-color: #FFFFFF;
+    --hover-color: #FF6347;
+    --accent-color: #F0E68C;
+    --light-bg: #ffffff;
+    --light-text: #0071ff;
+  }
+
+  body {
+    font-family: Sans-Serif, serif;
+  }
+
+  .search-container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--secondary-color);
+    margin-top: 80px; /* Adjust spacing from the navbar */
+  }
+
+  .search-header {
+    color: var(--text-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .search-section {
+    margin-bottom: 2rem;
+  }
+
+  .search-section-title {
+    color: var(--secondary-color);
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: center; /* Center-align section titles */
+  }
+
+  .search-results {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto; /* Center the search results */
+    max-width: 800px; /* Limit the width of search results */
+  }
+
+  .search-result-item {
+    background-color: var(--light-bg);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .search-result-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .search-result-link {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .search-result-link:hover {
+    color: var(--hover-color);
+  }
+
+  .search-result-description {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .no-results {
+    text-align: center;
+    color: var(--light-text);
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
+</style>
+
+<div class="search-container">
+  <h2 class="search-header">Search Results for "{{ query }}"</h2>
+
+  <div class="search-section">
+    <h3 class="search-section-title">Channels</h3>
+    {% if channel_results %}
+      <ul class="search-results">
+        {% for channel in channel_results %}
+          <li class="search-result-item">
+            <a href="{{ channel.get_absolute_url }}" class="search-result-link">
+              {{ channel.channel_name }}
+            </a>
+            <p class="search-result-description">
+              {{ channel.description|safe|truncatewords:30 }}
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="no-results">No channels found.</p>
+    {% endif %}
+  </div>
+
+  <div class="search-section">
+    <h3 class="search-section-title">Videos</h3>
+    {% if video_results %}
+      <ul class="search-results">
+        {% for video in video_results %}
+          <li class="search-result-item">
+            <a href="{{ video.get_absolute_url }}" class="search-result-link">
+              {{ video.title }}
+            </a>
+            <p class="search-result-description">
+              {{ video.content|safe|truncatewords:30 }}
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="no-results">No videos found.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

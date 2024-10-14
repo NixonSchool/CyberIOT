@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberIoT - Footer</title>
+    <style>
+        /* Footer Styles */
+        .footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 1rem 0;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .footer a {
+            color: var(--footer-text);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--primary-hover);
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Media Queries for Mobile Devices */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 0.5rem 0;
+                font-size: 0.9rem;
+            }
+
+            .footer p {
+                margin-bottom: 0.5rem;
+            }
+
+            .footer a {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer">
+        <p>&copy; {{ current_year }} CyberIoT. All rights reserved.</p>
+        <p><a href="{% url 'terms:privacy_policy' %}">Privacy Policy</a> | <a href="{% url 'terms:terms_of_service' %}">Terms of Service</a></p>
+    </footer>
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.querySelector('.footer p').textContent = `© ${currentYear} CyberIoT. All rights reserved.`;
+    </script>
+</body>
+</html>

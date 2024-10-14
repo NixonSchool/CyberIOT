@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+{% block title %}Items{% endblock %}
+{% block content %}
+
+<div class="pb-6 p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 bg-gray-100">
+    <div class="col-span-1">
+        <h2 class="mb-4 text-2xl">Search</h2>
+        <form method="get" action="{% url 'marketitem:items' %}">
+            <input name="query" class="w-full py-4 px-6 border rounded-xl" type="text" value="{{ query }}" placeholder="Find an item">
+            <button class="mt-2 py-4 px-8 text-lg bg-teal-500 text-white rounded-xl">Search</button>
+        </form>
+
+        <hr class="my-6">
+
+        <h2 class="mb-4 text-2xl">Categories</h2>
+        <ul>
+            {% for category in categories %}
+                <li class="py-2 px-2 rounded-xl{% if category.id == category_id %} bg-gray-200{% endif %}">
+                    <a href="{% url 'marketitem:items' %}?query={{ query }}&category={{ category.id }}" class="font-poppins">{{ category.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <hr class="my-6">
+
+        <h2 class="mb-4 text-2xl">Clear filters</h2>
+        <a href="{% url 'marketitem:items' %}" class="mt-2 py-4 px-8 inline-block bg-yellow-500 text-lg rounded-xl text-white">Clear</a>
+    </div>
+
+    <div class="col-span-1 sm:col-span-2 lg:col-span-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+            {% for item in items %}
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg relative">
+                    {% if item.status != 'available' or item.quantity == 0 %}
+                        <div class="absolute top-0 right-0 bg-red-500 text-white px-2 py-1 m-2 rounded">
+                            {% if item.status == 'sold_out' or item.quantity == 0 %}
+                                Sold Out
+                            {% elif item.status == 'coming_soon' %}
+                                Coming Soon
+                            {% elif item.status == 'unavailable' %}
+                                Unavailable
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <a href="{% url 'marketitem:detail' item.id %}">
+                        <img src="{{ item.image.url }}" class="w-full h-48 object-cover rounded-t-xl" alt="{{ item.name }}">
+                    </a>
+                    <div class="p-6">
+                        <h2 class="text-xl">{{ item.name }}</h2>
+                        <p class="text-gray-500">Price: {{ item.price }}</p>
+                        {% if item.is_available %}
+                            <p class="text-green-500">Available: {{ item.quantity }} left</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

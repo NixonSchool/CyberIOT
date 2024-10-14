@@ -1,0 +1,245 @@
+{% extends "bughub_templates/base_track.html" %}
+
+{% block extra_head %}
+<style>
+    body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem 2rem 1rem 0;
+}
+
+.sidebar {
+    width: 300px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.card:hover .card-title::after {
+    width: 100%;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.btn-primary:hover::after {
+    animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.page-item {
+    margin: 0 0.25rem;
+}
+
+.page-link {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding-right: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+    
+</style>
+{% endblock extra_head %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="content-wrapper">
+        <main class="main-content">
+            <h1 class="mb-4">Welcome to the Vulnerability Tracking Blog page.</h1>
+            <p>Feel free to make posts here. We'll also be posting about vulnerabilities found and fixed in IoT devices, and occasionally other tech fields. More content can be found in the forums, and our learning hub will help you stay updated with the latest in IoT technology and innovations.</p>
+            
+            {% for post in post_list %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text">{{ post.author }} | {{ post.created_on }}</p>
+                        <p class="card-text">{{ post.content|safe|truncatewords:30 }}</p>
+                        <a href="{% url 'bug:post_detail' post.slug %}" class="btn btn-primary">Read More →</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>No posts available.</p>
+            {% endfor %}
+
+            {% if is_paginated %}
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <li class="page-item active"><a class="page-link" href="#">{{ num }}</a></li>
+                            {% else %}
+                                <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            {% endif %}
+        </main>
+
+        <aside class="sidebar">
+            {% block sidebar %}
+                {% include 'bughub_templates/sidebar.html' %}
+            {% endblock sidebar %}
+        </aside>
+    </div>
+</div>
+{% endblock content %}

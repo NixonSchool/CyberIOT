@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberIoT - Securing the Internet of Things</title>
+    <link rel="stylesheet" href="{% static 'mainpage/css/main_page.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="{% url 'mainpage:main_page' %}" class="nav__logo">
+                <img src="{% static 'images/logo.png' %}" alt="CyberIoT Logo">
+            </a>
+{#            <h1 style="color: white; font-size: 24px; font-weight: bold; margin: 0;">Mainpage</h1>#}
+            <div id="hamburger-menu" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav__user">
+              {% if user.is_authenticated %}
+                <div class="profile-dropdown">
+                  <div class="profile-image-container" id="profile-image-container" data-profile-url="#">
+                    {% if user.user_profile.profile_picture %}
+                      <img src="{{ user.user_profile.profile_picture.url }}" alt="{{ user.username }}" class="profile-image">
+                    {% else %}
+                      <img src="{% static 'images/default-profile-pic.png' %}" alt="{{ user.username }}" class="profile-image">
+                    {% endif %}
+                  </div>
+                  <div class="profile-dropdown-content" id="profile-dropdown-content">
+                    <a href="{% url 'profiles:profile' username=user.username %}">Profile</a>
+                    <a href="{% url 'settings:settings' %}">Settings</a>
+                    <a href="{% url 'terms:contact_us' %}">Help</a>
+                    <a href="{% url 'accounts:logout' %}">Logout</a>
+                    {% if user.is_staff %}
+                      <a href="{% url 'admin:index' %}">Admin</a>
+                    {% endif %}
+                  </div>
+                </div>
+              {% else %}
+                <a href="{% url 'accounts:login' %}" class="nav__button login-button">Login</a>
+                <a href="{% url 'accounts:signup' %}" class="nav__button register-button">Sign Up</a>
+              {% endif %}
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" role="main">
+  <div class="main-content">
+    <div class="module-container">
+      {% for module in modules %}
+        <div class="module-box">
+          <h3>{{ module.title }}</h3>
+          <!-- Notification bell removed -->
+          <div class="image-wrapper">
+            <img src="{{ module.image }}" alt="{{ module.title }}" class="module-image">
+          </div>
+          <p>{{ module.description }}</p>
+          <a href="{{ module.url }}" class="module-link">Visit</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div class="footer__section">
+                <h4>About Us</h4>
+                <p>CyberIoT: Securing the Internet of Things</p>
+            </div>
+            <div class="footer__section">
+                <h4>Contact Us</h4>
+                <p>support@cyberiot.com</p>
+            </div>
+            <div class="footer__section">
+                <h4>Legal</h4>
+                <a href="{% url 'terms:terms_of_service' %}">Terms of Service</a>
+                <a href="{% url 'terms:privacy_policy' %}">Privacy Policy</a>
+                <a href="{% url 'terms:contact_us' %}">Contact Us</a>
+                 <a href="{% url 'terms:about' %}">About</a>
+            </div>
+        </div>
+    </footer>
+{#    <script src="{% static 'settings/js/dark-mode.js' %}" defer></script>#}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+              const hamburger = document.querySelector('.hamburger');
+              const navMenu = document.querySelector('.nav__user');
+              const profileDropdown = document.querySelector('.profile-dropdown');
+              const profileImage = document.querySelector('.profile-image-container');
+              const profileDropdownContent = document.querySelector('.profile-dropdown-content');
+
+              hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+              });
+
+              // Handle profile image click
+              profileImage.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (window.innerWidth <= 768) {
+                  // On mobile, navigate to profile page
+                  window.location.href = profileImage.dataset.profileUrl;
+                } else {
+                  // On desktop, toggle dropdown
+                  profileDropdownContent.classList.toggle('active');
+                }
+              });
+
+              // Close dropdown when clicking outside
+              document.addEventListener('click', (e) => {
+                if (!profileDropdownContent.contains(e.target) && !profileImage.contains(e.target)) {
+                  profileDropdownContent.classList.remove('active');
+                }
+              });
+
+              // Close mobile menu and dropdown when a link is clicked
+              document.querySelectorAll('.nav__button, .profile-dropdown-content a').forEach(n => n.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                profileDropdownContent.classList.remove('active');
+              }));
+
+              // Handle window resize
+              window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                  hamburger.classList.remove('active');
+                  navMenu.classList.remove('active');
+                }
+                // Don't automatically close the profile dropdown on resize
+                // This allows it to work consistently on both mobile and desktop
+              });
+            });
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav__user');
+    const profileDropdown = document.querySelector('.profile-dropdown');
+    const profileImage = document.querySelector('.profile-image-container');
+    const profileDropdownContent = document.querySelector('.profile-dropdown-content');
+
+    // Function to check if the device is mobile
+    const isMobile = () => window.innerWidth <= 768;
+
+    // Toggle hamburger menu
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Handle profile image interactions
+    let touchStartTime;
+    let touchEndTime;
+    const touchDelay = 200; // milliseconds
+
+    profileImage.addEventListener('touchstart', () => {
+        touchStartTime = new Date().getTime();
+    });
+
+    profileImage.addEventListener('touchend', (e) => {
+        touchEndTime = new Date().getTime();
+        if (touchEndTime - touchStartTime < touchDelay) {
+            e.preventDefault();
+            if (isMobile()) {
+                window.location.href = profileImage.dataset.profileUrl;
+            }
+        }
+    });
+
+    // Handle hover on mobile devices
+    profileDropdown.addEventListener('touchstart', (e) => {
+        if (isMobile()) {
+            profileDropdownContent.classList.add('active');
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!profileDropdownContent.contains(e.target) && !profileImage.contains(e.target)) {
+            profileDropdownContent.classList.remove('active');
+        }
+    });
+
+    // Close mobile menu and dropdown when a link is clicked
+    document.querySelectorAll('.nav__button, .profile-dropdown-content a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            if (!isMobile()) {
+                profileDropdownContent.classList.remove('active');
+            }
+        });
+    });
+
+    // Handle window resize
+    let lastWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+        if (lastWidth <= 768 && window.innerWidth > 768 || lastWidth > 768 && window.innerWidth <= 768) {
+            // Only trigger if we're crossing the mobile breakpoint
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            profileDropdownContent.classList.remove('active');
+        }
+        lastWidth = window.innerWidth;
+    });
+});
+
+            </script>
+    </body>
+
+</html>

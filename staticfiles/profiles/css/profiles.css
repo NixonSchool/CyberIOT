@@ -1,0 +1,276 @@
+/* profiles_base.css */
+:root {
+  --primary-color: #007bff;
+  --primary-hover: #0056b3;
+  --text-color: #333333;
+  --bg-color: #ffffff;
+  --nav-bg: #007bff;
+  --nav-text: #ffffff;
+  --nav-hover: #0056b3;
+  --footer-bg: #007bff;
+  --footer-text: #ffffff;
+  --border-color: #007bff;
+  --module-bg: #ffffff;
+  --module-text: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  padding: 0.5rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.nav__button.disabled {
+  pointer-events: none; /* Prevents clicking */
+  opacity: 0.5; /* Gives a faded appearance */
+  cursor: not-allowed; /* Shows a 'not allowed' cursor */
+}
+
+.nav__logo img {
+  height: 50px;
+}
+
+.nav__user {
+  display: flex;
+  align-items: center;
+}
+
+.nav__button {
+  background-color: white;
+  color: #007bff;
+  border: 2px solid var(--nav-text);
+  border-radius: 25px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.nav__button:hover {
+  background-color: var(--nav-hover);
+  color: var(--nav-text);
+}
+
+/* Profile Image Styles */
+.profile-button {
+  padding: 0;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-button i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+
+.container {
+  display: flex;
+  margin-top: 60px;
+  min-height: calc(100vh - 60px);
+  padding: 1rem;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer__section {
+  margin: 0 0.5rem 0.5rem;
+  min-width: 120px;
+}
+
+.footer__section h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer__section a,
+.footer__section p {
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 0.15rem;
+  font-size: 0.9rem;
+  display: block;
+}
+
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--nav-text);
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__logo img {
+    height: 40px;
+  }
+
+  .nav__user {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--nav-bg);
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__user.active {
+    display: flex;
+  }
+
+  .nav__button {
+    margin: 0.25rem 0;
+    width: 80%;
+    text-align: center;
+  }
+
+  .profile-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--nav-text);
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .container {
+    margin-top: 60px;
+    padding: 0.5rem;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__section {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    margin-top: 60px;
+  }
+
+  .nav__logo img {
+    height: 30px;
+  }
+
+  .profile-button {
+    width: 32px;
+    height: 32px;
+  }
+}

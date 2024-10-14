@@ -1,0 +1,89 @@
+{% extends 'machina/board_base.html' %}
+{% load i18n %}
+
+{% block sub_title %}{% trans "Search" %}{% endblock sub_title %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1>{% trans "Search" %}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">{% trans "Search forums" %}</h3>
+            </div>
+            <div class="card-body">
+                <form method="get" action="{% url 'forum_search:search' %}">
+                    {% include "machina/partials/form_field.html" with field=form.q %}
+                    <button type="submit" class="btn btn-primary">{% trans "Search" %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if results %}
+<div class="row mt-4">
+    <div class="col-12">
+        <h2>{% trans "Results" %}</h2>
+        <div class="card">
+            <div class="card-body">
+                {% for post in results %}
+                <div class="mb-4">
+                    <h4>
+                        <a href="{% url 'forum_conversation:topic' post.topic.forum.slug post.topic.forum.pk post.topic.slug post.topic.pk %}?post={{ post.pk }}#{{ post.pk }}">
+                            {{ post.subject|default:post.topic.subject }}
+                        </a>
+                    </h4>
+                    <p>{{ post.content|truncatewords:30 }}</p>
+                    <small class="text-muted">
+                        {% trans "By" %}: {{ post.poster.username }} - {{ post.created|date:"DATETIME_FORMAT" }}
+                        {% trans "in" %} <a href="{% url 'forum:forum' post.topic.forum.slug post.topic.forum.pk %}">{{ post.topic.forum.name }}</a>
+                    </small>
+                </div>
+                {% if not forloop.last %}<hr>{% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if results.has_other_pages %}
+<div class="row mt-3">
+    <div class="col-12">
+        <nav aria-label="{% trans 'Search results pages' %}">
+            <ul class="m-0 pagination">
+                <li class="page-item{% if not results.has_previous %} disabled{% endif %}">
+                    <a href="{% if results.has_previous %}?q={{ form.q.value }}&amp;page={{ results.previous_page_number }}{% endif %}" class="page-link">&laquo;</a>
+                </li>
+                {% for number in results.paginator.page_range %}
+                <li class="page-item{% if results.number == number %} active{% endif %}">
+                    <a href="?q={{ form.q.value }}&amp;page={{ number }}" class="page-link">{{ number }}</a>
+                </li>
+                {% endfor %}
+                <li class="page-item{% if not results.has_next %} disabled{% endif %}">
+                    <a href="{% if results.has_next %}?q={{ form.q.value }}&amp;page={{ results.next_page_number }}{% endif %}" class="page-link">&raquo;</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endif %}
+
+{% else %}
+    {% if form.q.value %}
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="alert alert-info" role="alert">
+                {% trans "No results found." %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,333 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberIoT - Navbar</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* Root Variables */
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --text-color: #333333;
+            --bg-color: #ffffff;
+            --nav-bg: #007bff;
+            --nav-text: #ffffff;
+            --nav-hover: #0056b3;
+        }
+
+        /* Header and Navigation */
+        .header {
+            background-color: var(--nav-bg);
+            color: var(--nav-text);
+            padding: 0.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .nav__logo img {
+            height: 50px;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            flex: 1;
+            padding: 0.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            outline: none;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .search-button {
+            background-color: var(--primary-color);
+            color: var(--nav-text);
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-left: 0.5rem;
+        }
+
+        .search-button:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        .nav__user {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-left: 0.5rem;
+        }
+
+        .nav__button:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: var(--nav-text);
+        }
+
+        .profile-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-button {
+            background-color: var(--primary-color);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: var(--bg-color);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .profile-dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .profile-dropdown-content a:hover {
+            background-color: var(--primary-color);
+            color: var(--nav-text);
+        }
+
+        .profile-dropdown:hover .profile-dropdown-content {
+            display: block;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--nav-text);
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 0.5rem;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 0;
+            }
+
+            .search-container {
+                width: 90%;
+                max-width: 400px;
+                margin-bottom: 1rem;
+            }
+
+            .nav__logo img {
+                height: 40px;
+            }
+
+            .nav__user {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                background-color: var(--nav-bg);
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+
+            .nav__user.active {
+                display: flex;
+            }
+
+            .nav__button {
+                margin: 0.25rem 0;
+                width: 80%;
+                text-align: center;
+            }
+
+            .profile-dropdown {
+                width: 80%;
+            }
+
+            .profile-button {
+                width: 36px;
+                height: 36px;
+            }
+
+            .profile-dropdown-content {
+                position: static;
+                display: none;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+
+            .profile-dropdown:hover .profile-dropdown-content {
+                display: block;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .nav__logo img {
+                height: 30px;
+            }
+
+            .profile-button {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="{% url 'mainpage:main_page' %}" class="nav__logo">
+                <img src="{% static 'images/logo.png' %}" alt="CyberIoT Logo">
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="hamburger-menu" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="nav-menu" class="nav__user">
+                {% if user.is_authenticated %}
+                    <div class="profile-dropdown">
+                        <button class="profile-button">
+                            {% if user.profile.profile_img %}
+                                <img src="{{ user.profile.profile_img.url }}" alt="{{ user.username }}" class="profile-image">
+                            {% else %}
+                                <i class="fas fa-user-circle"></i>
+                            {% endif %}
+                        </button>
+                        <div class="profile-dropdown-content">
+                            <a href="{% url 'profiles:profile' username=user.username %}">Profile</a>
+                            <a href="{% url 'settings:settings' %}">Settings</a>
+                            <a href="{% url 'terms:contact_us' %}">Help</a>
+                            <a href="{% url 'accounts:logout' %}">Logout</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <a href="{% url 'accounts:login' %}" class="nav__button">Login</a>
+                    <a href="{% url 'accounts:signup' %}" class="nav__button">Sign Up</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header>
+        <script>
+        // JavaScript for dropdown and hamburger menu
+        const profileButton = document.querySelector('.profile-button');
+        const dropdownContent = document.querySelector('.profile-dropdown-content');
+        const hamburger = document.getElementById('hamburger-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        profileButton.addEventListener('click', function() {
+            dropdownContent.classList.toggle('show');
+        });
+
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.profile-button')) {
+                if (dropdownContent.classList.contains('show')) {
+                    dropdownContent.classList.remove('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

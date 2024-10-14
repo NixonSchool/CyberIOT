@@ -1,0 +1,47 @@
+{% extends "base/base.html" %}
+{% load widget_tweaks %}
+{% block description %}Update Library · {% endblock description %}
+{% block keywords %}Update Library · {% endblock keywords %}
+{% block title %}Update Library · {% endblock title %}
+{% block content %}
+<div class="container d-flex justify-content-center mt-5">
+    <div class="col-md-8 col-sm-12">
+        <h1 class="text-center display-4 rounded mb-4" style="font-family: 'Poppins', sans-serif; font-size: 2.5rem;">Update Library</h1>
+
+        <div class="card p-4 shadow-sm">
+            <div class="card-body">
+                {% include 'base/message.html' %}
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% if form.errors %}
+                    <div class="alert alert-danger" style="font-family: 'Poppins', sans-serif;">
+                        {{form.errors}}
+                    </div>
+                    {% endif %}
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="{{ form.title.id_for_label }}" class="form-label">{{ form.title.label }}</label>
+                            {{ form.title|add_class:"form-control" }}
+                        </div>
+                        <div class="col">
+                            <label for="{{ form.videos.id_for_label }}" class="form-label">{{ form.videos.label }}</label>
+                            {{ form.videos|add_class:"form-control" }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3 form-check form-switch">
+                        {{ form.private|add_class:"form-check-input" }}
+                        <label class="form-check-label" for="{{ form.private.id_for_label }}">{{ form.private.label }}</label>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" style="font-family: 'Poppins', sans-serif;">Update Library</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

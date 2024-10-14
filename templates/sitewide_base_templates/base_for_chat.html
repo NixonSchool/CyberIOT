@@ -1,0 +1,257 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ChatZone{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-dark: #0056b3;
+            --primary-light: #cce5ff;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --input-bg: #fff;
+            --input-border: #ced4da;
+            --input-border-focus: var(--primary-color);
+            --input-shadow-focus: rgba(0, 123, 255, 0.25);
+        }
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .main-container {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .content-wrapper {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        .content-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .navbar-custom {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+        }
+        
+        .navbar-custom .navbar-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .navbar-custom .navbar-toggler {
+            border-color: white;
+        }
+        
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .navbar-custom .nav-link {
+            color: white;
+            margin-right: 10px;
+        }
+        
+        .navbar-custom .nav-link:hover {
+            color: var(--primary-light);
+        }
+        
+        .navbar-custom .navbar-nav {
+            align-items: center;
+        }
+        
+        .navbar-custom .form-control {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+        }
+        
+        .navbar-custom .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .navbar-custom .form-control:focus {
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: none;
+        }
+        
+        .navbar-custom .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .navbar-custom .nav-item {
+            margin-right: 10px;
+        }
+        
+        .navbar-custom .nav-link.btn-custom {
+            color: var(--primary-color);
+            background-color: white;
+            border: 1px solid var(--primary-color);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        
+        .navbar-custom .nav-link.btn-custom:hover {
+            color: white;
+            background-color: var(--primary-color);
+        }
+        
+        .btn-custom {
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 50px;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary-color);
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s;
+        }
+        
+        .btn-custom:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+        
+        .content-body {
+            padding: 2rem;
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+        
+        .footer__content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer__section {
+            margin-bottom: 1rem;
+        }
+        
+        .footer__section h4 {
+            margin-bottom: 1rem;
+        }
+        
+        .footer__section a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer__section a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (min-width: 768px) {
+            .content-header {
+                font-size: 2rem;
+            }
+            .footer__content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'exploits:dashboard' %}">
+                <img src="{% static 'images/logo.png' %}" alt="CyberIoT" style="height: 40px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex mx-auto" action="{% url 'exploits:search_vulnerabilities' %}" method="get">
+                    <input class="form-control me-2" type="search" placeholder="Search for Users..." aria-label="Search" name="q">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="#">Archive</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="#">Groups</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="#">Random Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="{% url 'mainpage:main_page' %}">Mainpage</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- <div class="main-container">
+        <div class="content-wrapper">
+            <div class="content-header">
+                <h2 class="mb-0">{% block header_title %}Admin Dashboard{% endblock %}</h2>
+            </div>
+            <div class="content-body">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div> -->
+
+    <footer class="footer">
+        <div class="container text-center">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h4>About Us</h4>
+                    <p>CyberIoT: Securing the Internet of Things</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Contact Us</h4>
+                    <p><a href="mailto:support@cyberiot.com">support@cyberiot.com</a></p>
+                </div>
+                <div class="footer__section">
+                    <h4>Legal</h4>
+                    <a href="{% url 'terms:terms_of_service' %}">Terms of Service</a><br>
+                    <a href="{% url 'terms:privacy_policy' %}">Privacy Policy</a><br>
+                    <a href="{% url 'terms:contact_us' %}">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

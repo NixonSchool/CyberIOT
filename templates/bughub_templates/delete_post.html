@@ -1,0 +1,12 @@
+{% extends "bughub_templates/base_track.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Confirm Deletion</h2>
+    <p>Are you sure you want to delete "{{ object.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        <a href="{% url 'bug:post_detail' slug=object.slug %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

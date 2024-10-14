@@ -1,0 +1,149 @@
+{% load static %}
+{% block content %}
+    
+<header>
+    <img src="{% static 'images/logo.png' %}" alt="CyberIOT Logo" class="logo">
+    <link rel="stylesheet" href="{% static 'terms/css/policy.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <h1>Privacy Policy</h1>
+</header>
+
+<main>
+    <section>
+        <h2>Information We Collect</h2>
+        <p>We may collect personal information such as your name, email address, and usage data. This information is collected to improve our services and communicate with you effectively.</p>
+        <p>For users participating in our forums, we may collect additional information, including IP addresses, device information, and activity logs to enhance the security of our platform and ensure compliance with our community guidelines.</p>
+        <p><strong>Personal Data:</strong> This includes identifiable information such as your full name, username, email address, and any other information you voluntarily provide through our platform.</p>
+        <p><strong>Technical Data:</strong> We collect information about your device, browser type, IP address, and operating system. This data helps us troubleshoot issues, enhance security, and provide a better user experience.</p>
+        <p><strong>Usage Data:</strong> We track your interactions with our platform, including the pages you visit, the time you spend on the site, and your navigation patterns. This data allows us to understand user behavior and optimize our content.</p>
+        <a href="{% url 'terms:data_collection_info' %}" class="button">Learn More About Our Data Collection</a>
+    </section>
+
+    <section>
+        <h2>How We Use Your Information</h2>
+        <p>Your information is used to provide and enhance our services, process transactions, and send you updates about CyberIOT. We may also use your data for research and analytical purposes.</p>
+        <p>Specifically, for our IoT-based services, we may use your data to personalize your experience, suggest relevant content, and notify you about new IoT vulnerabilities, patches, or community discussions that might interest you.</p>
+        <p><span style="color: #007bff;"><strong>Service Improvement:</strong></span> We use your feedback and usage data to enhance our platform's functionality and deliver a seamless user experience. Your input helps us tailor our services to meet your needs.</p>
+        <p><span style="color: #007bff;"><strong>Security Enhancements:</strong></span> The information we collect is crucial in identifying potential threats and securing our platform. We implement advanced security measures based on the data we gather to protect your personal information.</p>
+    </section>
+
+    <section>
+        <h2>Data Sharing and Disclosure</h2>
+        <p>We do not share your personal information with third parties except as required by law or to fulfill your requests. We may share aggregated data that does not personally identify you.</p>
+        <p>In the event of a security breach, we may share your information with relevant authorities to comply with legal obligations and protect the safety and integrity of our community. Additionally, we may collaborate with security researchers and organizations to improve the overall safety of IoT devices by sharing non-personal, technical data related to vulnerabilities.</p>
+        <p>We take your privacy seriously, and any data shared with third parties is done under strict confidentiality agreements. Our partners are required to adhere to the same high standards of data protection that we uphold.</p>
+        <p>Before sharing any data, we ensure that all information is anonymized and cannot be traced back to individual users. This approach helps us contribute to the global IoT community without compromising your privacy.</p>
+    </section>
+
+    <section>
+        <h2>Your Choices</h2>
+        <p>You have the right to access, update, or delete your personal information. You can also opt out of receiving marketing communications from us at any time.</p>
+        <p>If you choose to participate in our forums or report IoT vulnerabilities, you can control the visibility of your contributions and decide whether to remain anonymous. Additionally, you can manage your communication preferences by adjusting your account settings or contacting our support team.</p>
+        <p><span style="color: #007bff;"><strong>Accessing Your Data:</strong></span> You can view and update your personal information at any time through your account settings. We encourage you to keep your data accurate and up-to-date.</p>
+        <p><span style="color: #007bff;"><strong>Managing Preferences:</strong></span> Customize your communication preferences to receive only the information that matters to you. Whether it's security alerts, community updates, or product announcements, you decide what you want to hear about.</p>
+    </section>
+
+    <section>
+        <h2>Security</h2>
+        <p>We implement security measures to protect your personal information from unauthorized access, alteration, or destruction. However, no method of transmission over the internet is completely secure.</p>
+        <p>To protect the integrity of IoT vulnerability data, we employ encryption, regular security audits, and multifactor authentication for all user accounts. We also encourage users to follow best practices in securing their IoT devices and accounts.</p>
+        <p><span style="color: #007bff;"><strong>Encryption:</strong></span> All sensitive data is encrypted both in transit and at rest, ensuring that your information remains secure from unauthorized access.</p>
+        <p><span style="color: #007bff;"><strong>Regular Audits:</strong></span> We conduct frequent security audits to identify and address potential vulnerabilities in our systems. Our commitment to security is ongoing, and we continuously update our practices to reflect the latest industry standards.</p>
+    </section>
+
+    <section>
+        <h2>Cookies and Tracking Technologies</h2>
+        <p>CyberIOT uses cookies and similar tracking technologies to enhance your experience on our platform. Cookies help us understand user behavior, track your preferences, and improve our services.</p>
+        <p>You can manage your cookie preferences through your browser settings. However, disabling cookies may limit your ability to use certain features of our site.</p>
+        <p><span style="color: #007bff;"><strong>Understanding Cookies:</strong></span> Cookies are small text files stored on your device that help us remember your preferences and provide a more personalized experience.</p>
+        <p><span style="color: #007bff;"><strong>Types of Cookies We Use:</strong></span> We use session cookies to keep you logged in during your visit and persistent cookies to remember your preferences for future visits.</p>
+    </section>
+
+    <section>
+        <h2>Third-Party Links</h2>
+        <p>Our platform may contain links to third-party websites, products, or services that are not controlled or operated by CyberIOT. We are not responsible for the privacy practices of these third parties, and we encourage you to review their privacy policies before providing any personal information.</p>
+        <p>While we strive to ensure that all external links on our platform are safe, we cannot guarantee the security or privacy of information you provide to third-party sites. We recommend that you exercise caution and read the privacy policies of any external websites you visit.</p>
+        <p><span style="color: #007bff;"><strong>Affiliate Links:</strong></span> Some links on our site may be affiliate links, which means we may earn a commission if you make a purchase through those links. These links are clearly marked, and we only promote products or services that align with our values.</p>
+    </section>
+
+    <section>
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top.</p>
+        <p>We encourage you to review this Privacy Policy periodically for any changes. Continued use of our platform after any changes constitutes your acceptance of the revised policy.</p>
+        <p>If there are any significant changes to how we handle your personal information, we will provide a more prominent notice, such as an email notification or a banner on our website.</p>
+    </section>
+
+    <section>
+            <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@cyberiot.com">support@cyberiot.com</a>.</p>
+            <p>We value your feedback and are committed to addressing any concerns you may have about your privacy. Our support team is available to assist you with any inquiries regarding our privacy practices or how we handle your data.</p>
+            <p><strong>Mailing Address:</strong> CyberIOT, 1234 Nairobi, Westlands, TC 56789</p>
+            <a href="{% url 'terms:contact_us' %}" class="button">Contact Our Support Team</a><br><br>
+            <a href="{% url 'mainpage:main_page' %}" class="button">Back To Mainpage</a>
+
+            
+        </section>
+
+    <footer>
+        <p>&copy; CyberIOT 2024. All rights reserved.</p>
+    </footer>
+
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .button {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+
+</main>
+{% endblock %}

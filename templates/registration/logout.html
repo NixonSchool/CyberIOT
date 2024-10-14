@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout Successful</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --text-color: #333333;
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --card-shadow: rgba(0, 0, 0, 0.1);
+            --btn-hover-color: #0056b3;
+            --alert-bg: #d4edda;
+            --alert-text: #155724;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            overflow: hidden;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px var(--card-shadow);
+        }
+
+        .card-header {
+            background-color: var(--primary-color);
+            color: var(--card-bg);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card-header i {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .alert {
+            background-color: var(--alert-bg);
+            color: var(--alert-text);
+            border-radius: 10px;
+            padding: 1rem;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .btn-info {
+            background-color: var(--primary-color);
+            border: none;
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-info:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 480px) {
+            .card-header {
+                padding: 1.5rem;
+            }
+
+            .card-header i {
+                font-size: 3rem;
+            }
+
+            .card-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .card-body {
+                padding: 1.5rem;
+            }
+
+            .btn-info {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Logout Successful</h2>
+            </div>
+            <div class="card-body">
+                <div class="alert">
+                    <p>You have successfully logged out.</p>
+                    <p>Thank you for visiting CyberIOT!</p>
+                </div>
+                <a class="btn btn-info" href="{% url 'accounts:login' %}">
+                    <i class="fas fa-sign-in-alt"></i> Log In Again
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+        

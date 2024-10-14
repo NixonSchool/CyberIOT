@@ -1,0 +1,270 @@
+{% extends 'profiles/profiles_base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="edit-profile-container">
+    <h1>Edit Profile</h1>
+    <form method="post" enctype="multipart/form-data" id="editProfileForm">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.first_name.id_for_label }}">First Name:</label>
+            {{ form.first_name }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.last_name.id_for_label }}">Last Name:</label>
+            {{ form.last_name }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.bio.id_for_label }}">Bio:</label>
+            {{ form.bio }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.profile_picture.id_for_label }}">Profile Picture:</label>
+            {{ form.profile_picture }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.cover_photo.id_for_label }}">Cover Photo:</label>
+            {{ form.cover_photo }}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.title.id_for_label }}">Nickname:</label>
+            {{ form.title }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.phone_number.id_for_label }}">Phone Number:</label>
+            {{ form.phone_number }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.skills.id_for_label }}">Skills:</label>
+            {{ form.skills }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.education.id_for_label }}">Education:</label>
+            {{ form.education }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.experience.id_for_label }}">Experience:</label>
+            {{ form.experience }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.job_title.id_for_label }}">Job Title:</label>
+            {{ form.job_title }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.address.id_for_label }}">Address:</label>
+            {{ form.address }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.city.id_for_label }}">City:</label>
+            {{ form.city }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.country.id_for_label }}">Country:</label>
+            {{ form.country }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.zip_code.id_for_label }}">Zip Code:</label>
+            {{ form.zip_code }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.twitter_url.id_for_label }}">Twitter URL:</label>
+            {{ form.twitter_url }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.instagram_url.id_for_label }}">Instagram URL:</label>
+            {{ form.instagram_url }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.facebook_url.id_for_label }}">Facebook URL:</label>
+            {{ form.facebook_url }}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.github_url.id_for_label }}">GitHub URL:</label>
+            {{ form.github_url }}
+        </div>
+
+         <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <button type="button" class="btn btn-secondary" id="clearForm">Clear Form</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    .edit-profile-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: var(--module-bg);
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .edit-profile-container h1 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-color);
+        font-weight: bold;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="url"],
+    .form-group input[type="tel"],
+    .form-group textarea,
+    .form-group select {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-size: 1rem;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        box-sizing: border-box;
+    }
+
+    .form-group input[type="file"] {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        font-size: 1rem;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+
+    .form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+
+    .btn:active {
+        transform: translateY(1px);
+    }
+
+    .btn-primary {
+        background-color: var(--primary-color);
+        color: #ffffff;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+        background-color: #f0f0f0;
+        color: var(--text-color);
+        border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+        background-color: #e0e0e0;
+    }
+
+    @media (max-width: 768px) {
+        .edit-profile-container {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        .form-actions {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('editProfileForm');
+    const clearButton = document.getElementById('clearForm');
+
+    clearButton.addEventListener('click', function() {
+        const inputs = form.querySelectorAll('input:not([type="file"]), textarea, select');
+        inputs.forEach(input => {
+            input.value = '';
+        });
+
+        const fileInputs = form.querySelectorAll('input[type="file"]');
+        fileInputs.forEach(input => {
+            input.value = '';
+        });
+    });
+
+    // Add touch-friendly styles for mobile devices
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        const styleElement = document.createElement('style');
+        styleElement.textContent = `
+            .btn {
+                min-height: 44px;
+            }
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        `;
+        document.head.appendChild(styleElement);
+    }
+});
+</script>
+{% endblock %}
