@@ -84,9 +84,11 @@ Every user's username and password is: username || ghoster123@@#
 
 Registered users (Visit the chat app search functionality to see all users listed).
 
-Just type their name or their email and the password.
+Just type their name or their email and the password in the login page.
 
 Current's superadmin username and password is: cyberiot || ghoster123@@#@@#
+
+NOTE: The project has some unfinished parts, like the settings page, reset password page, and a few more things like 404 pages for access control. I might implement them in future, coz they aren't as necessary for now.
 
 For pycharm users, ensure that you've configured you server properly, else the project won't work.
 
