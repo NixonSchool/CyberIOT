@@ -44,7 +44,52 @@ Create a virtual environment.
 
 ![image](https://github.com/user-attachments/assets/2d74c433-f3b5-4a2f-bd2b-9211dc864268)
 
-You can name it as you like, eg myenv can also be python -m venv venv / python -m venv env/python -m venv my_custom_env_name(that's up to you)
+You can name it as you like, eg myenv can also be python -m venv venv // python -m venv env // python -m venv my_custom_env_name (that's up to you).
+
+Once the venv is created, it will appear over there as a folder. 
+
+Activate the virtual environment(venv):
+
+![image](https://github.com/user-attachments/assets/0c092e2d-4cc6-4db1-bb84-6fe357ea615c)
+
+On MacOS and linux:
+
+![image](https://github.com/user-attachments/assets/0ae198e2-9e41-4acd-9a3b-e36995254033)
+
+It will reflect in your terminal.
+
+![image](https://github.com/user-attachments/assets/55b443b6-dbdc-4811-a659-70e8ea0f06e0)
+
+Install django on your main computer using pip:
+
+![image](https://github.com/user-attachments/assets/4a7d9968-e5bc-4533-b328-09f2eb3f724b)
+
+Then come back and install the requirements.txt, it will take lots of time and also if you're using pycharm, indexing can take around 10 to 20 minutes: 
+
+![image](https://github.com/user-attachments/assets/7337d02b-dc9f-4655-a02c-9a62373b3e7e)
+
+You don't need to do migrations, unless you've changed the tables structures:
+
+![image](https://github.com/user-attachments/assets/25821ea9-a982-4237-af8f-64baef53d3c4)
+
+The project has an sqlite database with migrations already done, so you don't need to setup anything else.
+
+Optional: Create another superuser, ensure you're in venv before you create the superadmin:
+
+![image](https://github.com/user-attachments/assets/3721d020-2315-4f2b-8145-fcdfef3c7e62)
+
+Every user's username and password is: username || ghoster123@@#
+
+Registered users (Visit the chat app search functionality to see all users listed).
+
+Just type their name or their email and the password.
+
+Current's superadmin username and password is: cyberiot || ghoster123@@#@@#
+
+
+
+
+
 
 
 
