@@ -62,7 +62,7 @@ It will reflect in your terminal.
 
 Install django on your main computer using pip:
 
-![image](https://github.com/user-attachments/assets/4a7d9968-e5bc-4533-b328-09f2eb3f724b)
+![image](https://github.com/user-attachments/assets/7e9fe40a-729e-4a15-a071-5c3c303ee9be)
 
 Then come back and install the requirements.txt, it will take lots of time and also if you're using pycharm, indexing can take around 10 to 20 minutes: 
 
