@@ -6,7 +6,7 @@ Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts!
 
 ![image](https://github.com/user-attachments/assets/96e0051e-a16f-4bc2-a5aa-11c2a59de634)
 
-**IoT Marketplace:** Buy and sell gadgets. Finally, a place to get those toasters that make tweets! It's like Amazon, but for people who want to sell their cutting-edge IoT gadgets or buy that Wi-Fi enabled toaster they never knew they needed!
+**IoT Marketplace:** Buy and sell gadgets. A place to get those toasters that make tweets! It's like Amazon, but for people who want to sell their cutting-edge IoT gadgets or do some window shopping.😄
 
 ![image](https://github.com/user-attachments/assets/10ba4f74-3a85-4118-9fb7-1131849fe679)
 
