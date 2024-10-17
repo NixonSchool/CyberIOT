@@ -80,7 +80,9 @@ Optional: Create another superuser, ensure you're in venv before you create the 
 
 ![image](https://github.com/user-attachments/assets/3721d020-2315-4f2b-8145-fcdfef3c7e62)
 
-Every user's username and password is: username || ghoster123@@#
+Every user's username and password is: username, ghoster123@@# 
+
+The database is sqlite(file-based) you don't need to install anything, django automatically supports it.
 
 Registered users (Visit the chat app search functionality to see all users listed).
 
