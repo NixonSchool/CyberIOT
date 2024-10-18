@@ -6,15 +6,15 @@ Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts!
 
 ![image](https://github.com/user-attachments/assets/96e0051e-a16f-4bc2-a5aa-11c2a59de634)
 
-**IoT Marketplace:** Buy and sell gadgets. A place to get those toasters that make tweets! It's like Amazon, but for people who want to sell their cutting-edge IoT gadgets or do some window shopping.😄
+**IoT Marketplace:** Buy and sell gadgets. It's a tiny Amazon for IOT/tech people who want to sell their cutting-edge gadgets or do some window shopping.😄
 
 ![image](https://github.com/user-attachments/assets/10ba4f74-3a85-4118-9fb7-1131849fe679)
 
-**LearningHub:** Watch videos about IoT. A simpler YouTube for IOT-geeks! Upload videos of yourself hacking a coffee maker or watch tutorials. Knowledge is power, and power is voltage divided by current!
+**LearningHub:** Watch videos about IoT. Simpler than YouTube! Upload videos and watch existing ones. Knowledge is power, and power is voltage divided by current!
 
 ![image](https://github.com/user-attachments/assets/18e9ec34-749e-4755-8dce-602e773a5ea5)
 
-**VulnerabilitiesHub:** Found a bug? Report it here! Tell us about all of it in depth. It's like a confessional booth for white-hat hackers. "Forgive me, admin, for I have stumbled upon a zero-day exploit and I do not desire to use it for harm, so take they exploit and report it, but will I get paid?"
+**VulnerabilitiesHub:** Found a bug? Then here's your confessional booth, a booth for white-hat hackers. "Forgive me, admin, for I have stumbled upon a zero-day exploit and I do not desire to use it for harm, so take they exploit and report it, but will I get paid?"
 
 ![image](https://github.com/user-attachments/assets/34c64e2e-0023-4616-8290-7f78ffe48979)
 
