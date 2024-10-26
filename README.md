@@ -17,7 +17,7 @@ cyberiot - The core Django app that handles the combined settings for all the ot
 
 exploits - The Vulnerability reporting module.
 
-machina - A bit more complex than the other forums. Custom Django machina forum.
+machina - A bit more complex than the other modules. Customized from Django machina.
 
 mainpage  - landing page where you see all the six modules.
 
