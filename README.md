@@ -1,7 +1,7 @@
 Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts!
 
-=======================================================================================================
-=======================================================================================================
+============================
+============================
 
 I will explain the project structure in folders for easier navigation for those who want to modify it.
 
@@ -37,8 +37,8 @@ templates - I tried to label them properly so that you can find the specific app
 
 terms - privacy policy page, terms and conditions page._
 
-=======================================================================================================
-=======================================================================================================
+============================
+============================
 
 ![image](https://github.com/user-attachments/assets/0da19965-6640-4aad-8f9f-5f443d3e31bb)
 
