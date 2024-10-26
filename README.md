@@ -3,7 +3,7 @@ Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts!
 ============================
 ============================
 
-I will explain the project structure in folders for easier navigation for those who want to modify it.
+I will explain the project structure in folders, simplifying it for those who want to modify it.
 
 accounts - Extends the Django authentication system. Login, signup and reset. Reset page isn't implemented.
 
