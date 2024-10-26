@@ -1,8 +1,11 @@
-Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts! Let's first see how the project is structured so those who want to edit will find it simple.
+Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts!
 
-I will explain the project organization based on folders so that those who want to edit it, will have an easier time.
+=======================================================================================================
+=======================================================================================================
 
-_accounts - Extends the Django authentication system. Login, signup and reset. Reset page isn't implemented.
+I will explain the project structure in folders for easier navigation for those who want to modify it.
+
+accounts - Extends the Django authentication system. Login, signup and reset. Reset page isn't implemented.
 
 bug - vulnerability tracking module, handles all things related to blogposts.
 
@@ -34,6 +37,7 @@ templates - I tried to label them properly so that you can find the specific app
 
 terms - privacy policy page, terms and conditions page._
 
+=======================================================================================================
 =======================================================================================================
 
 ![image](https://github.com/user-attachments/assets/0da19965-6640-4aad-8f9f-5f443d3e31bb)
