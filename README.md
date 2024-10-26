@@ -1,4 +1,40 @@
-Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts!
+Welcome to CyberIOT: The Hub for Tech and IOT enthusiasts! Let's first see how the project is structured so those who want to edit will find it simple.
+
+I will explain the project organization based on folders so that those who want to edit it, will have an easier time.
+
+_accounts - Extends the Django authentication system. Login, signup and reset. Reset page isn't implemented.
+
+bug - vulnerability tracking module, handles all things related to blogposts.
+
+channel, channelaccount, video - these are the learninghub modules working together to present the youtube-like video platform in one place.
+
+chatzone2 - Chatting application.
+
+cyberiot - The core Django app that handles the combined settings for all the other modules.
+
+exploits - The Vulnerability reporting module.
+
+machina - A bit more complex than the other forums. Custom Django machina forum.
+
+mainpage  - landing page where you see all the six modules.
+
+marketchat, marketdash, marketitem, marketcore - all the 4 marketplace modules.
+
+media - folder that handles media resources.
+
+notifications - notifications app that was to display notifications, difficult to implement, I left it alone.
+
+profiles - user's profile app, takes the data from accounts after you sign up and updates it on your profile.
+
+settings - not implemented. I wanted features like dark mode, but they are a bit difficult and not important.
+
+static - handles all the static files for the project.
+
+templates - I tried to label them properly so that you can find the specific app's templates.
+
+terms - privacy policy page, terms and conditions page._
+
+=======================================================================================================
 
 ![image](https://github.com/user-attachments/assets/0da19965-6640-4aad-8f9f-5f443d3e31bb)
 
