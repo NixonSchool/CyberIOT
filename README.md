@@ -35,10 +35,12 @@ static - handles all the static files for the project.
 
 templates - I tried to label them properly so that you can find the specific app's templates.
 
-terms - privacy policy page, terms and conditions page._
+terms - privacy policy page, terms and conditions page.
 
 ============================
 ============================
+
+Mainpage: Displays the 6 modules for the whole forum. The official landing page for the entire application.
 
 ![image](https://github.com/user-attachments/assets/0da19965-6640-4aad-8f9f-5f443d3e31bb)
 
