@@ -25,7 +25,7 @@ marketchat, marketdash, marketitem, marketcore - all the 4 marketplace modules.
 
 media - folder that handles media resources.
 
-notifications - notifications app that was to display notifications, difficult to implement, I left it alone.
+notifications - notifications app that was to display notifications, not yet implement.
 
 profiles - user's profile app, takes the data from accounts after you sign up and updates it on your profile.
 
@@ -132,7 +132,7 @@ Just type their name or their email and the password in the login page.
 
 Current's superadmin username and password is: cyberiot || ghoster123@@#@@#
 
-NOTE: The project has some unfinished parts, like the settings page, reset password page, and a few more things like 404 pages for access control. I might implement them in future, coz they aren't as necessary for now.
+NOTE: The project has some unfinished parts, like the settings page, reset password page, and a few more things like 404 pages for access control.
 
 For pycharm users, ensure that you've configured you server properly, else the project won't work.
 
